@@ -4,26 +4,27 @@
 
 <style> 
     body {
-        font-family: Montserrat;
+        font-family: ethno;
         margin: 0;
         padding: 0;
         height: 100vh;
-        width : 100vw;
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        justify-content: space-between;
     }
       
   .outerBorder {
     position: absolute;
-            border: 2px solid #4EBAF0;
+            border: 2px solid #fff;
             width: 95%;
             top: 2.5%;
             border-radius: 3rem;
             justify-content: center;
             align-items: center;
             align-content: center;
+            padding-bottom: 1rem;
   }
-  
+ 
   .containeraboutpage-1 {
     border-style: solid;
     border-width: 2;
@@ -39,11 +40,14 @@
   
   @keyframes glowing {
     from {
-      box-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #4e79f0, 0 0 4px rgba(0, 255, 255, 0.079), 0 0 5px #4ebaf025, 0 0 6prgba (78, 186, 240, 0.271) F0, 0 0 7px #4ebaf0;
+      box-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #ffffff,
+        0 0 4px rgba(0, 0, 0, 0), 0 0 5px #ffffff,
+        0 0 6prgba (0, 0, 0, 0) F0, 0 0 7px #ffffff;
     }
-  
+
     to {
-      box-shadow: 0 0 2px #fff, 0 0 3px #4ebaf0, 0 0 4px #4ebaf0, 0 0 5px #4ebaf0, 0 0 6px #4ebaf0, 0 0 7px #4ebaf0, 0 0 8px #4ebaf0;
+      box-shadow: 0 0 2px #ffffff, 0 0 3px #ffffff, 0 0 4px #ffffff,
+        0 0 5px #ffffff, 0 0 6px #ffffff, 0 0 7px #ffffff, 0 0 8px #ffffff;
     }
   }
  
@@ -56,6 +60,7 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
+    margin-bottom: 10rem !important;
   }
   
   .contaboutpage {
@@ -67,7 +72,7 @@
   .logo-imageaboutpage {
     height: 100px;
     position: absolute;
-    left: 0;
+    left: 1rem;
   }
   
   .main-headingaboutpage {
@@ -82,7 +87,6 @@
     background-color: rgba(83, 174, 219, 0.155);
     text-align: center;
     align-self: flex-end;
-    font-family : MonsOlympia;
   }
   
   .containeraboutpage-2 {
@@ -102,22 +106,22 @@
   }
 
   .backButton{
+    font-family: moto;
     position: absolute;
-    border: 2px solid #4EBAF0;
+    border: 2px solid #fff;
     border-radius: 1rem;
     font-size: 1.5rem;
     padding: 0px 10px;
     right:1.5%;
     top:2%;
-    font-family: MonsOlympia;
     border-left-style: none;
-    color: rgb(194 200 206);
+    color: white;
     background-color:#0000004d;
     text-align: center;
 }
 
 .backButton:hover{
-    background-color:#4EBAF0;
+    background-color:white;
     transform: scale(1.1);
 }
 
@@ -181,45 +185,43 @@
 
 }
 
-
-
-
 </style>
 <div class="bg-containeraboutpage">
   <div class="containeraboutpage-1 outerBorder glowing-circle container-fluid">
-    <a href="{% url 'cit2020:navPage' %}"><button type="button" class="btn backButton glowing-circle-backButton"><-</button></a>
+    <a href="{% url 'cit2020:navPage' %}"><button type="button" class="btn backButton glowing-circle-backButton"><</button></a>
     <div class="text-center contaboutpage">
-      <a href="{% url 'cit2020:navPage' %}"><img class="logo-imageaboutpage" src="{% static './Assets/isteLogoThemed.png'%}" /></a>
+      <a href="{% url 'cit2020:navPage' %}"><img class="logo-imageaboutpage" src="{% static './Assets/whiteIste.png'%}" /></a>
       <h class="main-headingaboutpage">About</h>
     </div>
     <div class="containeraboutpage-2">
       <div class="abouttheme">
-      <h1>Cognitive Intelligence Test 6.0</h1>
-      <p>CIT 6.0 is one-of-a-kind opportunity for all aspiring students as we unveil exhilarating challenges of national standard over the realms of basic mathematical aptitude, logical & verbal reasoning, and data interpretation. Not only does CIT implant an idea of various acclaimed aptitude tests like CAT, but our flagship event also never fails to provide a simulation of the overall screening procedure of the hiring companies. This is the most anticipated online event to compete for intellectual glory among multitude of striving contestants.</p>
-      <br>
-      <br>
-      <h2><strong>Schedule For CIT 6.0</strong></h2>
-      <b>Preliminary Round:</b> Candidates can attempt CIT only once in any of the three available slots:
-      <li><b>Slot 1:</b> January 18, 2023 (9:00 PM - 9:45 PM)</li>
-      <li><b>Slot 2:</b> January 19, 2023 (9:00 PM - 9:45 PM)</li>
-      <li><b>Slot 3:</b> January 20, 2023 (9:00 PM - 9:45 PM)</li>
-      <b>Final Round:</b> Candidates selected for final round will receive a mail with details
-      <li><b>Final:</b> January 22, 2023 (9:00 PM - 9:45 PM)</li>
-</div>
-<br>
-<br>
-<div class="prize-section">
-  <h2><strong>Cash PRIZES worth 3K For CIT 6.0</strong></p>
-    {% comment %} <img src="{% static 'Assets/ims.png'%}" alt="PRIZES"> {% endcomment %}
-</div>
-<br>
-<br>
-<div class="sponsors-section ">
-  <h2><strong>EVENT SPONSOR</strong></p>
-    <img src="{% static 'Assets/ims.png'%}" alt="IMS" style="margin-right: 10px; padding-bottom: 0; border-radius: 15px;">
-    {% comment %} <img src="{% static 'Assets/iocl.png'%}" alt="IOCL"
-                    style="padding-bottom: 0; border-radius: 15px; margin-right: 10px;"> {% endcomment %}
-</div>
+        <h1 style="font-family: ethno;">Cognitive Intelligence Test 7.0</h1>
+        <p>CIT 6.0 is one-of-a-kind opportunity for all aspiring students as we unveil exhilarating challenges of national standard over the realms of basic mathematical aptitude, logical & verbal reasoning, and data interpretation. Not only does CIT implant an idea of various acclaimed aptitude tests like CAT, but our flagship event also never fails to provide a simulation of the overall screening procedure of the hiring companies. This is the most anticipated online event to compete for intellectual glory among multitude of striving contestants.</p>
+        <br>
+        <br>
+        <h2><strong>Schedule For CIT 6.0</strong></h2>
+        <b>Preliminary Round:</b> Candidates can attempt CIT only once in any of the three available slots:
+        <li><b>Slot 1:</b> January 18, 2023 (9:00 PM - 9:45 PM)</li>
+        <li><b>Slot 2:</b> January 19, 2023 (9:00 PM - 9:45 PM)</li>
+        <li><b>Slot 3:</b> January 20, 2023 (9:00 PM - 9:45 PM)</li>
+        <b>Final Round:</b> Candidates selected for final round will receive a mail with details
+        <li><b>Final:</b> January 22, 2023 (9:00 PM - 9:45 PM)</li>
+        <br>
+        <br>
+        <div class="prize-section">
+          <h2><strong>Cash PRIZES worth 3K For CIT 6.0</strong>
+            {% comment %} <img src="{% static 'Assets/ims.png'%}" alt="PRIZES"> {% endcomment %}
+          </div>
+          <br>
+          <br>
+          <div class="sponsors-section ">
+            <h2><strong>EVENT SPONSOR</strong> <br>
+              <img src="{% static 'Assets/ims.png'%}" alt="IMS" style="margin-right: 10px; padding-bottom: 0; border-radius: 15px;">
+              {% comment %} <img src="{% static 'Assets/iocl.png'%}" alt="IOCL"
+              style="padding-bottom: 0; border-radius: 15px; margin-right: 10px;"> {% endcomment %}
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

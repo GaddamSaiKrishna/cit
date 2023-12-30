@@ -43,19 +43,28 @@
     />
     <style>
       @font-face {
-        font-family: MonsOlympia;
-        src: url({% static './fonts/MonsOlympia.ttf'%});
+        font-family: moto;
+        src: url({% static './fonts/moto-verse.ttf'%});
       }
+    
+    @font-face {
+        font-family: antonio;
+        src: url({% static './fonts/Antonio-Regular.ttf'%});
+      }
+    
+    @font-face {
+        font-family: ethno;
+        src: url({% static './fonts/ethnocentric_rg.otf'%});
+     }
       body {
         height: 100vh;
-        background-image: url({% static './Assets/bg.webp' %});
+        background-image: url({% static './Assets/bg.png' %});
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-size: 100% 100%;
         background-color : #061E4C;
-
-        {% comment %} overflow-y: scroll;
-        -webkit-overflow-scrolling:touch; {% endcomment %}
+        overflow-y: scroll;
+        -webkit-overflow-scrolling:touch;
     }
     </style> 
     {% block cssStyles %} {% endblock %}
