@@ -5,7 +5,7 @@
 
     <style>
 		body {
-			font-family: MonsOlympia;
+			font-family: mons;
             letter-spacing: 2px;
 		}
 
@@ -20,42 +20,25 @@
             padding: 0;
             margin: 0;
         }
-
-        .main-headinginstructionpage {
-            border-style: solid;
-            border-width: 1;
-            border-color: rgba(98, 159, 228, 0.781);
-            border-radius: 30px;
-            padding: 10px 25px;
-            position: relative;
-            top: -2rem;
-            font-size: 40px;
-            border-left-style: none;
-            color: rgb(77, 150, 233);
-            background-color: rgba(83, 174, 219, 0.155);
-            text-align: center;
-            font-family : MonsOlympia;
-            letter-spacing : 5px;
-        }
-
+        
         
         {% comment %} back button {% endcomment %}
         .backButton{
             position: absolute;
-            border: 2px solid #4EBAF0;
+            border: 2px solid #fff;
             border-radius: 1rem;
             font-size: 1.5rem;
             padding: 0px 10px;
-            right:2%;
-            top:2%;
-            border-left-style: none;
-            color: rgb(194 200 206);
+            right:2rem;
+            top:2rem;
+            color: white;
             background-color:#0000004d;
             text-align: center;
+            font-family: moto;
         }
 
         .backButton:hover{
-            background-color:#4EBAF0;
+            background-color:white;
             transform: scale(1.1);
         }
 
@@ -68,7 +51,7 @@
         {% comment %}  {% endcomment %}
         .outerBorder-viewProfile {
             position: relative;
-            border: 2px solid #4EBAF0;
+            border: 2px solid #fff;
             width: 100%;
             top: -1%;
             bottom:2.5%;
@@ -87,25 +70,48 @@
             animation: glowing 1s ease-in-out infinite alternate;
         }
 
-        
+        .txtOnImage{
+            position: absolute; 
+            top: 45%; 
+            left: 45%; 
+            transform: translate(-50%, -50%); 
+            color: white; 
+            font-size: 1.3rem; 
+            margin-left: 0.5rem;
+            text-align: center;
+            font-family: moto;
+          }
+  
+          .headerImg{
+            width: 27rem;
+            height: 10rem;
+          }
+
+          .icon{
+            position: relative;
+            left: 4.5rem;
+          }
         
         @keyframes glowing {
             from {
-                box-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #4e79f0, 0 0 4px rgba(0, 255, 255, 0.079), 0 0 5px #4ebaf025, 0 0 6prgba(78, 186, 240, 0.271)F0, 0 0 7px #4EBAF0;
+              box-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #ffffff,
+                0 0 4px rgba(0, 0, 0, 0), 0 0 5px #ffffff,
+                0 0 6prgba (0, 0, 0, 0) F0, 0 0 7px #ffffff;
             }
-        
+      
             to {
-                box-shadow: 0 0 2px #fff, 0 0 3px #4EBAF0, 0 0 4px #4EBAF0, 0 0 5px #4EBAF0, 0 0 6px #4EBAF0, 0 0 7px #4EBAF0, 0 0 8px #4EBAF0;
+              box-shadow: 0 0 2px #ffffff, 0 0 3px #ffffff, 0 0 4px #ffffff,
+                0 0 5px #ffffff, 0 0 6px #ffffff, 0 0 7px #ffffff, 0 0 8px #ffffff;
             }
-        }
+          }
         
         
         .logo img {
             position: absolute;
-            width: 10rem;
+            width: 7rem;
             height: auto;
             top: 1rem;
-            left: -0.5rem;
+            left: 1rem;
         }
         
         
@@ -114,7 +120,7 @@
             border-style: solid;
             border-radius: 50px;
             border-width: 2;
-            border-color: rgb(98, 159, 228);
+            border-color: white;
             height: auto;
             width: auto;
             padding: 15px;
@@ -136,6 +142,8 @@
         
         h4 {
             margin-top: 15px;
+            font-size: 1.1rem;
+            font-family: moto;
         }
         
         .logo h1 {
@@ -161,7 +169,30 @@
                 background-color: rgba(83, 174, 219, 0.155);
                 text-align: center;
             }
-
+            .txtOnImage{
+                position: absolute; 
+                top: 45%; 
+                left: 45%; 
+                transform: translate(-50%, -50%); 
+                color: white; 
+                font-size: 1rem; 
+                margin-top: 4rem;
+                margin-left: 0.5rem;
+                text-align: center;
+                font-family: moto;
+              }
+      
+              .headerImg{
+                position: relative;
+                top:4rem;
+                width: 18rem;
+                height: 7rem;
+              }
+    
+              .icon{
+                position: relative;
+                left: 2.5rem;
+              }
             .outerBorder-viewProfile{
                 justify-content : flex-start;
             }
@@ -171,10 +202,10 @@
             }
         
             .logo img {
-                width: 8rem;
+                width: 5rem;
                 height: auto;
                 top: 1rem;
-                left: -0.5rem;
+                left: 1rem;
             }
         
         
@@ -186,57 +217,71 @@
             }
         
             h4 {
-                font-size: 15px;
+                font-size: 0.6rem;
             } 
+            .container{
+                margin-top: 3rem;
+            }
+
+            strong{
+                font-size: 0.65rem;
+            }
             
             .backButton{
                 right:4%;
                 top:4%;
             }
         }
+        strong{
+            font-family: ethno;
+            color:antiquewhite;
+        }
     </style>
 
     <div class="view-profile outerBorder-viewProfile glowing-circle">
-        <a href="{% url 'cit2020:navPage' %}"><button type="button" class="btn backButton glowing-circle-backButton"><-</button></a>
+        <a href="{% url 'cit2020:navPage' %}"><button type="button" class="btn backButton glowing-circle-backButton"><</button></a>
         <div class="logo">
-            <a href="{% url 'cit2020:navPage' %}"><img src="{% static './Assets/isteLogoThemed.png' %}" alt="" /></a>
-            <h class="main-headinginstructionpage"> Profile</h>
+            <a href="{% url 'cit2020:navPage' %}"><img src="{% static './Assets/whiteIste.png' %}" alt="" /></a>
         </div>
+        <div style="position: relative; text-align: center;">
+            <img class="headerImg" src="{% static "./Assets/enter.png" %}" alt="Profile">
+            <div class="txtOnImage">Profile<i class="fa fa-book icon"></i></div>
+         </div>
 
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-lg-6 mb-2">
-                    <h4><strong>Name : {{player.name}}</strong> </h4>
-                    <h4><strong>UserName : {{player.userName}}</strong> </h4>
-                    <h4><strong>Email Id : {{player.email}}</strong> </h4>
-                    <h4><strong>Mobile No : {{player.mobile}}</strong> </h4>
-                    <h4><strong>School/College : {{player.institute_name}} </strong> </h4>
-                    <h4><strong>Year of Study : {{player.year_of_study}}</strong> </h4>
-                    <h4><strong>Department : {{player.department}}</strong> </h4>
+                    <h4><strong > Name : </strong>{{player.name}} </h4>
+                    <h4><strong >UserName : </strong> {{player.userName}} </h4>
+                    <h4><strong >Email Id : </strong> {{player.email}} </h4>
+                    <h4><strong >Mobile No : </strong> {{player.mobile}}</h4>
+                    <h4><strong >School/College : </strong> {{player.institute_name}} </h4>
+                    <h4><strong >Year of Study : </strong> {{player.year_of_study}} </h4>
+                    <h4><strong >Department : </strong> {{player.department}}</h4>
                 </div>
                 <div class="col-md-12 col-lg-6 mb-2">
                     {% if player.slot == 0 %}
-                    <h3><strong>Preliminary Round  </strong>Select <a href="{% url 'cit2020:index' %}"><strong>Slot</strong></a></h3>
+                    <h3><strong >Preliminary Round </strong>Select <a href="{% url 'cit2020:index' %}"><strong>Slot</strong></a></h3>
                     {% else %}
-                    <h3><strong>Preliminary Round  </strong></h3>
-                    <h4><strong>Slot: </strong> 
+                    <h3><strong >Preliminary Round  </strong></h3>
+                    <h4><strong style="color:wheat; ">Slot: </strong> 
                         {% if player.slot == 1 %} (1) Jan 11, 2022 (9:30 PM - 9:40 PM)
                         {% elif player.slot == 2 %} (2) Jan 11, 2022 (9:50 PM - 10:00 PM)
                         {% elif player.slot == 3 %} (3) Jan 11, 2022 (10:10 PM - 10:20 PM)
                         {% endif %}
                     </h4>
-                    <h4><strong>Score : </strong> {{player.score}}</h4>
+                    <h4><strong style="color:wheat; font-family: ethno;">Score : </strong> {{player.score}}</h4>
                     {% if final == False %}
-                    <h4><strong>Selected for Final : </strong> -- </h4>
+                    <h4><strong style="color:wheat; font-family: ethno;">Selected for Final : </strong> -- </h4>
                     {% elif player.qualified == True %}
-                    <h4><strong>Selected for Final : </strong> Yes </h4>
+                    <h4><strong style="color:wheat; font-family: ethno;">Selected for Final : </strong> Yes </h4>
                     {% else %}
-                    <h4><strong>Selected for Final : </strong> No </h4>
+                    <h4><strong style="color:wheat; font-family: ethno;">Selected for Final : </strong> No </h4>
                     {% endif %}
                     {% if player.qualified == True %}
-                    <h3><strong>Final Round : </strong></h3>
-                    <h4><strong>Slot : </strong> Jan 11, 2022 (11:00 PM - 11:10 PM)</h4>
-                    <h4><strong>Score : </strong> {{player.final_score}}</h4>
+                    <h3><strong style="color:wheat; font-family: ethno;">Final Round : </strong></h3>
+                    <h4><strong style="color:wheat; font-family: ethno;">Slot : </strong> Jan 11, 2022 (11:00 PM - 11:10 PM)</h4>
+                    <h4><strong style="color:wheat; font-family: ethno;">Score : </strong> {{player.final_score}}</h4>
                     {% endif %}
                     {% endif %}    
                 </div>
