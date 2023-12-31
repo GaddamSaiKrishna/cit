@@ -15,12 +15,12 @@ body {
     height: 100vh;
     display: flex;
     justify-content: center;
-    font-family : MonsOlympia;
+    font-family : ethno;
 }
 
 .outerBorder {
     position: absolute;
-    border: 2px solid #4EBAF0;
+    border: 2px solid #fff;
     width: 95%;
     top: 2.5%;
     border-radius: 3rem;
@@ -38,13 +38,17 @@ body {
 
 @keyframes glowing {
     from {
-        box-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #4e79f0, 0 0 4px rgba(0, 255, 255, 0.079), 0 0 5px #4ebaf025, 0 0 6prgba(78, 186, 240, 0.271)F0, 0 0 7px #4EBAF0;
+      box-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #ffffff,
+        0 0 4px rgba(0, 0, 0, 0), 0 0 5px #ffffff,
+        0 0 6prgba (0, 0, 0, 0) F0, 0 0 7px #ffffff;
     }
 
     to {
-        box-shadow: 0 0 2px #fff, 0 0 3px #4EBAF0, 0 0 4px #4EBAF0, 0 0 5px #4EBAF0, 0 0 6px #4EBAF0, 0 0 7px #4EBAF0, 0 0 8px #4EBAF0;
+      box-shadow: 0 0 2px #ffffff, 0 0 3px #ffffff, 0 0 4px #ffffff,
+        0 0 5px #ffffff, 0 0 6px #ffffff, 0 0 7px #ffffff, 0 0 8px #ffffff;
     }
-}
+  }
+
 
 .forms-card {
     height: 90%;
@@ -66,12 +70,12 @@ body {
 }
 
 
-.forms-logo img {
+.forms-logo {
     position: absolute;
-    width: 10rem;
+    width: 7rem;
     height: auto;
     top: 1rem;
-    left: -0.5rem;
+    left: 1rem;
 }
 
 .forms-title {
@@ -97,7 +101,7 @@ form {
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin-top : 120px;
+    margin-top : 5rem;
 }
 
 .forms-card h3 {
@@ -112,8 +116,8 @@ form {
 .forms-input-box {
     width: 70%;
     overflow: hidden;
-    background: transparent;
-    border: 1px solid #4EBAF0;
+    background: #00000026;
+    border: 1px solid wheat;
     margin: 8px 0;
     padding: 0 10px;
     height: 35px;
@@ -144,6 +148,44 @@ form {
         margin: 15px 0;
     }
 }
+@media (min-width: 200px) and (max-width: 656px){
+    .txtOnImage{
+        position: absolute; 
+        top: 45%; 
+        left: 45%; 
+        transform: translate(-50%, -50%); 
+        color: white; 
+        font-size: 1rem !important; 
+        margin-left: 0.5rem !important;
+        text-align: center;
+        font-family: moto;
+      }
+    
+      .headerImg{
+        width: 15rem !important;
+        height: 5rem !important;
+      }
+      .header{
+        top:5rem !important;
+      }
+      .icon{
+        position: relative;
+        left: 4.5rem;
+      }
+
+      .forms-logo{
+        width: 5rem !important;
+      }
+
+      form{
+        margin-top:5rem !important;
+      }
+
+      input,select{
+        font-size: 0.75rem !important;
+      }
+
+}
 
 ::placeholder {
     color: #fff;
@@ -167,55 +209,69 @@ form {
 
 @media screen and (max-width: 600px) {
     button {
-        width: 70%;
+        width: 100%;
     }
     .forms-logo img{
         position: absolute;
-        width: 8rem;
+        width: 7rem;
         height: auto;
         top: 1rem;
-        left: -0.5rem;
+        left: 1rem;
     }
-    .forms-title{
-        border-style: solid;
-        border-color: rgba(98, 159, 228, 0.781);
-        border-radius: 30px;
-        position: relative;
-        top: 6rem;
-        left : 18%;
-        font-size: 24px;
-        border-left-style: none;
-        font-family : MonsOlympia;
-        color: rgb(77, 150, 233);
-        background-color: rgba(83, 174, 219, 0.155);
-        text-align: center;
-        border-width: 1;
-    }
+
     .button-forms{
         width : 30%;
         padding : 0 10px;
     }
     ::placeholder {
-        font-size : 12px;
+        font-size : 0.65rem;
     }
 }
 
 .submit-btn-forms {
+    width: 10rem;
+    border-color: white;
+    background: #00000059;
     position: relative;
 }
 
 .card .btn {
     margin-top: 25px;
 }
+
+.txtOnImage{
+    position: absolute; 
+    top: 45%; 
+    left: 45%; 
+    transform: translate(-50%, -50%); 
+    color: white; 
+    font-size: 1.5rem; 
+    margin-left: 1.2rem;
+    text-align: center;
+    font-family: moto;
+  }
+
+  .headerImg{
+    width: 28rem ;
+    height: 9rem ;
+  }
+
+  .icon{
+    position: relative;
+    left: 4.5rem;
+  }
 </style>
 
-<div class="forms-main-container forms-logo outerBorder glowing-circle">
-        <img src="{% static './Assets/isteLogoThemed.png' %}" alt="">
+<div class="forms-main-container outerBorder glowing-circle">
+        <img class="forms-logo " src="{% static './Assets/whiteIste.png' %}" alt="">
         <div class="forms-container">
             <div class="forms-card">
-              <div class="forms-inner-box">     
-                <div class="forms-card-front">
-                      <h class="forms-title">Register</h>
+                <div class="forms-inner-box">     
+                    <div class="forms-card-front">
+                    <div style="position: relative; text-align: center; top:1.5rem;" class="header">
+                        <img class="headerImg" src="{% static "./Assets/profile.png" %}" alt="Register">
+                        <div class="txtOnImage about">Register</div>
+                     </div>
                       <form id="complete_profile" method="post" action="/profile/update">
                         {% csrf_token %}
         
@@ -237,7 +293,7 @@ form {
                         {% comment %} <input type="text" class="forms-input-box" placeholder="Year of Study" required> {% endcomment %}
                         {% render_field form.year_of_study class="form-control forms-input-box" placeholder="Enter year of study" style="display:inline-block;max-width: 95%;text-align:center;" %}     
                           
-                        <button type="submit" class="button-forms submit-btn-forms"><span>Submit</span></button>
+                        <button type="submit" class="button-forms submit-btn-forms glowing-circle"><span>Submit</span></button>
                       </form>
                 </div>
               </div>
