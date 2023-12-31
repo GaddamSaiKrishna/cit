@@ -16,16 +16,18 @@
     top: 100px;
     left: 50px;
     text-decoration: none;
-    color: #4e91f0;
-    font-size: 30px;
+    color: white;
+    font-size: 1.25rem;
     letter-spacing: 4px;
     overflow: hidden;
     border-width: 1px;
     border-radius: 20px;
     border-image-slice: 1;
-    background-color: rgba(0, 64, 255, 0.153);
+    background-color: #0000005c;
+    border:2px solid white;
     font-weight: 500;
     margin-bottom : 20px;
+    font-family: ethno;
   }
   
   body {
@@ -53,20 +55,23 @@
 
   @keyframes glowing {
     from {
-      box-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #4e79f0, 0 0 4px rgba(0, 255, 255, 0.079), 0 0 5px #4ebaf025, 0 0 6prgba(78, 186, 240, 0.271)F0, 0 0 7px #4EBAF0;
+      box-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #ffffff,
+        0 0 4px rgba(0, 0, 0, 0), 0 0 5px #ffffff,
+        0 0 6prgba (0, 0, 0, 0) F0, 0 0 7px #ffffff;
     }
 
     to {
-      box-shadow: 0 0 2px #fff, 0 0 3px #4EBAF0, 0 0 4px #4EBAF0, 0 0 5px #4EBAF0, 0 0 6px #4EBAF0, 0 0 7px #4EBAF0, 0 0 8px #4EBAF0;
+      box-shadow: 0 0 2px #ffffff, 0 0 3px #ffffff, 0 0 4px #ffffff,
+        0 0 5px #ffffff, 0 0 6px #ffffff, 0 0 7px #ffffff, 0 0 8px #ffffff;
     }
   }
 
   .image-forms {
     position: absolute;
-    width: 10rem;
+    width: 7rem;
     height: auto;
     top: 1rem;
-    left: -0.5rem;
+    left: 1rem;
   }
 
   .container {
@@ -74,22 +79,25 @@
   }
 
   .main-heading-slot {
-    font-size: 2rem;
+    font-size: 1.75rem;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     color: white;
     padding-top: 10rem;
+    margin-bottom: 5rem !important;
     letter-spacing : 5px;
     margin-bottom : 30px;
+    font-family: ethno;
   }
 
   .p1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 300;
     color: white;
     padding-top: 25px;
     letter-spacing : 5px;
+    font-family:ethno;
   }
   .opt{
     display : flex;
@@ -121,14 +129,14 @@
 
     .image-forms {
       position: absolute;
-      width: 8rem;
+      width: 5rem;
       height: auto;
       top: 1rem;
-      left: -0.5rem;
+      left: 2rem;
     }
 
     .main-heading-slot {
-      font-size: 21px;
+      font-size: 1rem;
       font-style: normal;
       font-weight: 400;
       color: white;
@@ -136,11 +144,15 @@
     }
 
     .p1 {
-      font-size: 15px;
+      font-size: 0.8rem;
       font-style: normal;
       font-weight: 400;
       color: white;
       padding-top: 25px;
+    }
+
+    .main-heading-slot{
+      margin-bottom: 3rem !important;
     }
 
     .submitbtn {
@@ -148,14 +160,14 @@
       top: 50px;
       left: 20px;
       text-decoration: none;
-      color: #4e91f0;
-      font-size: 20px;
+      color: white``;
+      font-size: 0.6rem;
       letter-spacing: 4px;
       overflow: hidden;
       border-width: 1px;
-      border-radius: 25px;
+      border-radius: 17.5px;
       border-image-slice: 1;
-      background-color: rgba(0, 64, 255, 0.153);
+      background-color: #0000005c;
       font-weight: 500;
     }
   }
@@ -163,13 +175,13 @@
 
   <div class="outerBorder-forms glowing-circle">
     <div class="text-center cont-forms">
-    <img class="image-forms" src="{% static './Assets/isteLogoThemed.png'%}" />
+    <img class="image-forms" src="{% static './Assets/whiteIste.png'%}" />
   </div>
   <div class="container container-fluid">
     <div class="slots-choose">
       <div class="container">
 
-        <h2 class="main-heading-slot">Please Choose Your Slot - </h2>
+        <h2 class="main-heading-slot">Please Choose Your Slot  </h2>
 
         <form id="slot" method="post" action="/forms/">
           {% csrf_token %}
@@ -190,7 +202,7 @@
           <br> <br>
           <div class="next-arrow-block">
             <div class="next-arrow">
-              <input type="submit" value="Submit" class="submitbtn rounded-corners-gradient-borders-form-Slot" />
+              <input type="submit" value="Submit" class="submitbtn glowing-circle" />
             </div>
           </div>
         </form>
