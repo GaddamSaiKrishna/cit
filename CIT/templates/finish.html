@@ -59,12 +59,17 @@
         border-radius: 50px;
         border-width: 2;
         border-color: white;
+        color: #fff;
         height: cover;
       
     }
     
     .container-fluid {
-        padding-top: 10rem;
+        display: flex;
+        height : 95vh;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
     
     .cont {
@@ -89,13 +94,12 @@
         font-style: normal;
         font-weight: 400;
         font-family: ethno;
-        margin-top : 60px;
         letter-spacing : 5px;
+        margin-top: 10px;
     }
     
     .para-2 {
         color: white;
-        padding-top: 60px;
         font-size: 1.5rem;
         text-align: center;
         text-align: center;
@@ -107,7 +111,6 @@
     
     .para-3 {
         color: white;
-        padding-top: 30px;
         font-size: 1.5rem;
         text-align: center;
         text-align: center;
@@ -156,23 +159,19 @@
         }
     
     
-        .container-fluid {
-            padding-top: 7rem;
-        }
-    
         .para-1 {
             color: white;
-            padding-top: 10px;
-            font-size: 1.5rem;
+            margin-top: 10px;
+            font-size: 1rem;
             text-align: center;
             font-style: normal;
-            font-weight: 400;
+            font-weight: 100;
         }
     
         .para-2 {
             color: white;
             padding-top: 30px;
-            font-size: 1rem;
+            font-size: 0.5rem;
             text-align: center;
             font-style: normal;
             font-weight: 300;
@@ -200,11 +199,11 @@
             {% if user and not user.is_anonymous %}
              <h2 class = "para-1"><strong>TEST FINISHED</strong></h2class>
             {% if player.qualified == True %}
-             <h2 class = "para-2"><strong>Your Preliminary Round Score : <span style="color:red">{{player.score}}</span><br> <br> Final Round Score : <span style="color:red">{{player.final_score}}</span></strong></h2>
-            <h2 class = "para-3"><strong>Visit <a style="text-decoration:none;" href="{% url 'cit2020:lboard' %}"> LEADERBOARD </a> for Rank</strong></h2class>
+             <h2 class = "para-1"><strong>Your Preliminary Round Score : <span style="color:#0d6efd">{{player.score}}</span> <br> <br> Final Round Score : <span style="color:#0d6efd">{{player.final_score}}</span></strong></h2>
+            <h2 class = "para-1"><strong>Visit <a style="text-decoration:none;" href="{% url 'cit2020:lboard' %}"> LEADERBOARD </a> for Rank</strong></h2class>
             {% else %}
-            <h2 class = "para-4"><strong>Your Preliminary Round Score is {{player.score}}</strong></h2>
-            <h2 class = "para-5"><strong>Visit <a style="text-decoration:none;" href="{% url 'cit2020:lboard' slot=player.slot %}"> LEADERBOARD </a> for Rank</strong></h2>
+            <h2 class = "para-1"><strong>Your Preliminary Round Score is <span style="color:#0d6efd">{{player.score}}</span></strong></h2>
+            <h2 class = "para-1"><strong>Visit <a style="text-decoration:none;" href="{% url 'cit2020:lboard' slot=player.slot %}"> LEADERBOARD </a> for Rank</strong></h2>
             {% endif %}
             {% endif %}
         </div>

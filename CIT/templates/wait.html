@@ -3,18 +3,18 @@
 {% block content %}
 
 <div class="outerBorder glowing-circle"></div>
-<a href="{% url 'cit2020:navPage' %}"> <button type="button" class="btn backButton glowing-circle-backButton"><-</button></a>
+<a href="{% url 'cit2020:navPage' %}"> <button type="button" class="btn backButton glowing-circle-backButton"><</button></a>
 <div class="bg-containertimerpage">
   {% if user and not user.is_anonymous %}
   <div class="containertimerpage-1">
     <div class="text-center conttimerpage">
-      <a href="{% url 'cit2020:navPage' %}"><img class="logo-imagetimerpage" src="{% static './Assets/isteLogoThemed.png'%}" /></a>
+      <a href="{% url 'cit2020:navPage' %}"><img class="logo-imagetimerpage" src="{% static './Assets/whiteIste.png'%}" /></a>
     </div>
     <div class="containertimerpage container-fluid">
       <h1 class="main-headingtimerpage">TEST WILL START AFTER</h1>
       <p id="demo" style="color:red;"></p>
       <p class="paratimerpage1">Register at <a href="https://unstop.com/competition/cognitive-intelligence-test-60-national-institute-of-technology-nit-durgapur-583542" style="text-decoration: none;">Unstop</a> platform to confirm your registration.</p>
-      <p class="paratimerpage2">READ THE RULES CAREFULLY BEFORE STARTING YOUR TEST</p>
+      <p class="paratimerpage2">READ THE <a href="{% url 'cit2020:rules' %}" style="text-decoration: none;">Rules</a> CAREFULLY BEFORE STARTING YOUR TEST</p>
       <p class="paratimerpage3">ALL THE BEST!</p>
     </div>
   </div>
@@ -23,7 +23,7 @@
 
 <style>
   body{
-    font-family: MonsOlympia;
+    font-family: ethno;
   }
 
   .bg-containertimerpage {
@@ -36,7 +36,7 @@
 
   .outerBorder {
       position: absolute;
-      border: 2px solid #4EBAF0;
+      border: 2px solid #fff;
       width: 95%;
       height: 95%;
       top: 2.5%;
@@ -55,18 +55,24 @@
   }
 
   @keyframes glowing {
-      from {
-          box-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #4e79f0, 0 0 4px rgba(0, 255, 255, 0.079), 0 0 5px #4ebaf025, 0 0 6prgba(78, 186, 240, 0.271)F0, 0 0 7px #4EBAF0;
-      }
+    from {
+      box-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #ffffff,
+        0 0 4px rgba(0, 0, 0, 0), 0 0 5px #ffffff,
+        0 0 6prgba (0, 0, 0, 0) F0, 0 0 7px #ffffff;
+    }
 
-      to {
-          box-shadow: 0 0 2px #fff, 0 0 3px #4EBAF0, 0 0 4px #4EBAF0, 0 0 5px #4EBAF0, 0 0 6px #4EBAF0, 0 0 7px #4EBAF0, 0 0 8px #4EBAF0;
-      }
+    to {
+      box-shadow: 0 0 2px #ffffff, 0 0 3px #ffffff, 0 0 4px #ffffff,
+        0 0 5px #ffffff, 0 0 6px #ffffff, 0 0 7px #ffffff, 0 0 8px #ffffff;
+    }
   }
 
   .containertimerpage-1 {
-      height: cover;
       position:fixed;
+      display: flex;
+      justify-content: center ;
+      align-items: center;
+      height: 95vh;
       margin: 10px;
       padding-top: 10%;
   }
@@ -78,11 +84,11 @@
   }
 
   .logo-imagetimerpage {
-      position: fixed;
-      width: 10rem;
+      position: absolute;
+      width: 7rem;
       height: auto;
-      top: 3rem;
-      left: 2rem;
+      top: 2rem;
+      left: 3rem;
   }
 
   .containertimerpage {
@@ -91,7 +97,7 @@
 
   .main-headingtimerpage {
       font-size: 40px;
-      font-family: MonsOlympia;
+      font-family: ethno;
       font-style: normal;
       font-weight: 400;
       color: white;
@@ -136,22 +142,21 @@
    {% comment %} back button {% endcomment %}
    .backButton{
     position: absolute;
-    border: 2px solid #4EBAF0;
+    border: 2px solid #fff;
     border-radius: 1rem;
     font-size: 1.5rem;
     padding: 0px 10px;
     right:4%;
     top:5%;
-    font-family: MonsOlympia;
-    border-left-style: none;
-    color: rgb(194 200 206);
+    font-family: moto;
+    color: white;
     background-color:#0000004d;
     text-align: center;
     z-index : 100;
 }
 
 .backButton:hover{
-    background-color:#4EBAF0;
+    background-color:#fff;
     transform: scale(1.1);
 }
 
@@ -169,38 +174,37 @@
 
   @media screen and (max-width: 600px) {
       .backButton{
-        top:8%;
+        top:6%;
         right:7%;
       }
       .logo-imagetimerpage {
         position: absolute;
-        width: 8rem;
+        width: 5rem;
         height: auto;
         top: 2rem;
-        left: -0.5rem;
+        left: 1rem;
       }
 
       .main-headingtimerpage {
-          font-size: 24px;
-          margin-top: 25%;
+          font-size: 1.25rem;
       }
 
       .headingtimerpage {
-          font-size: 18px;
+          font-size: 1rem;
       }
 
       .paratimerpage1 {
-          font-size: 18px;
-
+          font-size: 1rem;
+          padding: 0;
       }
 
       .paratimerpage2 {
-          font-size: 18px;
-
+          font-size: 1rem;
+          padding: 0;
       }
 
       .paratimerpage3 {
-          font-size: 18px;
+          font-size: 1rem;
       }
 
       #demo{
@@ -216,23 +220,23 @@
   var countDownDate
   if ({{player.qualified}}) {
     // Final slot date
-    countDownDate = new Date("Jan 22, 2023 21:00:00").getTime();
+    countDownDate = new Date("Jan 4, 2024 21:00:00").getTime();
   }
   else if ({{player.slot}}==1) {
     // slot 1 date
-    countDownDate = new Date("Jan 18, 2023 21:00:00").getTime();
+    countDownDate = new Date("Jan 18, 2024 21:00:00").getTime();
   } 
   else if ({{player.slot}}==2) {
     // slot 2 date 
-    countDownDate = new Date("Jan 19, 2023 21:00:00").getTime();
+    countDownDate = new Date("Jan 4, 2024 18:30:00").getTime();
   } 
   else if ({{player.slot}}==3) {
     // slot 3 date 
-    countDownDate = new Date("Jan 20, 2023 21:00:00").getTime();
+    countDownDate = new Date("Jan 3, 2024 11:00:00").getTime();
   } 
   else{
     // final slot date 
-    countDownDate = new Date("Jan 22, 2023 21:00:00").getTime();
+    countDownDate = new Date("Jan 4, 2024 21:00:00").getTime();
   }
   
 

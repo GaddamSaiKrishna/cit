@@ -2,24 +2,37 @@
 {% load static %}
 {%block content%}
 <section class="outerBorder-lBoard glowing-circle">
-    <a href="{% url 'cit2020:navPage' %}"><button type="button" class="btn backButton glowing-circle-backButton"><-</button></a>
+    <a href="{% url 'cit2020:navPage' %}">
+        <button type="button" class="btn backButton glowing-circle-backButton">
+            <
+        </button>
+    </a>
     <div class="container">
-        <a href="{% url 'cit2020:navPage' %}"><div class="logo-lBoard"><img src="{% static './Assets/logoThemed.png' %}" alt="logo-lBoard"></div></a>
+        <a href="{% url 'cit2020:navPage' %}">
+            <div class="logo-lBoard">
+                <img src="{% static './Assets/whiteIste.png' %}" alt="logo-lBoard">
+            </div>
+        </a>
         <div class="container">
             <section>
                 <div class="cont-lBoard">
-                    <div class="content text-center outerBorder glowing-circle">
-                        LEADERBOARD
-                        <br>
-                        {% if slot == 1 %}Slot 1
-                        {% elif slot == 2 %}Slot 2
-                        {% elif slot == 3 %}Slot 3
-                        {% else %}Final
-                        {% endif %}
+                    <div style="position: relative; text-align: center;">
+                        <img class="headerImg" src="{% static "./Assets/profile.png" %}" alt="Leaderboard">
+                        <div class="txtOnImage">Leaderboard
+                            <br>
+                            {% if slot == 1 %}
+                                Slot 1
+                            {% elif slot == 2 %}
+                                Slot 2
+                            {% elif slot == 3 %}
+                                Slot 3
+                            {% else %}
+                                Final
+                            {% endif %}
+                        </div>
                     </div>
                 </div>
-
-                 <div class="slots-lBoard">
+                <div class="slots-lBoard">
                     <div class="container">
                         <a id="slot1" class="slot-button-lBoard rounded-corners-gradient-borders"
                             href="{% url 'cit2020:lboard' 1  %}">Slot 1</a>
@@ -31,244 +44,199 @@
                             href="{% url 'cit2020:lboard' 4 %}">Final Round</a>
                     </div>
                 </div>
-            
-            
-            <br>
-            {% if players %}
-                {% if rank == 0 %}
-                
-                {% else %}
-                <h4 style="text-align: center;"><strong> Your rank is {{rank}} </strong></h4>
-                {% endif %}
-            <br>
-
-            {% comment %} <div class="slots-lBoard">
-                <div class="container">
-                    <a class="slot-button-lBoard rounded-corners-gradient-borders"
-                        href="{% url 'cit2020:lboard' 1  %}">Slot 1</a>
-                    <a class="slot-button-lBoard rounded-corners-gradient-borders"
-                        href="{% url 'cit2020:lboard' 2  %}">Slot 2</a>
-                    <a class="slot-button-lBoard rounded-corners-gradient-borders"
-                        href="{% url 'cit2020:lboard' 3  %}">Slot 3</a>
-                    <a class="slot-button-lBoard rounded-corners-gradient-borders"
-                        href="{% url 'cit2020:lboard' 4 %}">Final Round</a>
+                <br>
+                {% if players %}
+                    {% if rank == 0 %}
+                    
+                    {% else %}
+                        <h4 style="text-align: center;"><strong> Your rank is {{rank}} </strong></h4>
+                    {% endif %}
+                    <br>
+                    <div class="center">
+                        <div class="top3 glowing-circle1">
+                            {% if slot == 4 %}
+                                {% for player in players|slice:":1" %}
+                                    {% if rank != player.rank %}
+                                        <div class="one item">
+                                            <!-- Player 1 -->
+                                            <div class="pos">
+                                                1
+                                            </div>
+                                            <div class="pic"
+                                                style="background-image: url({{player.image_url}})">
+                                            </div>
+                                            <div class="name">
+                                                {{player.name}}
+                                            </div>
+                                            <div class="score">
+                                                {{player.final_score}}
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            {% else %}
+                                {% for player in players|slice:":1" %}
+                                    {% if rank != player.rank %}
+                                        <div class="one item">
+                                            <!-- Player 1 -->
+                                            <div class="pos">
+                                                1
+                                            </div>
+                                            <div class="pic"
+                                                style="background-image: url({{player.image_url}})">
+                                            </div>
+                                            <div class="name">
+                                                {{player.name}}
+                                            </div>
+                                            <div class="score">
+                                                {{player.score}}
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
+                            {% if slot == 4 %}
+                    {% for player in players|slice:':2' %}
+                    {% if rank != player.rank %}
+                    {% if player.rank == 2 %}
+                    <div class="two item">
+                        <div class="pos">
+                            2
+                        </div>
+                        <div class="pic"
+                            style="background-image: url({{player.image_url}})">
+                        </div>
+                        <div class="name">
+                            {{player.name}}
+                        </div>
+                        <div class="score">
+                            {{player.final_score}}
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% endif %}
+                    {% endfor %}
+                    {% else %}
+                    {% for player in players|slice:':2' %}
+                    {% if rank != player.rank %}
+                    {% if player.rank == 2 %}
+                    <div class="two item">
+                        <div class="pos">
+                            2
+                        </div>
+                        <div class="pic"
+                            style="background-image: url({{player.image_url}})">
+                        </div>
+                        <div class="name">
+                            {{player.name}}
+                        </div>
+                        <div class="score">
+                            {{player.score}}
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% endif %}
+                    {% endfor %}
+                    {% endif %}
+                    
+                    {% if slot == 4 %}
+                    {% for player in players|slice:':3' %}
+                    {% if rank != player.rank %}
+                    {% if player.rank == 3 %}
+                    <div class="three item">
+                        <div class="pos">3</div>
+                        <div class="pic"
+                            style="background-image: url({{player.image_url}})">
+                        </div>
+                        <div class="name">{{player.name}}</div>
+                        <div class="score">{{player.final_score}}</div>
+                    </div>
+                    {% endif %}
+                    {% endif %}
+                    {% endfor %}
+                    {% else %}
+                    {% for player in players|slice:':3' %}
+                    {% if rank != player.rank %}
+                    {% if player.rank == 3 %}
+                    <div class="three item">
+                        <div class="pos">3</div>
+                        <div class="pic"
+                            style="background-image: url({{player.image_url}})">
+                        </div>
+                        <div class="name">{{player.name}}</div>
+                        <div class="score">{{player.score}}</div>
+                    </div>
+                    {% endif %}
+                    {% endif %}
+                    {% endfor %}
+                    {% endif %}
                 </div>
-            </div> {% endcomment %}
+            </div>
         </section>
-            <div class="row">
-                <!-- First Position -->
-                <div class="col-sm-1">
-                </div>
-                <div class="col-sm-3">
-                    <div class="leaderboard-card leaderboard-card">
-
-                        <div class="leaderboard-card__body">
-                            <div class="text-center">
-                                <img src="{% static './Assets/LboardAsset1.svg' %}" class="circle-img mb-2" alt="User Img">
-                                <div class="bodyBox-lBoard">
-                                {% if slot == 4 %}
-                                {% for player in players|slice:":1" %}
-                                    {% if rank !=  player.rank %}
-                                    <h5 class="hashTag">#1</h5>
-                                    <h5 class="mb-0 nameLboard">{{player.name}}</h5>
-                                    <p class="text-muted mb-0">@{{player.userName}}</p>
-                                    <div class="leaderboard-card-bottom">
-                                        <h3 class="text-center scoreLboard">{{player.final_score}}</h3>
-                                    </div>
-                                    {% endif %}
-                                {% endfor %}
-                                {% else %}
-                                {% for player in players|slice:":1" %}
-                                    {% if rank !=  player.rank %}
-                                    <h5 class="hashTag">#1</h5>
-                                    <h5 class="mb-0 nameLboard">{{player.name}}</h5>
-                                    <p class="text-muted mb-0">@{{player.userName}}</p>
-                                    <div class="leaderboard-card-bottom">
-                                        <h3 class="text-center scoreLboard">{{player.score}}</h3>
-                                    </div>
-                                    {% endif %}
-                                {% endfor %}
-                                {% endif %}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--  -->
-                <div class="col-sm-1">
-                </div>
-                <div class="col-sm-3">
-                    <div class="leaderboard-card">
-                        <div class="leaderboard-card__body">
-                            <div class="text-center">
-                                <img src="{% static './Assets/LboardAsset2.svg' %}" class="circle-img mb-2" alt="User Img">
-                                <div class="bodyBox-lBoard">
-                                    {% if slot == 4 %}
-                                    {% for player in players|slice:":2" %}
-                                    {% if rank !=  player.rank %}
-                                        {% if player.rank == 2 %}
-                                        <h5 class="hashTag">#2</h5>
-                                        <h5 class="mb-0 nameLboard">{{player.name}}</h5>
-                                        <p class="text-muted mb-0">@{{player.userName}}</p>
-                                        <div class="leaderboard-card-bottom">
-                                            <h3 class="text-center scoreLboard">{{player.final_score}}</h3>
-                                        </div>
-                                        {% endif %}
-                                    {% endif %}
-                                    {% endfor %}
-                                    {% else %}
-                                    {% for player in players|slice:":2" %}
-                                    {% if rank !=  player.rank %}
-                                        {% if player.rank == 2 %}
-                                        <h5 class="hashTag">#2</h5>
-                                        <h5 class="mb-0 nameLboard">{{player.name}}</h5>
-                                        <p class="text-muted mb-0">@{{player.userName}}</p>
-                                        <div class="leaderboard-card-bottom">
-                                            <h3 class="text-center scoreLboard">{{player.score}}</h3>
-                                        </div>
-                                        {% endif %}
-                                    {% endif %}
-                                    {% endfor %}
-                                    {% endif %}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--  -->
-                <div class="col-sm-1">
-                </div>
-                <div class="col-sm-3">
-                    <div class="leaderboard-card">
-                        <div class="leaderboard-card__body">
-                            <div class="text-center">
-                                <img src="{% static './Assets/LboardAsset3.svg' %}" class="circle-img mb-2" alt="User Img">
-                                <div class="bodyBox-lBoard">
-                                    {% if slot == 4 %}
-                                    {% for player in players|slice:":3" %}
-                                    {% if rank !=  player.rank %}
-                                        {% if player.rank == 3 %}
-                                        <h5 class="hashTag">#3</h5>
-                                        <h5 class="mb-0 nameLboard">{{player.name}}</h5>
-                                        <p class="text-muted mb-0">@{{player.userName}}</p>
-                                        <div class="leaderboard-card-bottom">
-                                            <h3 class="text-center scoreLboard">{{player.final_score}}</h3>
-                                        </div>
-                                        {% endif %}
-                                    {% endif %}
-                                    {% endfor %}
-                                    {% else %}
-                                    {% for player in players|slice:":3" %}
-                                    {% if rank !=  player.rank %}
-                                        {% if player.rank == 3 %}
-                                        <h5 class="hashTag">#3</h5>
-                                        <h5 class="mb-0 nameLboard">{{player.name}}</h5>
-                                        <p class="text-muted mb-0">@{{player.userName}}</p>
-                                        <div class="leaderboard-card-bottom">
-                                            <h3 class="text-center scoreLboard">{{player.score}}</h3>
-                                        </div>
-                                        {% endif %}
-                                    {% endif %}
-                                    {% endfor %}
-                                    {% endif %}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-
-            <h4>All Users</h4>
-            <table class="table table-borderless">
-                <thead>
-                    <tr>
-                        <th scope="col">Rank</th>
-                        <th scope="col">Name</th>
-                        <th scope="col" class="text-center">Score</th>
-                    </tr>
-                </thead>
-                <tbody>
+            <br>
+            <div class="container">
+                <h4>All Users</h4>
+                <br>
                 {% if slot == 4 %}
-                    {% for player in players %}
-                    {% if rank == player.rank %}
-                    <tr class="highlight-rank" >
-                        <td scope="row">{{ player.rank }}</td>
-                        <td>{{ player.name }}
-                            <p class="text-muted mb-0">@{{player.userName}}</p>
-                        </td>
-                        <td class="text-center">{{player.final_score}}</td>
-                    </tr>
+                        {% for player in players %}
+                            {% if rank == player.rank %}
+                                <div class="list">
+                                    <!-- Player with rank -->
+                                    <div class="item">
+                                        <div class="pos">{{player.rank}}</div>
+                                        <div class="pic" style="background-image: url({{player.image_url}})"></div>
+                                        <div class="name">{{player.name}}</div>
+                                        <div class="score">{{player.final_score}}</div>
+                                    </div>
+                                </div>
+                            {% else %}
+                                <div class="list">
+                                    <div class="item">
+                                        <div class="pos">{{player.rank}}</div>
+                                        <div class="pic" style="background-image: url({{player.image_url}})"></div>
+                                        <div class="name">{{player.name}}</div>
+                                       <div class="score">{% if showScore %}{{player.final_score}}{% endif %}</div>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
                     {% else %}
-                    <tr>
-                        <td scope="row">{{ player.rank }}</td>
-                        <td>{{ player.name }}
-                            <p class="text-muted mb-0">@{{player.userName}}</p>
-                        </td>
-                        <td class="text-center">{% if showScore %}{{player.final_score}}{% endif %}</td>
-                    </tr>
+                        {% for player in players %}
+                            {% if rank == player.rank %}
+                                <div class="list">
+                                    <div class="item">
+                                        <div class="pos">{{player.rank}}</div>
+                                        <div class="pic" style="background-image: url({{player.image_url}})"></div>
+                                        <div class="name">{{player.name}}</div>
+                                        <div class="score">{{player.score}}</div>
+                                     </div>
+                                </div>
+                            {% else %}
+                                <div class="list">
+                                    <div class="item">
+                                        <div class="pos">{{player.rank}}</div>
+                                        <div class="pic" style="background-image: url({{player.image_url}})"></div>
+                                        <div class="name">{{player.name}}</div>
+                                        <div class="score">{% if showScore %}{{player.score}}{% endif %}</div>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
                     {% endif %}
-                    {% endfor %}
                 {% else %}
-                    {% for player in players %}
-                    {% if rank == player.rank %}
-                    <tr class="highlight-rank" >
-                        <td scope="row">{{ player.rank }}</td>
-                        <td>{{ player.name }}
-                            <p class="text-muted mb-0">@{{player.userName}}</p>
-                        </td>
-                        <td class="text-center">{{player.score}}</td>
-                    </tr>
-                    {% else %}
-                    <tr>
-                        <td scope="row">{{ player.rank }}</td>
-                        <td>{{ player.name }}
-                            <p class="text-muted mb-0">@{{player.userName}}</p>
-                        </td>
-                        
-                        <td class="text-center">{% if showScore %}{{player.score}}{% endif %}</td>
-                       
-                    </tr>
-                    {% endif %}
-                    {% endfor %}
+                    <div class="soonText text-center">
+                        Leaderboard will be available soon .... 
+                    </div>
                 {% endif %}
-                    {% comment %} <tr>
-                        <td scope="row">1</td>
-                        <td>Demo_name
-                            <p class="text-muted mb-0">@demo</p>
-                        </td>
-                        <td class="text-center">#</td>
-                    </tr>
-                    <tr>
-                        <td scope="row">2</td>
-                        <td>Demo_name
-                            <p class="text-muted mb-0">@demo</p>
-                        </td>
-                        <td class="text-center">#</td>
-                    </tr>
-                    <tr>
-                        <td scope="row">3</td>
-                        <td>Demo_name
-                            <p class="text-muted mb-0">@demo</p>
-                        </td>
-                        <td class="text-center">#</td>
-                    </tr> {% endcomment %}
-                </tbody>
-            </table>
-            {% else %}
-            <div class="soonText text-center">
-                Leaderboard will be available soon .... 
             </div>
-            {% endif %}
         </div>
-
     </div>
 </section>
+
 <style>
     body {
-        color: #4EBAF0;
-        font-family: MonsOlympia;
+        color: white;
+        font-family: Ethno;
         letter-spacing: 4px;
     }
     .nameLboard{
@@ -352,82 +320,6 @@
         margin-bottom: 30px;
     }
     
-    .table thead {
-        background: rgb(0, 1, 1);
-        color: white;
-    }
-    
-    .table tr {
-        height: 60px;
-        text-align: center;
-    }
-    
-    .table tr:hover {
-        background-color: rgb(0, 1, 1);
-    }
-    
-    .table tr.highlight-rank {
-        background-color: rgba(17, 26, 45, 0.1);
-    }
-    
-    .table td {
-        font-size: 16px;
-        padding-top: 22px;
-        padding-bottom: 22px;
-        color: #4EBAF0;
-    }
-    
-    .table thead tr th,
-    .table thead tr td,
-    .table tbody tr th {
-        vertical-align: middle;
-        border: none;
-    }
-    
-    .table tbody tr th,
-    .table tbody tr td,
-    .table tbody tr th {
-        vertical-align: middle;
-        border: none;
-    }
-    
-    .table thead tr th:nth-last-child(1),
-    .table thead tr td:nth-last-child(1),
-    .table tbody tr th:nth-last-child(1) {
-        text-align: center;
-    }
-    
-    .table tbody tr td {
-        background: rgba(6, 86, 136, 0.488);
-    }
-    
-    .table tbody tr td:nth-child(1) {
-        border-radius: 20px 0 0 20px;
-        border: double 2px transparent;
-        background-image: linear-gradient(rgba(0, 0, 0, 0.542), rgba(0, 0, 0, 0.542)), linear-gradient(#224fcb7e, #0018223b);
-        background-origin: border-box;
-        background-clip: padding-box, border-box;
-        border-right: none;
-    }
-    
-    .table tbody tr td:nth-child(2) {
-        border: double 2px transparent;
-        background-image: linear-gradient(rgba(0, 0, 0, 0.542), rgba(0, 0, 0, 0.542)), linear-gradient(#224fcb7e, #0018223b);
-        background-origin: border-box;
-        background-clip: padding-box, border-box;
-        border-left: none;
-        border-right: none;
-    }
-    
-    .table tbody tr td:nth-last-child(1) {
-        border-radius: 0 20px 20px 0;
-        border: double 2px transparent;
-        background-image: linear-gradient(rgba(0, 0, 0, 0.542), rgba(0, 0, 0, 0.542)), linear-gradient(#224fcb7e, #0018223b);
-        background-origin: border-box;
-        background-clip: padding-box, border-box;
-        border-left: none;
-    }
-    
     .row{
         margin-top:3rem;
     }
@@ -435,10 +327,9 @@
     .rounded-corners-gradient-borders {
         border: double 2px transparent;
         border-radius: 20px;
-        background-image: linear-gradient(rgba(0, 0, 0, 0.542), rgba(0, 0, 0, 0.542)), linear-gradient(#2241cb, #0018223b);
         background-origin: border-box;
         background-clip: padding-box, border-box;
-        box-shadow: 0 5px 5px rgba(0, 0, 0.2);
+        box-shadow: 2px 5px 10px rgba(0, 0, 0.2);
     }
     
     .slots-lBoard {
@@ -447,6 +338,8 @@
     }
     
     .slots-lBoard a:hover {
+        background-color:#0000004d;
+        color: yellowgreen;
         text-decoration: none;
     }
     
@@ -454,7 +347,7 @@
     
     .outerBorder-lBoard {
         position: relative;
-        border: 2px solid #4EBAF0;
+        border: 2px solid #fff;
         width: 95%;
         left: 2.5%;
         margin-top: 1.5%;
@@ -475,31 +368,33 @@
     
     @keyframes glowing {
         from {
-            box-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #4e79f0, 0 0 4px rgba(0, 255, 255, 0.079), 0 0 5px #4ebaf025, 0 0 6prgba(78, 186, 240, 0.271)F0, 0 0 7px #4EBAF0;
+          box-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #ffffff,
+            0 0 4px rgba(0, 0, 0, 0), 0 0 5px #ffffff,
+            0 0 6prgba (0, 0, 0, 0) F0, 0 0 7px #ffffff;
         }
     
         to {
-            box-shadow: 0 0 2px #fff, 0 0 3px #4EBAF0, 0 0 4px #4EBAF0, 0 0 5px #4EBAF0, 0 0 6px #4EBAF0, 0 0 7px #4EBAF0, 0 0 8px #4EBAF0;
+          box-shadow: 0 0 2px #ffffff, 0 0 3px #ffffff, 0 0 4px #ffffff,
+            0 0 5px #ffffff, 0 0 6px #ffffff, 0 0 7px #ffffff, 0 0 8px #ffffff;
         }
-    }
+      }
     {% comment %} back button {% endcomment %}
     .backButton{
         position: absolute;
-        border: 2px solid #4EBAF0;
+        border: 2px solid white;
         border-radius: 1rem;
         font-size: 1.5rem;
         padding: 0px 10px;
         right:2%;
         top:2%;
-        font-family: MonsOlympia;
-        border-left-style: none;
-        color: rgb(194 200 206);
+        font-family: moto;
+        color: white;
         background-color:#0000004d;
         text-align: center;
     }
 
     .backButton:hover{
-        background-color:#4EBAF0;
+        background-color:white;
         transform: scale(1.1);
     }
 
@@ -508,6 +403,180 @@
         -moz-animation: glowing 2s ease-in-out infinite alternate;
         animation: glowing 2s ease-in-out infinite alternate;
     }
+    .txtOnImage{
+        position: absolute; 
+        top: 45%; 
+        left: 45%; 
+        transform: translate(-50%, -50%); 
+        color: white; 
+        font-size: 1.3rem; 
+        margin-left: 0.5rem;
+        text-align: center;
+        font-family: moto;
+      }
+
+      .headerImg{
+        width: 35rem;
+        height: 12rem;
+      }
+
+      .icon{
+        position: relative;
+        left: 4.5rem;
+      }
+       {% comment %} Leaderboard table styles {% endcomment %}
+    .center {
+        position: relative;
+        top: 12rem;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+        font-family: "Red Hat Display", sans-serif;
+      }
+      
+      .top3 {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        color: white;
+      }
+      .top3 .item {
+        box-sizing: border-box;
+        position: relative;
+        background: #0000009c;
+        border: 2px solid white;
+        width: 12rem;
+        height: 15rem;
+        text-align: center;
+        padding: 2.8rem 0 0;
+        margin: 1rem 1rem 2rem;
+        border-radius: 2rem;
+        transform-origin: bottom;
+        cursor: pointer;
+        font-family: ethno;
+        transition: transform 200ms ease-in-out;
+        box-shadow: 0 0 4rem 0 rgba(0, 0, 0, 0.1), 0 1rem 2rem -1rem rgba(0, 0, 0, 0.3);
+      }
+      .top3 .item.one{
+        -webkit-animation: glowing1 7s ease-in-out infinite alternate;
+        -moz-animation: glowing1 7s ease-in-out infinite alternate;
+        animation: glowing1 7s ease-in-out infinite alternate;
+      }
+      .top3 .item.two{
+        -webkit-animation: glowing1 6s ease-in-out infinite alternate;
+        -moz-animation: glowing1 6s ease-in-out infinite alternate;
+        animation: glowing1 6s ease-in-out infinite alternate;
+      }
+      .top3 .item.three{
+        -webkit-animation: glowing1 5s ease-in-out infinite alternate;
+        -moz-animation: glowing1 5s ease-in-out infinite alternate;
+        animation: glowing1 5s ease-in-out infinite alternate;
+      }
+      .top3 .item .pic {
+        position: absolute;
+        top: -2rem;
+        left: 3.5rem;
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+        background-size: cover;
+        background-position: center;
+        margin-right: 1rem;
+        box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2), 0 1rem 1rem -0.5rem rgba(0, 0, 0, 0.3);
+      }
+      .top3 .item .pos {
+        font-weight: 900;
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+      }
+      .top3 .item .name {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+      }
+      .top3 .item .score {
+        opacity: 0.75;
+      }
+      .top3 .item .score:after {
+        display: block;
+        content: "points";
+        opacity: 0.5;
+      }
+      .top3 .item.one {
+        width: 12rem;
+        height: 19rem;
+        padding-top: 3.5rem;
+      }
+      .top3 .item.one .pic {
+        width: 6rem;
+        height: 6rem;
+        left: 2.8rem;
+      }
+      .top3 .item:hover {
+        transform: scale(1.05);
+      }
+      .top3 .item.two {
+        height: 17rem;
+      }
+      
+      .list {
+        padding-left: 2rem;
+        margin: 0 auto;
+      }
+      .list .item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        background: white;
+        height: 3rem;
+        border: 1px solid white;
+        border-radius: 4rem;
+        margin-bottom: 2rem;
+        background: #000000ad;
+        transform-origin: left;
+        cursor: pointer;
+        transition: transform 200ms ease-in-out;
+        box-shadow: 0 0 4rem 0 rgba(0, 0, 0, 0.1), 0 1rem 2rem -1rem rgba(0, 0, 0, 0.3);
+      }
+      .list .item .pos {
+        font-weight: 900;
+        position: absolute;
+        left: -2rem;
+        text-align: center;
+        font-size: 1.25rem;
+        width: 1.5rem;
+        color: white;
+        opacity: 0.75;
+        transition: opacity 200ms ease-in-out;
+      }
+      .list .item .pic {
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        background-size: cover;
+        background-position: center;
+        margin-right: 1rem;
+        box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2), 0 1rem 1rem -0.5rem rgba(0, 0, 0, 0.3);
+      }
+      .list .item .name {
+        flex-grow: 2;
+        flex-basis: 10rem;
+        font-size: 1.1rem;
+      }
+      .list .item .score {
+        margin-right: 1.5rem;
+        opacity: 1;
+      }
+      .list .item .score:after {
+        margin-right: 1rem;
+        content: "points";
+        opacity: 0.5;
+      }
+      .list .item:hover {
+        transform: scale(1.05);
+      }
+      .list .item:hover .pos {
+        opacity: 0.8;
+      }
     {% comment %}  {% endcomment %}
     /* For mobile */
     @media (min-width: 200px) and (max-width: 1024px) {
@@ -519,7 +588,7 @@
         .content {
             border-style: solid;
             border-width: 1;
-            border-color: #4EBAF0;
+            border-color: #fff;
             background-color: #012c4149;
             border-radius: 20px;
             padding: 10px;
@@ -530,10 +599,19 @@
             width: 16rem;
             color: rgb(77, 150, 233);
         }
-    
+
+        .center{
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            left: 60%;
+            top:3rem;
+        }
+
         .outerBorder-lBoard {
             position: relative;
-            border: 2px solid #4EBAF0;
+            border: 2px solid #fff;
             width: 95%;
             margin-top: 2%;
             top:1rem;
@@ -545,20 +623,16 @@
             align-items: center;
             align-content: center;
         }
-        .table tr {
-            color:#4EBAF0;
-            font-size: 0.5rem;
-        }
+        
     
         .logo-lBoard {
-            position: relative;
-            width:8rem;
+            position: absolute;
             top: 1rem;
-            left: -1rem;
+            left: 1rem;
         }
     
         .logo-lBoard img {
-            width: 8rem;
+            width: 5rem;
             height: auto;
         }
     
@@ -570,7 +644,7 @@
             top: 10%;
             display: inline-block;
             text-decoration: none;
-            color: #4EBAF0;
+            color: #fff;
             font-size: 0.7rem;
             text-transform: uppercase;
             letter-spacing: 4px;
@@ -581,8 +655,55 @@
 
         .soonText{
             margin-top: 0%;
-            font-size: 1.3rem;
+            font-size: 1rem;
         }
+
+        .txtOnImage{
+            position: absolute; 
+            top: 45%; 
+            left: 45%; 
+            transform: translate(-50%, -50%); 
+            color: white; 
+            font-size: 0.7rem; 
+            margin-left: -0.2rem;
+            text-align: center;
+            font-family: moto;
+          }
+    
+          .headerImg{
+            width: 17rem;
+            height: 8rem;
+          }
+
+          .top3{
+            position: relative;
+            top:10rem;
+            left: -2rem;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .top3 .item{
+              height: auto !important;
+          }
+        
+          .list .item .name{
+            font-size: 0.55rem !important;
+          }
+
+          .list .item .score{
+            font-size: 0.5rem;
+          }
+
+          .list .item .pic{
+            width: 3rem !important;
+            height: 3rem !important;
+          }
+          .list .item .score:after {
+            display: block;
+            content: none !important;
+            opacity: 0.5;
+          }
     }
     
     /* For desktop */
@@ -609,7 +730,7 @@
             width: 15rem;
             top: 10%;
             text-decoration: none;
-            color: #4EBAF0;
+            color: #fff;
             font-size: 1em;
             text-transform: uppercase;
             letter-spacing: 4px;
@@ -618,15 +739,36 @@
     
         .logo-lBoard {
             position: absolute;
-            top: 2rem;
-            left: -0.5rem;
+            top: 1rem;
+            left: 1rem;
         }
     
         .logo-lBoard img {
-            width: 10rem;
+            width: 7rem;
             height: auto;
         }
     }
+
+    @keyframes glowing1 {
+        0% {
+            box-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #ffffff,
+              0 0 4px rgba(0, 0, 0, 0), 0 0 5px #ffffff,
+              0 0 6px rgba(0, 0, 0, 0) F0, 0 0 7px #ffffff;
+         }
+        
+          50% {
+            box-shadow: 0 0 2px #ffffff, 0 0 3px #ffffff, 0 0 4px #ffffff,
+              0 0 5px #ffffff, 0 0 6px #ffffff, 0 0 7px #ffffff, 0 0 8px #ffffff;
+         }
+        
+          100% {
+            box-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #ffffff,
+              0 0 4px rgba(0, 0, 0, 0), 0 0 5px #ffffff,
+              0 0 6px rgba(0, 0, 0, 0) F0, 0 0 7px #ffffff;
+         }
+        
+      }
+   
 </style>
 
 

@@ -8,7 +8,7 @@
     }
 
     body {
-        font-family: MonsOlympia;
+        font-family: ethno;
         margin: 0;
         padding: 0;
     }
@@ -21,15 +21,15 @@
         font-size: 2rem;
 
     }
-    .header img {
+    .header .logo-img{
         position: absolute;
-        width: 10rem;
+        width: 8rem;
         height: auto;
         top: 1rem;
-        left: -0.5rem;
+        left: 1rem;
     }
     .header h2 {
-        font-family: MonsOlympia;
+        font-family: ethno;
         position: absolute;
         left: 45%;
         top: 20%;
@@ -45,6 +45,25 @@
         padding: 8px;
         border-radius: 15px;
     }
+
+    .txtOnImage{
+        position: absolute; 
+        top: 45%; 
+        left: 45%; 
+        transform: translate(-50%, -50%); 
+        color: white; 
+        font-size: 1.75rem; 
+        margin-left: 2.25rem;
+        margin-top: -0.3rem;
+        text-align: center;
+        font-family: moto;
+      }
+    
+    .headerImg{
+        margin-top: -1rem;
+        width: 30rem;
+        height: 9rem;
+      }
 
     .question {
         height: auto;
@@ -79,12 +98,20 @@
         width:auto;
         font-size: 24px;
         color:#fff;        
+        background-color: #00236f;
+        padding: 0.25rem 1rem;
+        border-radius: 2rem 0 0 2rem;
+        font-family: ethno;
     }
 
     .box {
+        border: 1px solid white;
+        padding: 0.2rem 0.3rem;
+        border-radius: 2rem 0 0 2rem;
         position: absolute;
+        height: auto;
         right: 3%;
-        top: 3%;
+        top: 1%;
         color: #fff;
     }
 
@@ -94,7 +121,21 @@
         width: 100%;
         font-family: MonsOlympia;
         letter-spacing: 2px;
-        line-height: 24px;
+        margin-bottom: 0rem !important;
+    }
+
+    .last{
+        position: absolute;
+        padding: 0.2rem 0.3rem;
+        border-radius: 2rem 0 0 2rem;
+        border: 1px solid white;
+        top:-4rem;
+        right: 1.3rem;
+    }
+
+    .clear-button{
+        border-radius: 2rem 0 0 2rem !important;
+        left: -2rem;
     }
 
     .content {
@@ -123,79 +164,39 @@
     } {% endcomment %}
 
     form div {
-        margin-left: 15px;
+        margin-left: 10px;
     }
 
     .opt {
-        width: auto;
-        height: auto;
-        display: flex;
-        align-items: center;
-        margin-top: 0.4em;
-        padding-left: 1rem;
-        line-height: 30px;
-    }
-
-    .opt input {
         display: inline-block;
-        position: relative;
-        cursor: pointer;
-        appearance: none;
-        -webkit-appearance: none;
-    }
-
-    .opt input::before,
-    .opt input::after {
-        content: "";
-        position: absolute;
-        width: 8px;
-        height: 8px;
         border-radius: 50px;
-    }
-
-    .opt input:checked::before {
-        background: #00bfff;
-        transform: translate(-50%, -50%);
-    }
-
-    .opt input::after {
-        width: 12px;
-        height: 12px;
-        background: none;
-        border: 2px solid #ffffff;
-        border-radius: 50px;
-        transform: translate(-80%, -50%);
         transition: all 0.4s;
     }
-
-    .opt input:checked::after {
-        width: 12px;
-        height: 12px;
-        border: 2px solid #7b00ff;
-        border-radius: 10px;
-        transform: translate(-50%, -50%);
+    
+    .opt input[type="radio"] {
+        display: none;
+    }
+    
+    .opt input[type="radio"]:checked ~ label {
+        background-color: #0012128a;
+        transition: background-color 0.4s;
     }
 
     .opt label {
-        margin-left: 0.9em;
         cursor: pointer;
         font-size: 18px;
-        text-align: left;
+        text-align: center;
         font-family: Montserrat;
+        width:100% ;
+        padding: 5px 10px;
+        border-radius: 2rem;
     }
 
     input.clear-button {
-        padding-top: 10px;
-        padding-bottom: 10px;
-        padding-left: 20px;
-        padding-right: 20px;
-        margin-top: 15px;
-        background-color: rgba(62, 188, 251, 0.157);
+        position: relative;
         color: white;
-        /* font-family: 'Montserrat', sans-serif; */
-        border: 1px solid white;
-        border-radius: 9px;
         font-weight: bolder;
+        padding: 0.25rem 1rem;
     }
 
     input.clear-button:hover {
@@ -260,7 +261,7 @@
 
     .outerBorder {
         position: absolute;
-        border: 2px solid #4EBAF0;
+        border: 2px solid #fff;
         justify-content: center;
         align-items: center;
         align-content: center;
@@ -274,8 +275,21 @@
 
     .outerBorder2 {
         position: relative;
-        border: 2px solid #4EBAF0;
-        border-radius: 1rem;
+        border: 2px solid #fff;
+        border-radius: 2rem;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        height: auto;
+        margin-left: 21px;
+        margin-right: 21px;
+        margin-top: 17.1354px;
+        margin-bottom: 17.1354px;
+    }
+    .outerBorder211 {
+        position: relative;
+        border: 2px solid #fff;
+        border-radius: 2rem;
         justify-content: center;
         align-items: center;
         align-content: center;
@@ -286,27 +300,107 @@
         margin-bottom: 17.1354px;
     }
 
+    .options-box{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .options-box .opt{
+        width: 45%;
+    }
+
+    .outerBorder21 {
+        position: relative;
+        border: 2px solid #fff;
+        border-radius: 2rem;
+        border-top-style: none;
+        padding: 1rem 5rem;
+        margin: 1rem 1rem;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        height: auto;
+    }
+    
+    @media (min-width: 701px) and (max-width:1004px){
+        .options-box .opt{
+            width: 100% !important;
+            margin-left: 0px;
+        }
+    }
     @media (max-width: 700px) {
         .image-section {
             width: 90%;
             margin-right: auto;
             margin-left: auto;
         }
-
+        .outerBorder21{
+            padding: 1rem;
+            margin: 0rem;
+        }
         .question {
-            font-size: 18px;
+            font-size: 1rem;
             padding: 0px;
+        }
+        .clear-button{
+            left: 0rem;
+        }
+        .last{
+            top:-4rem ;
+            right: -2rem ;
         }
         .opt , .footer  , .options-block , .grid-container , .grid-block , .grid-item{
             margin-left : 0;
         }
-        .clear-button {
-           margin-left : -5px;
+        .options-box .opt{
+            width: 100%;
+        }
+        .options-box{
+            margin-left: 20px;
+        }
+        .txtOnImage{
+            position: absolute; 
+            top: 45%; 
+            left: 45%; 
+            transform: translate(-50%, -50%); 
+            color: white; 
+            font-size: 1.25rem; 
+            margin-left: -0.1rem;
+            margin-top: -0.3rem;
+            text-align: center;
+            font-family: moto;
+          }
+        
+        .headerImg{
+            margin-top: -1rem;
+            width: 20rem;
+            height: 9rem;
+          }
+        .outerBorder2{
+            top:0rem;
         }
     }
 
     @media only screen and (max-width: 600px) {
 
+        .txtOnImage{
+            position: absolute; 
+            top: 45%; 
+            left: 45%; 
+            transform: translate(-50%, -50%); 
+            color: white; 
+            font-size: 1rem; 
+            margin-left: 0.1rem;
+            margin-top: 2rem;
+            text-align: center;
+            font-family: moto;
+          }
+        .headerImg{
+            position: relative;
+            top:2.5rem;
+            width: 14.5rem;
+            height: 7rem;
+          }
         p {
             font-size: 17px;
             font-family: MonsOlympia;
@@ -324,54 +418,54 @@
             font-family: MonsOlympia;
         }
 
-        .box {
-            right: 3%;
-            top:0%;
-            margin-top : 25px;
-            position: absolute;
-            border: 1px solid rgb(40, 113, 240);
-            border-radius: 15px;
-            background-color: rgba(83, 174, 219, 0.155);
-            padding : 10px;
-        }
-
         .box p {
             width: auto;
             color: #fff;
-            font-size: 16px;
+            font-size: 0.5rem;
             margin-bottom:0;
         }
 
-        .logo img {
+        .last{
             position: absolute;
-            width: 8rem;
-            height: auto;
-            top: 1rem;
-            left: -0.5rem;
+            top:-5.75rem;
+            right: -0.75rem;
+            font-size: 16px !important;
+            font-size: 0.5rem !important;
         }
 
-        .outerBorder2{
-            margin-top : 45px;
+        .header .logo-img {
+            position: absolute;
+            width: 5rem;
+            height: auto;
+            top: 1rem;
+            left: 1rem;
         }
+
 
     }
 
     @keyframes glowing {
         from {
-            box-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #4e79f0, 0 0 4px rgba(0, 255, 255, 0.079), 0 0 5px #4ebaf025, 0 0 6prgba(78, 186, 240, 0.271)F0, 0 0 7px #4EBAF0;
+          box-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #ffffff,
+            0 0 4px rgba(0, 0, 0, 0), 0 0 5px #ffffff,
+            0 0 6prgba (0, 0, 0, 0) F0, 0 0 7px #ffffff;
         }
-
+    
         to {
-            box-shadow: 0 0 2px #fff, 0 0 3px #4EBAF0, 0 0 4px #4EBAF0, 0 0 5px #4EBAF0, 0 0 6px #4EBAF0, 0 0 7px #4EBAF0, 0 0 8px #4EBAF0;
+          box-shadow: 0 0 2px #ffffff, 0 0 3px #ffffff, 0 0 4px #ffffff,
+            0 0 5px #ffffff, 0 0 6px #ffffff, 0 0 7px #ffffff, 0 0 8px #ffffff;
         }
-    }
+      }
 
     .grid-container {
         gap: 5px 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         grid-template-columns: auto auto auto;
         padding: 10px;
         flex-wrap: wrap;
-        font-family : Montserrat;
+        font-family : ethno;
     }
 
     .grid-item {
@@ -381,10 +475,11 @@
 <div class="container1 glowing-circle outerBorder">
     <div class="header">
         <div class="logo">
-            <a href="{% url 'cit2020:navPage' %}"><img src="{% static './Assets/isteLogoThemed.png'%}" alt="" /></a>
+            <a href="{% url 'cit2020:navPage' %}"><img class="logo-img" src="{% static './Assets/\whiteIste.png'%}" alt="logo" /></a>
         </div>
-        <div class="content">
-            <h2>SECTION</h2>
+        <div style="position: relative; text-align: center;">
+            <img class="headerImg" src="{% static "./Assets/question.png" %}" alt="section">
+            <div class="txtOnImage">Section</div>
         </div>
         <div class="box" id="demo-box">
             <p id="demo" class="time-left"></p>
@@ -392,80 +487,85 @@
     </div>
     <div class="main outerBorder2">
         <div class="question">
-            <div class="question-text"
+            <div class="question-text outerBorder21"
                 style="user-select:none;-webkit-user-select:none;-moz-user-select:none;-o-user-select:none;-user-select:none;">
    
                 <strong>Q {{question.Q_number}} :- </strong><br>
-                {{ question.Question|safe }} <br>
+                {{ question.Question|safe }} <br> <br>
+                {% if question.image %}
+
+                <div class="image-section">
+                    <img src="{{question.image.url}}" width="100%" />
+                </div>
+
+            {%endif%}
                 <h4>Accuracy: {{question.accuracy}} %</h4>
 
             </div>
 
-
-            {% if question.image %}
-
-            <div class="image-section">
-                <img src="{{question.image.url}}" width="100%" />
-            </div>
-
-            {%endif%}
+            
         </div>
         <form id="ans" method="post" action="/answer/">
         <div class="footer">
             {% csrf_token %}
             <div class="options-block">
-                <div class="opt">
-                    <input type="radio" name="option" value="1" id="option1" />
-                    <label for="option1" style="
-                user-select: none;
-                -webkit-user-select: none;
-                -moz-user-select: none;
-                -o-user-select: none;
-                -user-select: none;
-              ">{{question.option1}}</label>
-                </div>
-                <div class="opt">
-                    <input type="radio" name="option" value="2" id="option2" />
-                    <label for="option2" style="
-                user-select: none;
-                -webkit-user-select: none;
-                -moz-user-select: none;
-                -o-user-select: none;
-                -user-select: none;
-              ">{{question.option2}}</label>
-                </div>
-                <div class="opt">
-                    <input type="radio" name="option" value="3" id="option3" />
-                    <label for="option3" style="
-                user-select: none;
-                -webkit-user-select: none;
-                -moz-user-select: none;
-                -o-user-select: none;
-                -user-select: none;
-              ">{{question.option3}}</label>
-                </div>
-                <div class="opt">
+                
+                <div class="options-box">
+
+                    <div class="opt outerBorder211">
+                        <input type="radio" name="option" value="1" id="option1" />
+                        <label for="option1" style="
+                        user-select: none;
+                        -webkit-user-select: none;
+                        -moz-user-select: none;
+                        -o-user-select: none;
+                        -user-select: none;
+                        ">{{question.option1}}</label>
+                    </div>
+                    <div class="opt outerBorder211">
+                        <input type="radio" name="option" value="2" id="option2" />
+                        <label for="option2" style="
+                        user-select: none;
+                        -webkit-user-select: none;
+                        -moz-user-select: none;
+                        -o-user-select: none;
+                        -user-select: none;
+                        ">{{question.option2}}</label>
+                    </div>
+                    <div class="opt outerBorder211">
+                        <input type="radio" name="option" value="3" id="option3" />
+                        <label for="option3" style="
+                        user-select: none;
+                        -webkit-user-select: none;
+                        -moz-user-select: none;
+                        -o-user-select: none;
+                        -user-select: none;
+                        ">{{question.option3}}</label>
+                    </div>
+                <div class="opt outerBorder211">
                     <input type="radio" name="option" value="4" id="option4" />
                     <label for="option4" style="
-                user-select: none;
-                -webkit-user-select: none;
-                -moz-user-select: none;
-                -o-user-select: none;
-                -user-select: none;
-              ">{{question.option4}}</label>
+                    user-select: none;
+                    -webkit-user-select: none;
+                    -moz-user-select: none;
+                    -o-user-select: none;
+                    -user-select: none;
+                    ">{{question.option4}}</label>
                 </div>
+            </div>
+                
                 <div class="grid-container">
-                    <div class="grid-item"><span style="display: none"><input type="radio" name="option" id="option5"
-                                value="0" /></span>
-                        <input type="button" class="clear-button" value="Clear Choice"
+                    <div class="grid-item"><span style="display: none;"><input type="radio" name="option" id="option5"
+                        value="0" /></span>
+                        <input style="background-color: #0105056b; padding:0.5rem 2rem; border-radius: 0.5rem !important;" type="button" class="clear-button" value="Clear Choice"
                             onclick="document.getElementById('option5').checked = true;" />
                     </div>
 
                     <div class="last">
-                        <div class="grid-item"><span style="display: none"><input type="radio" name="option"
+                        <span style="display: none;"><input type="radio" name="option"
                                     id="option5" value="0" /></span>
-                                    <input type="submit" class="clear-button" value="Next" />
-                        </div>
+                                    <input style="background-color: #00236f !important; left: 0rem;" type="submit" class="clear-button" value="Next" />
+                        
 
                     </div>
                 </div>
@@ -494,23 +594,23 @@
     var countDownDate;
     if ({{player.qualified}}) {
         // Final slot date
-        countDownDate = new Date("Jan 22 , 2023 21:45:00").getTime();
+        countDownDate = new Date("Jan 22 , 2024 21:45:00").getTime();
       }
       else if ({{player.slot}}==1) {
         // slot 1 date
-        countDownDate = new Date("Jan 18 , 2023 21:45:00").getTime();
+        countDownDate = new Date("Jan 18 , 2024 21:45:00").getTime();
       } 
       else if ({{player.slot}}==2) {
         // slot 2 date 
-        countDownDate = new Date("Jan 19 , 2023 21:45:00").getTime();
+        countDownDate = new Date("Jan 3 , 2024 20:45:00").getTime();
       } 
       else if ({{player.slot}}==3) {
         // slot 3 date 
-        countDownDate = new Date("Jan 20 , 2023 21:45:00").getTime();
+        countDownDate = new Date("Jan 3 , 2024 21:30:00").getTime();
       } 
       else{
         // final slot date 
-        countDownDate = new Date("Jan 22 , 2023 21:45:00").getTime();
+        countDownDate = new Date("Jan 22 , 2024 21:45:00").getTime();
       }
 
 

@@ -63,7 +63,11 @@
     }
     
     .container-fluid {
-        padding-top: 10rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 95vh;
     }
     
     .cont {
@@ -167,42 +171,28 @@
             left: 1rem;
         }
     
-    
-        .container-fluid {
-            padding: 21px;
-            padding-top : 8rem;
-        }
+
     
         .para-1 {
             color: white;
-            font-size: 0.9rem;
+            font-size: 1.15rem;
             text-align: center;
             font-style: normal;
             font-weight: 400;
-            margin-top : 5rem;
         }
     
         .para-2 {
             color: white;
-            font-size: 0.9rem;
+            font-size: 1.15rem;
             text-align: center;
             font-style: normal;
             font-weight: 400;
             margin-top : 30px;
         }
     
-        {% comment %} .para-3 {
-            color: white;
-            padding: 13px;
-            font-size: 20px;
-            text-align: center;
-            font-style: normal;
-            font-weight: 400;
-        } {% endcomment %}
-    
         .para-3 {
         color: white;
-        font-size: 0.8rem;
+        font-size: 1.15rem;
         text-align: center;
         font-style: normal;
         font-weight: 400;
@@ -221,7 +211,7 @@
         </div>
         <div class="container-fluid">
             <h2 class = "para-1"><strong>You Have Not Qualified For the Final Round</strong></h2>
-            <h2 class = "para-2" ><strong>Your score is {{player.score}} which is less than cutoff</strong></h2>
+            <h2 class = "para-2" ><strong>Your score is <span style="color : #0d6efd">{{player.score}}</span> which is less than cutoff</strong></h2>
             <h2 class = "para-3" ><strong>Keep Practicing , Meet You In CIT 8.0</strong></h2>
         </div>
     </div>

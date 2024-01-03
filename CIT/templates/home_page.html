@@ -118,6 +118,11 @@
   font-size: 1.5rem;
 }
 
+.btnBox{
+  position: relative;
+  top:-50%;
+}
+
   /* Bg image and responsiveness for mobile and tablet devices */
   @media (min-width: 200px) and (max-width: 1023px) {
     body {
@@ -148,11 +153,15 @@
     }
 
     .titleHeading-home {
+      display: flex;
+      flex-direction: column;
       justify-content: center;
+      align-items: center;
+      height: 95vh;
       color: #ffffff;
-      font-size: 5rem;
+      font-size: 4rem;
       position: relative;
-      top:27rem;
+      top:7rem;
       font-optical-sizing: auto;
     }
 
@@ -162,24 +171,30 @@
       margin-left: -2rem;
       margin-top: -1rem;
       text-align: center;
-      font-size: 1rem;
+      font-size: 0.75rem;
     }
     .btnBox{
-      width: 100%;
+      width: 55%;
+      top:1rem;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      position: relative;
     }
     .bTn{
       top:1rem;
-      left: -1.1rem !important;
+      left: 0rem !important;
       margin-bottom: -2rem;
     }
     .bTn img{
-      width: 13rem;
+      width: 10rem;
     }
     .txtOnImage{
-      font-size: 0.79rem;
+      font-size: 0.58rem;
+    }
+    .btnArrow{
+      font-size: 0.75rem;
+      left: 1.5rem !important;
     }
     .socialMedia-home {
       display: flex;
@@ -260,227 +275,6 @@
           0 0 5px #ffffff, 0 0 6px #ffffff, 0 0 7px #ffffff, 0 0 8px #ffffff;
       }
     }
-    @media (min-width:250px) {
-      .titleHeading-home {
-        justify-content: center;
-        color: #ffffff;
-        font-size: 4rem;
-        position: relative;
-        top:20rem;
-        font-optical-sizing: auto;
-      }
-  
-      .textAfterHeading-home {
-        color: whitesmoke;
-        height: 10rem;
-        margin-left: -1rem;
-        margin-top: -1rem;
-        text-align: center;
-        font-size: 0.75rem;
-      }
-      .btnBox{
-        width: 100%;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-      .bTn{
-        top:1rem;
-        left: -1.1rem !important;
-        margin-bottom: -3rem;
-      }
-      .bTn img{
-        width: 12rem;
-      }
-      .txtOnImage{
-        font-size: 0.6rem;
-      }
-    }
-    @media (min-width:360px) {
-      .titleHeading-home {
-        justify-content: center;
-        color: #ffffff;
-        font-size: 4rem;
-        position: relative;
-        top:22rem;
-        font-optical-sizing: auto;
-      }
-  
-      .textAfterHeading-home {
-        color: whitesmoke;
-        height: 10rem;
-        margin-left: -2rem;
-        margin-top: -1rem;
-        text-align: center;
-        font-size: 0.9rem;
-      }
-      .btnBox{
-        width: 100%;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-      .bTn{
-        top:1rem;
-        left: 0rem !important;
-        margin-bottom: -2rem;
-      }
-      .bTn img{
-        width: 10rem;
-      }
-      .txtOnImage{
-        font-size: 0.45rem;
-      }
-    }
-
-    @media (min-width:390px) {
-      .titleHeading-home {
-        justify-content: center;
-        color: #ffffff;
-        font-size: 5rem;
-        position: relative;
-        top:20rem;
-        font-optical-sizing: auto;
-      }
-  
-      .textAfterHeading-home {
-        color: whitesmoke;
-        height: 10rem;
-        margin-left: -2rem;
-        margin-top: -1rem;
-        text-align: center;
-        font-size: 1rem;
-      }
-      .btnBox{
-        width: 100%;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-      .bTn{
-        top:1rem;
-        left: -1.1rem !important;
-        margin-bottom: -3rem;
-      }
-      .bTn img{
-        width: 12rem;
-      }
-      .txtOnImage{
-        font-size: 0.6rem;
-      }
-    }
-    @media (min-width:482px){
-      .titleHeading-home {
-        justify-content: center;
-        color: #ffffff;
-        font-size: 4rem;
-        position: relative;
-        top:19rem;
-        font-optical-sizing: auto;
-      }
-  
-      .textAfterHeading-home {
-        color: whitesmoke;
-        height: 10rem;
-        margin-left: -2rem;
-        margin-top: -1rem;
-        text-align: center;
-        font-size: 1rem;
-      }
-      .btnBox{
-        width: 100%;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-      .bTn{
-        top:0rem;
-        left: -1.1rem !important;
-        margin-bottom: -3rem;
-      }
-      .bTn img{
-        width: 13rem;
-      }
-      .txtOnImage{
-        font-size: 0.7rem;
-      }
-    }
-   /* @media (min-width:760px){
-      .titleHeading-home {
-        justify-content: center;
-        color: #ffffff;
-        font-size: 8rem;
-        position: relative;
-        top:30rem;
-        font-optical-sizing: auto;
-      }
-  
-      .textAfterHeading-home {
-        color: whitesmoke;
-        height: 10rem;
-        margin-left: -2rem;
-        margin-top: -1rem;
-        text-align: center;
-        font-size: 1.5rem;
-      }
-      .btnBox{
-        width: 100%;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-      .bTn{
-        top:0rem;
-        left: -4.1rem !important;
-        margin-bottom: -4rem;
-      }
-      .bTn img{
-        width: 20rem;
-      }
-      .txtOnImage{
-        font-size: 1rem;
-      }
-    }
-    @media (min-width:820px){
-      .titleHeading-home {
-        justify-content: center;
-        color: #ffffff;
-        font-size: 8rem;
-        position: relative;
-        top:34rem;
-        font-optical-sizing: auto;
-      }
-  
-      .textAfterHeading-home {
-        color: whitesmoke;
-        height: 10rem;
-        margin-left: -2rem;
-        margin-top: -1rem;
-        text-align: center;
-        font-size: 1.5rem;
-      }
-      .btnBox{
-        width: 100%;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-      .bTn{
-        top:0rem;
-        left: -4.7rem !important;
-        margin-bottom: -4rem;
-      }
-      .btnArrow{
-        left:3.3rem !important;
-        font-size: 1.4rem;
-      }
-      .bTn img{
-        width: 20rem;
-      }
-      .txtOnImage{
-        font-size: 1rem;
-      }
-    }*/
   }
 
   /* -------------------------------------------------------------- */
@@ -588,7 +382,7 @@
     @media (min-width:1024px) {
       .titleHeading-home{
         top:5rem;
-        left: 5.5rem;
+        left: 7.5rem;
         font-size: 8rem;
       }
       .textAfterHeading-home{
@@ -601,6 +395,9 @@
         left:1.2rem;
         margin-right: 1rem;
       }
+      .btnBox{
+        left: -2.5rem;
+      }
       .bTn img{
         width: 11.2rem;
       }
@@ -610,7 +407,7 @@
     }
     @media (min-width:1200px) {
       .titleHeading-home{
-        top:15rem;
+        top:9rem;
         left: 8rem;
       }
       .bTn{
@@ -618,6 +415,10 @@
         width: 2rem;
         left:2rem;
         margin-right: 3.4rem;
+      }
+
+      .btnBox{
+        left:-4rem;
       }
       .bTn img{
         width: 12rem;
@@ -628,8 +429,11 @@
     }
     @media (min-width:1300px) {
       .titleHeading-home{
-        top:14rem;
-        left: 9rem;
+        top:7rem;
+        left: 10rem;
+      }
+      .btnBox{
+        left: -2rem;
       }
       .bTn{
         top:8rem;
@@ -646,19 +450,23 @@
     }
     @media (min-width:1450px) {
       .titleHeading-home{
-        top:9rem;
-        left:10.5rem;
+        top:10rem;
+        left:12rem;
       }
       .bTn{
         top:10rem;
         left:0rem;
         margin-right: 2rem;
       }
+      .btnBox{
+        left: -2rem;
+      }
       .txtOnImage{
         font-size: 0.9rem;
+        margin-left: 0.75rem;
       }
       .btnArrow{
-        left:1rem !important;
+        left:0.5rem !important;
       }
     }
   }
@@ -683,7 +491,7 @@
     CIT
     <div class="textAfterHeading-home text-center">
      &nbsp &nbsp COGNITIVE INTELLIGENCE TEST 7.0<br />
-      <div class="btnBox" style="display:flex; margin-right: 0;margin-left: -2rem;">
+      <div class="btnBox" style="display:flex; margin-right: 0;">
         <a class="bTn" href="{% url 'cit2020:about' %}" id="demo">
           <div style="position: relative; display: inline-block;">
              <img src="{% static "./Assets/Enter.png" %}" alt="About">

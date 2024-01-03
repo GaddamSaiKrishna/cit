@@ -17,7 +17,7 @@ class player(models.Model):
     slot = models.IntegerField(default=0)
     qualified = models.BooleanField(default=False)
     details_updated = models.BooleanField(default=False)
-
+    image_url = models.URLField(max_length = 500, blank = True, null = True)
     mobile = models.CharField(max_length=13,null=True)
 
     year_of_study_choices = (

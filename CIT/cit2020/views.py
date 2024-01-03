@@ -9,19 +9,19 @@ from django.urls import reverse_lazy
 from django.contrib.auth import logout
 from .forms import Profileform
 
-slot1_start=datetime.datetime(2023, 1, 18, 21, 00, 00, 701322)
-slot1_end=datetime.datetime(2023, 1, 18, 21, 45, 00, 701322)
+slot1_start=datetime.datetime(2024, 1, 2, 12, 00, 00, 701322)
+slot1_end=datetime.datetime(2024, 1, 2, 12, 45, 00, 701322)
 
-slot2_start=datetime.datetime(2023, 1, 19, 21, 00, 00, 701322)
-slot2_end=datetime.datetime(2023, 1, 19, 21, 45, 00, 701322)
+slot2_start=datetime.datetime(2024, 1, 2, 18, 30, 00, 701322)
+slot2_end=datetime.datetime(2024, 1, 3, 15, 45, 00, 701322)
 
-slot3_start=datetime.datetime(2023, 1, 20, 21, 00, 00, 701322)
-slot3_end=datetime.datetime(2023, 1, 20, 21, 45, 00, 701322)
+slot3_start=datetime.datetime(2024, 1, 3, 11, 00, 00, 701322)
+slot3_end=datetime.datetime(2024, 1, 4, 11, 25, 00, 701322)
 
-round1_result=datetime.datetime(2023, 1, 21, 12,00, 00, 701322)
+round1_result=datetime.datetime(2024, 1, 3, 11, 25, 00, 701322)
 
-final_start=datetime.datetime(2023, 1, 22, 21, 00, 00, 701322)
-final_end=datetime.datetime(2023, 1, 22, 21,45, 00, 701322)
+final_start=datetime.datetime(2024, 1, 3, 12, 00, 00, 701322)
+final_end=datetime.datetime(2024, 1, 3, 14, 45, 00, 701322)
 
 def index(request):
     user = request.user
@@ -114,6 +114,7 @@ def save_profile(backend, user, response, *args, **kwargs):
             except:
                 player.name = response.get(
                     'given_name') + " " + response.get('family_name')
+            player.image_url = response.get('picture')
             player.save()
 
 @login_required
@@ -294,4 +295,4 @@ def qualify(request, cutoff):
 
         return redirect(reverse_lazy('cit2020:index'))
     else:
-        return redirect(reverse_lazy('cit2020:index'))
+        return redirect(reverse_lazy('cit2020:rules'))

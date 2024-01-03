@@ -63,7 +63,11 @@
     }
     
     .container-fluid {
-        padding-top: 10rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 95vh;
     }
     
     .cont {
@@ -167,45 +171,30 @@
             left: 1rem;
         }
     
-    
-        .container-fluid {
-            padding: 21px;
-            padding-top : 8rem;
-        }
-    
         .para-1 {
             color: white;
-            font-size: 0.9rem;
+            font-size: 1.5rem;
             text-align: center;
             font-style: normal;
-            font-weight: 400;
+            font-weight: 100;
             margin-top : 5rem;
         }
     
         .para-2 {
             color: white;
-            font-size: 0.9rem;
+            font-size: 1.25rem;
             text-align: center;
             font-style: normal;
-            font-weight: 400;
+            font-weight: 100;
             margin-top : 30px;
         }
     
-        {% comment %} .para-3 {
-            color: white;
-            padding: 13px;
-            font-size: 20px;
-            text-align: center;
-            font-style: normal;
-            font-weight: 400;
-        } {% endcomment %}
-    
         .para-3 {
         color: white;
-        font-size: 0.8rem;
+        font-size: 1.3rem;
         text-align: center;
         font-style: normal;
-        font-weight: 400;
+        font-weight: 100;
         margin-top : 30px;
         }
     
@@ -214,18 +203,18 @@
 </style>
 
 <div class = "bg-container">
-    <a href="{% url 'cit2020:navPage' %}"> <button type="button" class="btn backButton glowing-circle-backButton"><-</button></a>
+    <a href="{% url 'cit2020:navPage' %}"> <button type="button" class="btn backButton glowing-circle-backButton"><</button></a>
     <div class="container-1 outerBorder glowing-circle">
         <div class="text-center cont">
-            <a href="{% url 'cit2020:navPage' %}"><img class="image" src="{% static './Assets/isteLogoThemed.png'%}" /></a>
+            <a href="{% url 'cit2020:navPage' %}"><img class="image" src="{% static './Assets/whiteIste.png'%}" /></a>
         </div>
         <div class="container-fluid">
             <h2 class = "para-1"><strong>You Have Attempted All Questions</strong></h2>
             {% if player.qualified == True %}
-             <h2 class = "para-2" ><strong>Your Preliminary Round Score is {{player.score}} and Final Round Score is {{player.final_score}}</strong></h2>
+             <h2 class = "para-2" ><strong>Your Preliminary Round Score is <span style="color: #0d6efd">{{player.score}}</span> and Final Round Score is <span style="color: #0d6efd">{{player.final_score}}</span></strong></h2>
             <h2 class = "para-3" ><strong>Visit <a style="text-decoration:none;" href="{% url 'cit2020:lboard' %}"> LEADERBOARD </a> for Rank</strong></h2>
             {% else %}
-            <h2 class = "para-2" ><strong>Your Preliminary Round Score is {{player.score}}</strong></h2>
+            <h2 class = "para-2" ><strong>Your Preliminary Round Score is <span style="color: #0d6efd">{{player.score}}</span><strong></h2>
             <h2 class = "para-3" ><strong>Visit <a style="text-decoration:none;" href="{% url 'cit2020:lboard' slot=player.slot  %}"> LEADERBOARD </a> for Rank</strong></h2>
             {% endif %}
         </div>
