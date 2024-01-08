@@ -159,8 +159,10 @@
       align-items: center;
       color: #ffffff;
       font-size: 4rem;
-      position: relative;
-      top:17rem;
+      position: absolute;
+      width: 100%;
+      width: -webkit-fill-available;
+      bottom: 5rem;
       font-optical-sizing: auto;
     }
 
@@ -502,7 +504,7 @@
         <br>
         {% if user.is_anonymous %}
 
-        <a class="bTn" style="position: relative; left:8rem;" href="#" id="demo" onclick="window.location='{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}';">
+        <a class="bTn" style="position: relative; left:8rem;" href="#" id="demo" onclick="window.location='{% url 'social:begin' 'google-oauth2' %}';">
           <div class="registerBtn-home" style="position: relative; display: inline-block;">
              <img src="{% static "./Assets/Enter.png" %}" alt="About">
              <div class="txtOnImage">Login<span class="btnArrow" style="left:2.5rem;">>></span></div>
