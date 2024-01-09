@@ -29,7 +29,7 @@ def index(request):
         try:
             player = models.player.objects.get(user_id=request.user.pk)
         except:
-            logout(request)
+            auth_logout(request)
             return render(request, 'home_page.html')
         
         if player.details_updated == False:
@@ -54,7 +54,7 @@ def quiz(request):
         try:
             player = models.player.objects.get(user_id=request.user.pk)
         except:
-            logout(request)
+            auth_logout(request)
             return render(request, 'home_page.html')
         
         if player.details_updated == False:
@@ -236,6 +236,11 @@ def about(request):
 
 def navPage(request):
     return render(request, 'navigation_page.html')
+
+def auth_logout(request):
+   logout(request)
+   return render(request, 'home_page.html')
+
 @login_required
 def forms(request):
     slot = ""
