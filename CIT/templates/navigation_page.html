@@ -341,7 +341,7 @@
     {% endcomment %}
   </div>
   {% if user.is_authenticated %}
-  <a href="#" onclick="window.location='{% url 'logout' %}?next={{ '/' }}';">
+  <a href="#" onclick="window.location='{% url 'logout' %}';">
     <div class="start navButton glowing-circle-backButton logoutBtn">Log Out<img src="{% static "./Assets/logout.png" %}" alt=""></div>
   </a>
 </div>
