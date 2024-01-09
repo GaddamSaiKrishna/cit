@@ -46,6 +46,38 @@
     min-height:95%;
   }
 
+  .opt input[type="radio"] {
+    display: none;
+  }
+  
+  .opt input[type="radio"]:checked ~ label {
+      background-color: #0012128a;
+      transition: background-color 0.4s;
+  }
+  .opt label {
+    cursor: pointer;
+    font-size: 18px;
+    text-align: center;
+    width:100% ;
+    border-radius: 2rem;
+    padding: 1rem;
+  }
+
+  .outerBorder211 {
+    position: relative;
+    border: 1px solid #fff;
+    border-radius: 2rem;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: auto;
+    width: auto;
+    margin-left: 21px;
+    margin-right: 21px;
+    margin-top: 17.1354px;
+    margin-bottom: 17.1354px;
+}
+
   .glowing-circle {
 
     -webkit-animation: glowing 1s ease-in-out infinite alternate;
@@ -99,19 +131,7 @@
     letter-spacing : 5px;
     font-family:ethno;
   }
-  .opt{
-    display : flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    margin-top : 15px;
-  }
-  .opt input{
-    margin-right : 12px;
-  }
-  .opt label{
-    padding : 0;
-  }
+  
   
 .submitbtn:hover{
     transform: scale(1.1);
@@ -170,6 +190,11 @@
       background-color: #0000005c;
       font-weight: 500;
     }
+
+    .opt label{
+      padding: 0.2rem;
+      font-size: 0.75rem;
+    }
   }
 </style>
 
@@ -186,15 +211,15 @@
         <form id="slot" method="post" action="/forms/">
           {% csrf_token %}
           <div class="options-block slots-block">
-            <div class="opt">
+            <div class="opt outerBorder211">
               <input type="radio" name="slot" value="1" id="option1" />
               <label for="option1" class="p1">18 January 2023 (9:00 PM - 9:45 PM)</label>
             </div>
-            <div class="opt">
+            <div class="opt outerBorder211">
               <input type="radio" name="slot" value="2" id="option2" />
               <label for="option2" class="p1">19 January 2023 (9:00 PM - 9:45 PM)</label>
             </div>
-            <div class="opt">
+            <div class="opt outerBorder211">
               <input type="radio" name="slot" value="3" id="option3" />
               <label for="option3" class="p1">20 January 2023 (9:00 PM - 9:45 PM)</label>
             </div>

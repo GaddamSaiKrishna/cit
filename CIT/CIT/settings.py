@@ -53,7 +53,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'CIT.urls'
@@ -92,7 +91,7 @@ DATABASES = {
 }
 
 DATABASE_URL = config('DATABASE_URL')
-DATABASES["default"] = dj_database_url.parse(DATABASE_URL)
+# DATABASES["default"] = dj_database_url.parse(DATABASE_URL)
 
 
 # Password validation
