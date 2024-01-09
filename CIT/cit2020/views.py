@@ -227,6 +227,7 @@ def lboard(request,slot=0):
             rank=pl.rank
     return render(request, 'lboard.html', {'players': p, 'rank': rank, 'is_final':is_final,'slot':slot,'showScore':showScore})
 
+
 def rules(request):
     return render(request, 'rules.html')
 
