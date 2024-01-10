@@ -135,7 +135,7 @@
 
   .headerImg{
     width: 30rem;
-    height: 7rem;
+    height: 6rem;
   }
 
   .icon{
@@ -291,7 +291,7 @@
     {% csrf_token %}
     {% if user.is_authenticated %}
     <a href="{% url 'cit2020:quiz' %}">
-      <div style="position: relative; text-align: center; margin-top: 3rem;">
+      <div style="position: relative; text-align: center; margin-top: 4rem;">
         <img class="headerImg" src="{% static "./Assets/title.png" %}" alt="Start">
         <div class="txtOnImage start">Start<i class="fa fa-play icon start-icon" style="left:7.5rem"></i></div>
      </div></a
