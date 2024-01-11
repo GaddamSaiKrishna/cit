@@ -16,4 +16,4 @@ os.environ['DJANGO_SETTINGS_MODULE'] = 'CIT.settings'
 
 application = get_wsgi_application()
 
-
+app = application
