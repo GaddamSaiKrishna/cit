@@ -341,9 +341,10 @@
     {% endcomment %}
   </div>
   {% if user.is_authenticated %}
-  <a href="#" id="demo" onclick="window.location='{% url 'logout' %}';">
-    <div class="start navButton glowing-circle-backButton logoutBtn">Log Out<img src="{% static "./Assets/logout.png" %}" alt=""></div>
-  </a>
+  <form method="post" action="{% url 'logout' %}">
+    {% csrf_token %}
+    <button type="submit" class="start navButton glowing-circle-backButton logoutBtn">Log Out<img src="{% static "./Assets/logout.png" %}" alt=""></button>
+  </form>
 </div>
 <script> function handleLogoutClick(event) { event.preventDefault(); window.location = {% url 'logout' %}; } </script>
 {% endif %}
