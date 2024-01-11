@@ -60,11 +60,11 @@
     justify-content: center;
     align-items: center;
     align-content: center;
-    min-height: 95%;
+    min-height: 97%;
   }
 
   .navButton {
-    margin-top: 1rem;
+    margin-top: 0.5rem;
   }
 
   .rounded-corners-gradient-borders-navPage {
@@ -87,7 +87,6 @@
   }
 
   .buttonBox-nav {
-    height: 95vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -241,7 +240,7 @@
     }
 
     .buttonBox-nav {
-      margin-top: 0rem;
+      margin-top: 1rem;
     }
 
     .logoutBtn{
@@ -266,7 +265,9 @@
       filter: grayscale(1);
     }
   }
-
+.outerBorder-navPage{
+  top:1.5%;
+}
 .glowing-circle-backButton {
 
     -webkit-animation: glowing 2s ease-in-out infinite alternate;
@@ -346,6 +347,5 @@
     <button type="submit" class="start navButton glowing-circle-backButton logoutBtn">Log Out<img src="{% static "./Assets/logout.png" %}" alt=""></button>
   </form>
 </div>
-<script> function handleLogoutClick(event) { event.preventDefault(); window.location = {% url 'logout' %}; } </script>
 {% endif %}
 {% endblock %}

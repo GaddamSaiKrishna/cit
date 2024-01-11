@@ -49,7 +49,7 @@
             height: cover;
             top:4.5rem;
             position: relative;
-            padding-bottom: 10rem;
+            padding-bottom: 3rem;
             margin-bottom: 3rem;
         }
         .containerinstructionpage-2{
@@ -57,6 +57,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            align-items: center;
             top:2rem;
         }
 
@@ -136,7 +137,7 @@
 
         .rulesHeader{
             font-size: 1.7rem;
-            letter-spacing: 0.4em;
+            letter-spacing: 0.1em;
         }
 
         .rulesIcn{
@@ -223,7 +224,7 @@
               }
 
               .rulesIcn{
-                left: 3rem;
+                left: 3.25rem;
               }
 
             .backButton{
@@ -318,7 +319,7 @@
           }
     </style>
 
-    <div class="outerBorder-instruct glowing-circle">
+    <div class="outerBorder-instruct glowing-circle" style="font-family: Montserrat;">
         <a href="{% url 'cit2020:navPage' %}"><button type="button" class="btn backButton glowing-circle-backButton"><</button></a>
         <a href="{% url 'cit2020:navPage' %}"><img class="logo-imageinstructionpage" src="{% static './Assets/whiteIste.png'%}" /></a>
         <div class="container containerinstructionpage-1">
@@ -343,7 +344,7 @@
         <div class="text-center rulesHeader">
             <div style="position: relative; text-align: center;">
                 <img class="headerImg" src="{% static "./Assets/title.png" %}" alt="Instructions">
-                <div class="txtOnImage rulesHeader">Rules<i class="fa fa-book rulesIcn"></i></div>
+                <div class="txtOnImage rulesHeader">Rules<i style="left:3.5rem;" class="fa fa-book rulesIcn"></i></div>
              </div>
         </div>
         <p class="parainstructionpage parainstructionpageRules">
@@ -356,5 +357,4 @@
         </p>
       </div>
     </div>
-  </div>
 {% endblock %}
