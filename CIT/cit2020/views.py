@@ -9,19 +9,19 @@ from django.urls import reverse_lazy
 from django.contrib.auth import logout
 from .forms import Profileform
 
-slot1_start=datetime.datetime(2024, 1, 10, 12, 00, 00, 701322)
-slot1_end=datetime.datetime(2024, 1, 10, 12, 15, 00, 701322)
+slot1_start=datetime.datetime(2024, 1, 17, 21, 00, 00, 701322)
+slot1_end=datetime.datetime(2024, 1, 17, 21, 45, 00, 701322)
 
-slot2_start=datetime.datetime(2024, 1, 10, 12, 30, 00, 701322)
-slot2_end=datetime.datetime(2024, 1, 10, 12, 45, 00, 701322)
+slot2_start=datetime.datetime(2024, 1, 18, 21, 00, 00, 701322)
+slot2_end=datetime.datetime(2024, 1, 18, 21, 45, 00, 701322)
 
-slot3_start=datetime.datetime(2024, 1, 10, 13, 00, 00, 701322)
-slot3_end=datetime.datetime(2024, 1, 10, 13, 15, 00, 701322)
+slot3_start=datetime.datetime(2024, 1, 19, 21, 00, 00, 701322)
+slot3_end=datetime.datetime(2024, 1, 19, 21, 45, 00, 701322)
 
-round1_result=datetime.datetime(2024, 1, 10, 13, 30, 00, 701322)
+round1_result=datetime.datetime(2024, 1, 20, 12, 00, 00, 701322)
 
-final_start=datetime.datetime(2024, 1, 10, 13, 45, 00, 701322)
-final_end=datetime.datetime(2024, 1, 10, 14, 00, 00, 701322)
+final_start=datetime.datetime(2024, 1, 21, 21, 00, 00, 701322)
+final_end=datetime.datetime(2024, 1, 21, 21, 45, 00, 701322)
 
 def index(request):
     user = request.user
@@ -226,7 +226,6 @@ def lboard(request,slot=0):
         if show==True and pl.id == request.user.id:
             rank=pl.rank
     return render(request, 'lboard.html', {'players': p, 'rank': rank, 'is_final':is_final,'slot':slot,'showScore':showScore})
-
 
 def rules(request):
     return render(request, 'rules.html')
