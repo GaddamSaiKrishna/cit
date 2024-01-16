@@ -47,7 +47,7 @@
                 <br>
                 {% if players %}
                     {% if rank == 0 %}
-                    
+
                     {% else %}
                         <h4 style="text-align: center;"><strong> Your rank is {{rank}} </strong></h4>
                     {% endif %}
@@ -56,7 +56,7 @@
                         <div class="top3 glowing-circle1">
                             {% if slot == 4 %}
                                 {% for player in players|slice:":1" %}
-                                    {% if rank != player.rank %}
+
                                         <div class="one item">
                                             <!-- Player 1 -->
                                             <div class="pos">
@@ -72,11 +72,11 @@
                                                 {{player.final_score}}
                                             </div>
                                         </div>
-                                    {% endif %}
+
                                 {% endfor %}
                             {% else %}
                                 {% for player in players|slice:":1" %}
-                                    {% if rank != player.rank %}
+
                                         <div class="one item">
                                             <!-- Player 1 -->
                                             <div class="pos">
@@ -92,12 +92,12 @@
                                                 {{player.score}}
                                             </div>
                                         </div>
-                                    {% endif %}
+
                                 {% endfor %}
                             {% endif %}
                             {% if slot == 4 %}
                     {% for player in players|slice:':2' %}
-                    {% if rank != player.rank %}
+
                     {% if player.rank == 2 %}
                     <div class="two item">
                         <div class="pos">
@@ -114,11 +114,9 @@
                         </div>
                     </div>
                     {% endif %}
-                    {% endif %}
                     {% endfor %}
                     {% else %}
                     {% for player in players|slice:':2' %}
-                    {% if rank != player.rank %}
                     {% if player.rank == 2 %}
                     <div class="two item">
                         <div class="pos">
@@ -135,13 +133,11 @@
                         </div>
                     </div>
                     {% endif %}
-                    {% endif %}
                     {% endfor %}
                     {% endif %}
-                    
+
                     {% if slot == 4 %}
                     {% for player in players|slice:':3' %}
-                    {% if rank != player.rank %}
                     {% if player.rank == 3 %}
                     <div class="three item">
                         <div class="pos">3</div>
@@ -152,11 +148,9 @@
                         <div class="score">{{player.final_score}}</div>
                     </div>
                     {% endif %}
-                    {% endif %}
                     {% endfor %}
                     {% else %}
                     {% for player in players|slice:':3' %}
-                    {% if rank != player.rank %}
                     {% if player.rank == 3 %}
                     <div class="three item">
                         <div class="pos">3</div>
@@ -166,7 +160,6 @@
                         <div class="name">{{player.name}}</div>
                         <div class="score">{{player.score}}</div>
                     </div>
-                    {% endif %}
                     {% endif %}
                     {% endfor %}
                     {% endif %}
@@ -225,7 +218,7 @@
                     {% endif %}
                 {% else %}
                     <div class="soonText text-center">
-                        Leaderboard will be available soon .... 
+                        Leaderboard will be available soon ....
                     </div>
                 {% endif %}
             </div>
@@ -264,19 +257,19 @@
         margin-top: 4rem;
         font-size: 5rem;
     }
-    
+
     .topBox {
         height: 5rem;
         position: fixed;
         width: 100%;
     }
-    
+
     .leaderboard-card {
         background: #080c5800;
         margin-bottom: 30px;
         height: auto;
     }
-    
+
     .bodyBox-lBoard {
         background-color: #040737a0;
         border-radius: 30px;
@@ -284,7 +277,7 @@
         background-origin: border-box;
         background-clip: padding-box, border-box;
     }
-    
+
     .soonText{
         margin-top:10%;
         font-size: 3rem;
@@ -292,38 +285,38 @@
     .leaderboard-card.leaderboard-card--first {
         transform: scale(1.05);
     }
-    
+
     .leaderboard-card.leaderboard-card--first .leaderboard-card-bottom {
         color: red;
     }
-    
+
     .leaderboard-card-bottom {
         width: auto;
     }
-    
+
     img.circle-img.circle-img--small {
         height: 55px;
         width: 55px;
     }
-    
+
     .table {
         border-spacing: 0 15px;
         border-collapse: separate;
     }
-    
+
     .table-section {
         margin-top: 45px;
     }
-    
+
     .table-section h1 {
         text-align: center;
         margin-bottom: 30px;
     }
-    
+
     .row{
         margin-top:3rem;
     }
-    
+
     .rounded-corners-gradient-borders {
         border: double 2px transparent;
         border-radius: 20px;
@@ -331,20 +324,20 @@
         background-clip: padding-box, border-box;
         box-shadow: 2px 5px 10px rgba(0, 0, 0.2);
     }
-    
+
     .slots-lBoard {
         text-align: center;
         margin-top: 2rem;
     }
-    
+
     .slots-lBoard a:hover {
         background-color:#0000004d;
         color: yellowgreen;
         text-decoration: none;
     }
-    
+
     /* Border */
-    
+
     .outerBorder-lBoard {
         position: relative;
         border: 2px solid #fff;
@@ -358,21 +351,21 @@
         align-content: center;
         min-height: 93vh;
     }
-    
+
     .glowing-circle {
-    
+
         -webkit-animation: glowing 1s ease-in-out infinite alternate;
         -moz-animation: glowing 1s ease-in-out infinite alternate;
         animation: glowing 1s ease-in-out infinite alternate;
     }
-    
+
     @keyframes glowing {
         from {
           box-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #ffffff,
             0 0 4px rgba(0, 0, 0, 0), 0 0 5px #ffffff,
             0 0 6prgba (0, 0, 0, 0) F0, 0 0 7px #ffffff;
         }
-    
+
         to {
           box-shadow: 0 0 2px #ffffff, 0 0 3px #ffffff, 0 0 4px #ffffff,
             0 0 5px #ffffff, 0 0 6px #ffffff, 0 0 7px #ffffff, 0 0 8px #ffffff;
@@ -404,12 +397,12 @@
         animation: glowing 2s ease-in-out infinite alternate;
     }
     .txtOnImage{
-        position: absolute; 
-        top: 45%; 
-        left: 45%; 
-        transform: translate(-50%, -50%); 
-        color: white; 
-        font-size: 1.3rem; 
+        position: absolute;
+        top: 45%;
+        left: 45%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 1.3rem;
         margin-left: 0.5rem;
         text-align: center;
         font-family: moto;
@@ -433,7 +426,7 @@
         z-index: 10;
         font-family: "Red Hat Display", sans-serif;
       }
-      
+
       .top3 {
         display: flex;
         justify-content: center;
@@ -517,7 +510,7 @@
       .top3 .item.two {
         height: 17rem;
       }
-      
+
       .list {
         padding-left: 2rem;
         margin: 0 auto;
@@ -606,7 +599,7 @@
             justify-content: space-evenly;
             align-items: center;
             left: 60%;
-            top:23rem;
+            top:22rem;
         }
 
         .outerBorder-lBoard {
@@ -620,19 +613,19 @@
             align-items: center;
             align-content: center;
         }
-        
-    
+
+
         .logo-lBoard {
             position: absolute;
             top: 1rem;
             left: 1rem;
         }
-    
+
         .logo-lBoard img {
             width: 5rem;
             height: auto;
         }
-    
+
         .slot-button-lBoard {
             position: relative;
             padding: 5px 10px;
@@ -656,17 +649,17 @@
         }
 
         .txtOnImage{
-            position: absolute; 
-            top: 45%; 
-            left: 45%; 
-            transform: translate(-50%, -50%); 
-            color: white; 
-            font-size: 0.7rem; 
+            position: absolute;
+            top: 45%;
+            left: 45%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 0.7rem;
             margin-left: -0.2rem;
             text-align: center;
             font-family: moto;
           }
-    
+
           .headerImg{
             width: 17rem;
             height: 8rem;
@@ -679,11 +672,11 @@
             display: flex;
             flex-direction: column;
         }
-        
+
         .top3 .item{
               height: auto !important;
           }
-        
+
           .list .item .name{
             font-size: 0.55rem !important;
           }
@@ -693,7 +686,6 @@
           }
 
           .list .item .pic{
-            margin-left: -0.5rem;
             width: 3rem !important;
             height: 3rem !important;
           }
@@ -703,9 +695,9 @@
             opacity: 0.5;
           }
     }
-    
+
     /* For desktop */
-    
+
     @media (min-width: 1025px) {
         .content {
             border-style: solid;
@@ -720,8 +712,8 @@
             width: 25rem;
             color: rgb(77, 150, 233);
         }
-    
-    
+
+
         .slot-button-lBoard {
             position: relative;
             padding: 15px 20px;
@@ -734,13 +726,13 @@
             letter-spacing: 4px;
             overflow: hidden;
         }
-    
+
         .logo-lBoard {
             position: absolute;
             top: 1rem;
             left: 1rem;
         }
-    
+
         .logo-lBoard img {
             width: 7rem;
             height: auto;
@@ -753,20 +745,20 @@
               0 0 4px rgba(0, 0, 0, 0), 0 0 5px #ffffff,
               0 0 6px rgba(0, 0, 0, 0) F0, 0 0 7px #ffffff;
          }
-        
+
           50% {
             box-shadow: 0 0 2px #ffffff, 0 0 3px #ffffff, 0 0 4px #ffffff,
               0 0 5px #ffffff, 0 0 6px #ffffff, 0 0 7px #ffffff, 0 0 8px #ffffff;
          }
-        
+
           100% {
             box-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #ffffff,
               0 0 4px rgba(0, 0, 0, 0), 0 0 5px #ffffff,
               0 0 6px rgba(0, 0, 0, 0) F0, 0 0 7px #ffffff;
          }
-        
+
       }
-   
+
 </style>
 
 
