@@ -223,7 +223,7 @@ def lboard(request,slot=0):
         pl.rank = cur_rank
         # pl.save()
         cur_rank += 1
-        if show==True and pl.id == request.user.id:
+        if show==True and pl.email == request.user.email:
             rank=pl.rank
     return render(request, 'lboard.html', {'players': p, 'rank': rank, 'is_final':is_final,'slot':slot,'showScore':showScore})
 
