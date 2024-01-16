@@ -49,7 +49,8 @@
                     {% if rank == 0 %}
 
                     {% else %}
-                        <h4 style="text-align: center;"><strong> Your rank is {{rank}} </strong></h4>
+                        <br>
+                        <h4 style="text-align: center;"><strong> Your rank is <span style="color: #0d6efd">{{rank}}</span></strong></h4>
                     {% endif %}
                     <br>
                     <div class="center">
@@ -544,6 +545,7 @@
       .list .item .pic {
         width: 4rem;
         height: 4rem;
+        margin-left: -0.2rem;
         border-radius: 50%;
         background-size: cover;
         background-position: center;
@@ -688,6 +690,7 @@
           .list .item .pic{
             width: 3rem !important;
             height: 3rem !important;
+            margin-left:0.2rem;
           }
           .list .item .score:after {
             display: block;
