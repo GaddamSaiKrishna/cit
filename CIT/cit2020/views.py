@@ -20,8 +20,8 @@ slot3_end=datetime.datetime(2024, 1, 20, 21, 45, 00, 701322)
 
 round1_result=datetime.datetime(2024, 1, 21, 10, 45, 00, 701322)
 
-final_start=datetime.datetime(2024, 1, 21, 21, 00, 00, 701322)
-final_end=datetime.datetime(2024, 1, 21, 21, 45, 00, 701322)
+final_start=datetime.datetime(2024, 1, 21, 21, 30, 00, 701322)
+final_end=datetime.datetime(2024, 1, 21, 22, 15, 00, 701322)
 
 def index(request):
     user = request.user
