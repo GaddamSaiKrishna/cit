@@ -1,4 +1,4 @@
-/*
+/* 
     DJANGO Admin styles
 */
 
@@ -707,7 +707,7 @@ table#change-history tbody th {
     width: 16em;
 }
 
-/* PAGE STRUCTURE */
+PAGE STRUCTURE
 
 #container {
     position: relative;

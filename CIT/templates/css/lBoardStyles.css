@@ -1,4 +1,4 @@
-body {
+{% comment %} body {
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: 100% 100%;
@@ -299,4 +299,4 @@ img.circle-img.circle-img--small {
 		width: 10rem;
 		height: auto;
 	}
-}
+} {% endcomment %}

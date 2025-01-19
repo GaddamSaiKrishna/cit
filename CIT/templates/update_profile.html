@@ -9,270 +9,97 @@
     padding: 0;
 }
 
-body {
-    margin: 0;
-    padding: 0;
+.body {
+    background-color: #0b0b3a;
+    
+    background-image: url(background.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    color: #000;
     height: 100vh;
+    margin: 0;
     display: flex;
     justify-content: center;
-    font-family : ethno;
-}
-
-.outerBorder {
-    position: absolute;
-    border: 2px solid #fff;
-    width: 95%;
-    top: 2.5%;
-    border-radius: 3rem;
-    justify-content: center;
     align-items: center;
-    align-content: center;
-    min-height:95%;
-}
-
-.glowing-circle {
-    -webkit-animation: glowing 1s ease-in-out infinite alternate;
-    -moz-animation: glowing 1s ease-in-out infinite alternate;
-    animation: glowing 1s ease-in-out infinite alternate;
-}
-
-@keyframes glowing {
-    from {
-      box-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #ffffff,
-        0 0 4px rgba(0, 0, 0, 0), 0 0 5px #ffffff,
-        0 0 6prgba (0, 0, 0, 0) F0, 0 0 7px #ffffff;
-    }
-
-    to {
-      box-shadow: 0 0 2px #ffffff, 0 0 3px #ffffff, 0 0 4px #ffffff,
-        0 0 5px #ffffff, 0 0 6px #ffffff, 0 0 7px #ffffff, 0 0 8px #ffffff;
-    }
+    font-family: "Poppins", serif;
+    font-weight: 200;
+    font-style: normal;
+    
   }
-
-
-.forms-card {
-    height: 90%;
-    width: 70%;
-    margin : 0 auto;
-}
-
-@media screen and (max-width: 420px) {
-    .forms-card {
-        height: 90%;
-        width: 85%;
-    }
-}
-
-.forms-inner-box {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-
-.forms-logo {
-    position: absolute;
-    width: 7rem;
-    height: auto;
-    top: 1rem;
-    left: 1rem;
-}
-
-.forms-title {
-    border-style: solid;
-    border-width: 1;
-    border-color: rgba(98, 159, 228, 0.781);
-    border-radius: 30px;
-    padding: 10px 25px;
-    position: relative;
-    top: 5rem;
-    left : 36%;
-    font-size: 40px;
-    border-left-style: none;
-    color: rgb(77, 150, 233);
-    background-color: rgba(83, 174, 219, 0.155);
-    text-align: center;
-    font-family : MonsOlympia;
-    letter-spacing : 5px;
-    text-align : center;
-}
-
-form {
-    display: flex;
+  
+  
+  /* Form Container */
+  .form-container {
+    background-color: #dccdc8;
+    padding: 1rem;
+    border-radius: 20px;
+    
+    width: 60%;
+    max-width: 500px;
+    
+  }
+  
+  /* Registration Form */
+  .box{
+    box-shadow: 2px 2px 10px  #dccdc8;
+  }
+  .registration-form h2 {
+    font-weight: bold;
+    margin-bottom: 20px;;
+  }
+  
+  .registration-form .form-control {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: none;
+    font-size: 1rem;
+    margin: 10px auto;
+    width: 80%;
+    height: 2rem;
+    box-shadow: 1px 1px 4px black;
+  }
+  
+  .registration-form .btn-primary {
+    background-color: #1c1c6e;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1rem;
+    width: 80%;
+    border-radius: 5px;
+    
+    color: #fff;
+    margin-top: 15px;
+    box-shadow: 3px 3px 8px black;
+    
+  }
+  
+  .registration-form .btn-primary:hover {
+    background-color: #3333cc;
+  }
+  
+  .registration-form .login-link {
+    margin-top: 15px;
+    font-size: 0.9rem;
+  }
+  
+  .registration-form .login-link a {
+    color: #1c1c6e; /* Matching navy link */
+    text-decoration: none;
+  }
+  
+  .registration-form .login-link a:hover {
+    text-decoration: underline;
+    color: #3333cc;
+  }
+  .registration-form {
+    background-color: #dccdc8;
     align-items: center;
-    flex-direction: column;
-    margin-top : 5rem;
-}
-
-.forms-card h3 {
-    font-weight: normal;
-    font-size: 24px;
-    color: rgb(77, 150, 233);
     text-align: center;
-    margin-bottom: 15px;
-    font-family : MonsOlympia;
-}
-
-.forms-input-box {
-    width: 70%;
-    overflow: hidden;
-    background: #00000026;
-    border: 1px solid wheat;
-    margin: 8px 0;
-    padding: 0 10px;
-    height: 35px;
-    border-radius: 20px;
-    box-sizing: border-box;
-    outline: none;
-    text-align: center;
-    color: #fff;
-    letter-spacing : 4px;
-    
-}
-
-@media screen and (max-width: 600px) {
-    .forms-input-box {
-        width: 82%;
-        margin: 10px 0;
-    }
-}
-
-@media screen and (max-width: 820px) {
-    .forms-input-box {
-        margin: 15px 0;
-    }
-    input::placeholder{
-        font-size: 0.5rem;
-    }
-}
-
-
-@media screen and (max-width: 920px) {
-    .forms-input-box {
-        margin: 15px 0;
-    }
-    input::placeholder{
-        font-size: 0.5rem;
-    }
-}
-@media (min-width: 200px) and (max-width: 656px){
-    .txtOnImage{
-        position: absolute; 
-        top: 45%; 
-        left: 45%; 
-        transform: translate(-50%, -50%); 
-        color: white; 
-        font-size: 1rem !important; 
-        margin-left: 0.5rem !important;
-        text-align: center;
-        font-family: moto;
-      }
-      input::placeholder{
-        font-size: 0.5rem;
-    }
-    
-      .headerImg{
-        width: 15rem !important;
-        height: 5rem !important;
-      }
-      .header{
-        top:5rem !important;
-      }
-      .icon{
-        position: relative;
-        left: 4.5rem;
-      }
-
-      .forms-logo{
-        width: 5rem !important;
-      }
-
-      form{
-        margin-top:5rem !important;
-      }
-
-      input,select{
-        font-size: 0.75rem !important;
-      }
-
-}
-
-::placeholder {
-    color: #fff;
-    text-align: center;
-}
-
-.button-forms {
-    width: 25%;
-    background: transparent;
-    border: 1px solid #4EBAF0;
-    margin: 16px 0 10px;
-    padding: 0 10px;
-    height: 35px;
-    border-radius: 20px;
-    box-sizing: border-box;
-    outline: none;
-    color: #fff;
-    cursor: pointer;
-    letter-spacing : 4px;
-}
-
-@media screen and (max-width: 600px) {
-    button {
-        width: 100%;
-    }
-    .forms-logo img{
-        position: absolute;
-        width: 7rem;
-        height: auto;
-        top: 1rem;
-        left: 1rem;
-    }
-
-    .button-forms{
-        width : 30%;
-        padding : 0 10px;
-    }
-    ::placeholder {
-        font-size : 0.5rem;
-    }
-}
-
-.submit-btn-forms {
-    width: 10rem;
-    border-color: white;
-    background: #00000059;
-    position: relative;
-}
-
-.card .btn {
-    margin-top: 25px;
-}
-
-.txtOnImage{
-    position: absolute; 
-    top: 45%; 
-    left: 45%; 
-    transform: translate(-50%, -50%); 
-    color: white; 
-    font-size: 1.5rem; 
-    margin-left: 1.2rem;
-    text-align: center;
-    font-family: moto;
   }
-
-  .headerImg{
-    width: 28rem ;
-    height: 9rem ;
-  }
-
-  .icon{
-    position: relative;
-    left: 4.5rem;
-  }
+  
 </style>
 
-<div class="forms-main-container outerBorder glowing-circle">
+{% comment %} <div class="forms-main-container outerBorder glowing-circle">
         <img class="forms-logo " src="{% static './Assets/whiteIste.png' %}" alt="">
         <div class="forms-container">
             <div class="forms-card">
@@ -283,33 +110,48 @@ form {
                         <div class="txtOnImage about">Register</div>
                      </div>
                       <form id="complete_profile" method="post" action="/profile/update">
-                        {% csrf_token %}
-        
-                        {% comment %} <input type="text" class="forms-input-box" placeholder="Your Name" required> {% endcomment %}
-                        {% render_field form.name class="form-control forms-input-box" placeholder="Enter Your Name" style="display:inline-block;max-width: 95%;" %} 
-        
-                        {% comment %} <input type="text" class="forms-input-box" placeholder="Your Username" required> {% endcomment %}
-                        {% render_field form.userName class="form-control forms-input-box" placeholder="Enter your Username" style="display:inline-block;max-width: 95%;" %}
-        
-                        {% comment %} <input type="text" class="forms-input-box" placeholder="Phn Number" required> {% endcomment %}
-                        {% render_field form.mobile class="form-control forms-input-box" type="Number" placeholder="Enter your Mobile No" style="display:inline-block;max-width: 95%;" %}  
-        
-                        {% comment %} <input type="text" class="forms-input-box" placeholder="Name of College/School" required> {% endcomment %}
-                        {% render_field form.institute_name class="form-control forms-input-box"  placeholder="Enter your College/School" style="display:inline-block;max-width: 95%;" %}  
-                        
-                        {% comment %} <input type="text" class="forms-input-box" placeholder="Department/School Name" required> {% endcomment %}
-                        {% render_field form.department class="form-control forms-input-box" placeholder="Enter Department" style="display:inline-block;max-width: 95%;" %}
-        
-                        {% comment %} <input type="text" class="forms-input-box" placeholder="Year of Study" required> {% endcomment %}
-                        {% render_field form.year_of_study class="form-control forms-input-box" placeholder="Enter year of study" style="display:inline-block;max-width: 95%;text-align:center;" %}     
-                          
+                         
                         <button type="submit" class="button-forms submit-btn-forms glowing-circle"><span>Submit</span></button>
                       </form>
                 </div>
               </div>
             </div>
           </div>
-</div>
+</div> {% endcomment %}
+<div class="body">
+    <div class="container d-flex justify-content-center align-items-center" >
+      <form class="p-4 rounded shadow registration-form col-md-8 box" id="complete_profile" method="post" action="/profile/update">
+        <h2 class="text-center mb-4">Registration Form</h2>
+        {% comment %} <input class="form-control mb-3" type="text" placeholder="First Name" required>
+        <input class="form-control mb-3" type="text" placeholder="Last Name" required>
+        <input class="form-control mb-3" type="email" placeholder="Email Id" required>
+        <input class="form-control mb-3" type="tel" placeholder="Phone Number" required>
+        <input class="form-control mb-3" type="text" placeholder="Roll Number" required>
+        <input class="form-control mb-3" type="text" placeholder="Reg. Number" required>
+        <input class="form-control mb-3" type="text" placeholder="Branch" required> {% endcomment %}
+        {% csrf_token %}
+        
+        {% comment %} <input type="text" class="forms-input-box" placeholder="Your Name" required> {% endcomment %}
+        {% render_field form.name class="form-control forms-input-box" placeholder="Enter Your Name"  %} 
+
+        {% comment %} <input type="text" class="forms-input-box" placeholder="Your Username" required> {% endcomment %}
+        {% render_field form.userName class="form-control forms-input-box" placeholder="Enter your Username" style="display:inline-block;max-width: 95%;" %}
+
+        {% comment %} <input type="text" class="forms-input-box" placeholder="Phn Number" required> {% endcomment %}
+        {% render_field form.mobile class="form-control forms-input-box" type="Number" placeholder="Enter your Mobile No" style="display:inline-block;max-width: 95%;" %}  
+
+        {% comment %} <input type="text" class="forms-input-box" placeholder="Name of College/School" required> {% endcomment %}
+        {% render_field form.institute_name class="form-control forms-input-box"  placeholder="Enter your College/School" style="display:inline-block;max-width: 95%;" %}  
+        
+        {% comment %} <input type="text" class="forms-input-box" placeholder="Department/School Name" required> {% endcomment %}
+        {% render_field form.department class="form-control forms-input-box" placeholder="Enter Department" style="display:inline-block;max-width: 95%;" %}
+
+        {% comment %} <input type="text" class="forms-input-box" placeholder="Year of Study" required> {% endcomment %}
+        {% render_field form.year_of_study class="form-control forms-input-box" placeholder="Enter year of study" style="display:inline-block;max-width: 95%;text-align:center;" %} 
+        <button type="submit" class="btn btn-primary mb-3">Submit</button>
+      </form>
+    </div>
+   </div>
 
 
 {% endblock content %}

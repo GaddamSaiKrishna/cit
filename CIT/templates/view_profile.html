@@ -15,6 +15,8 @@
             padding: 0;
             display: flex;
             justify-content: center;
+            background-color: #111344;
+            
           }
 
           * {
@@ -125,6 +127,8 @@
             margin: 15px;
             display: flex;
             flex-direction: column;
+            background-image: url(../static/Assets/bg25.png);
+        background-size: 100% 100%;
         }
         
         .container {
@@ -233,9 +237,9 @@
     </style>
 
     <div class="view-profile outerBorder-viewProfile glowing-circle">
-        <a href="{% url 'cit2020:navPage' %}"><button type="button" class="btn backButton glowing-circle-backButton"><</button></a>
+        <a href="{% url 'cit2020:index' %}"><button type="button" class="btn backButton glowing-circle-backButton"><</button></a>
         <div class="logo">
-            <a href="{% url 'cit2020:navPage' %}"><img src="{% static './Assets/whiteIste.png' %}" alt="" /></a>
+            <a href="{% url 'cit2020:index' %}"><img src="{% static './Assets/whiteIste.png' %}" alt="" /></a>
         </div>
         <div style="position: relative; text-align: center;">
             <img class="headerImg" src="{% static "./Assets/Enter.png" %}" alt="Profile">

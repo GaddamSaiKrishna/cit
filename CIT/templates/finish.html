@@ -7,15 +7,15 @@
         padding: 0;
         margin: 0;
     }
-    
     body {
         overflow-y: hidden;
         font-family: ethno;
         font-weight: 400;
+        background-image: url(../static/Assets/bg25.png);
+        background-size: 100% 100%;
     }
     
     .finish-container {
-        {% comment %} background-image: url('{% static './Assets/bg.png'%}'); {% endcomment %}
         background-size: cover;
         height: 100vh;
         padding: 20px;
@@ -190,12 +190,12 @@
 
 
 <div class = "finish-container">
-    <a href="{% url 'cit2020:navPage' %}"> <button type="button" class="btn backButton glowing-circle-backButton"><</button></a>
+    <a href="{% url 'cit2020:index' %}"> <button type="button" class="btn backButton glowing-circle-backButton"><</button></a>
     <div class="container-1 outerBorder glowing-circle">
         <div class="text-center cont">
-            <a href="{% url 'cit2020:navPage' %}"><img class="image" src="{% static './Assets/whiteIste.png'%}" /></a>
+            <a href="{% url 'cit2020:index' %}"><img class="image" src="{% static './Assets/whiteIste.png'%}" /></a>
         </div>
-        <div class="container-fluid">
+        <div class="container-fluid fin">
             {% if user and not user.is_anonymous %}
              <h2 class = "para-1"><strong>TEST FINISHED</strong></h2class>
             {% if player.qualified == True %}

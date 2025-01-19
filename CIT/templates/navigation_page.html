@@ -1,332 +1,29 @@
-{% extends 'base.html' %} 
-{% load static %} 
-{% block content %}
-
-<style>
-  body {
-    font-family: MonsOlympia;
-  }
-
-  body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-  }
-
-  .btn:before {
-    content: "";
-    top: 0;
-    left: 0;
-    width: 0%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.1);
-  }
-
-  .btn:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(255, 255, 255, 0.4),
-      transparent
-    );
-    transition: 0.5s;
-    transition-delay: 0.1s;
-  }
-
-  .btn:hover {
-    text-decoration: none;
-    color: #4ebaf0;
-    transform: scale(1.1);
-  }
-
-  .btn:hover:after {
-    left: 100%;
-  }
-
-  .outerBorder-navPage {
-    position: absolute;
-    border: 2px solid #fff;
-    width: 95%;
-    top: 2.5%;
-    left: 2.5%;
-    border-radius: 3rem;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    min-height: 97%;
-  }
-
-  .navButton {
-    margin-top: 0.5rem;
-  }
-
-  .rounded-corners-gradient-borders-navPage {
-    border: double 2px transparent;
-    border-radius: 20px;
-    background-image: linear-gradient(
-        rgba(0, 0, 0, 0.542),
-        rgba(0, 0, 0, 0.542)
-      ),
-      linear-gradient(#2241cb, #0018223b);
-    background-origin: border-box;
-    background-clip: padding-box, border-box;
-    box-shadow: 0 5px 5px rgba(0, 0, 0.2);
-  }
-
-  .glowing-circle {
-    -webkit-animation: glowing 1s ease-in-out infinite alternate;
-    -moz-animation: glowing 1s ease-in-out infinite alternate;
-    animation: glowing 1s ease-in-out infinite alternate;
-  }
-
-  .buttonBox-nav {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  
-
-  @keyframes glowing {
-    from {
-      box-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #ffffff,
-        0 0 4px rgba(0, 0, 0, 0), 0 0 5px #ffffff,
-        0 0 6prgba (0, 0, 0, 0) F0, 0 0 7px #ffffff;
-    }
-
-    to {
-      box-shadow: 0 0 2px #ffffff, 0 0 3px #ffffff, 0 0 4px #ffffff,
-        0 0 5px #ffffff, 0 0 6px #ffffff, 0 0 7px #ffffff, 0 0 8px #ffffff;
-    }
-  }
-
-  .logoutBtn{
-    background-color : #0000004d;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    width: 11rem !important;
-    padding-left: 2rem !important;
-    color: white !important;
-    font-family: moto;
-    border: 2px solid #fff;
-    border-radius: 1rem;
-  }
-
-  .txtOnImage{
-    position: absolute; 
-    top: 45%; 
-    left: 45%; 
-    transform: translate(-50%, -50%); 
-    color: white; 
-    font-size: 1.3rem; 
-    margin-left: 1rem;
-    text-align: center;
-    font-family: moto;
-  }
-
-  .headerImg{
-    width: 30rem;
-    height: 6rem;
-  }
-
-  .icon{
-    position: relative;
-    left: 4.5rem;
-  }
-
-  /* For desktop */
-
-  @media (min-width: 656px) {
-    .logo-nav img {
-      position: absolute;
-      width: 7rem;
-      height: auto;
-      top: 1rem;
-      left: 1rem;
-    }
-
-
-    .btn {
-      position: relative;
-      padding: 20px 50px;
-      top: -5%;
-      width: 25rem;
-      text-decoration: none;
-      color: #4ebaf0;
-      font-size: 150%;
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      overflow: hidden;
-    }
-    .logoutBtn{
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      width : 12rem;
-      height: 10%;
-      font-size : 1rem;
-      padding: 5px 20px;
-    }
-  }
-
-  /* For mobiles */
-  @media (min-width: 200px) and (max-width: 656px) {
-    .btn {
-      position: relative;
-      padding: 15px 20px;
-      width: 15rem;
-      top: 10%;
-      text-decoration: none;
-      color: #4ebaf0;
-      font-size: 1em;
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      overflow: hidden;
-    }
-    .buttonBox-nav{
-      height: 95vh;
-    }
-    .txtOnImage{
-      position: absolute; 
-      top: 45%; 
-      left: 45%; 
-      transform: translate(-50%, -50%); 
-      color: white; 
-      font-size: 1rem; 
-      margin-left: 1rem;
-      text-align: center;
-      font-family: moto;
-    }
-  
-    .headerImg{
-      width: 20rem;
-      height: 5rem;
-    }
-    .start-icon{
-      left:4.5rem !important;
-    }
-    .about-icon{
-      left:4.5rem !important;
-    }
-    .instructions{
-      font-size: 0.8rem !important;
-    }
-    .instructions-icon{
-      left:2.5rem !important;
-    }
-    .leaderboard{
-      font-size: 0.8rem !important;
-    }
-    .leaderboard-icon{
-      left:2.5rem !important;
-    }
-    .profile{
-      font-size: 0.8rem !important;
-    }
-    .profile-icon{
-      left: 3rem !important;
-    }
-    .logo-nav img {
-      position: absolute;
-      width: 5rem;
-      height: auto;
-      top: 1rem;
-      left: 1rem;
-    }
-
-
-    .logoutBtn{
-      position: absolute;
-      top:1rem;
-      right: 1rem;
-      font-size: 0.8rem !important;
-      width: 6rem !important;
-      padding-left: 1rem !important;
-    }
-    .logoutBtn img{
-      width: 2.2rem;
-      position: relative;
-      left: 0rem;
-    }
-  }
-  .logoutBtn:hover{
-    transform: scale(1.09);
-  }
-  .buttonBox-nav a:hover{
-    img{
-      filter: grayscale(1);
-    }
-  }
-.outerBorder-navPage{
-  top:1.5%;
-}
-.glowing-circle-backButton {
-
-    -webkit-animation: glowing 2s ease-in-out infinite alternate;
-    -moz-animation: glowing 2s ease-in-out infinite alternate;
-    animation: glowing 2s ease-in-out infinite alternate;
-}
-  
-  .buttonBox-nav a:hover i{
-    color:cyan;
-    transform: scale(1.3);
-  }
-</style>
-
 <div class="outerBorder-navPage glowing-circle">
-  <div class="logo-nav text-left">
-    
-    <a href="{% url 'cit2020:index' %}">
-      <img src="{% static './Assets/whiteIste.png'%}" alt="ISTE Logo" />
-    </a>
-  </div>
+  
   <div class="buttonBox-nav">
     {% csrf_token %}
     {% if user.is_authenticated %}
     <a href="{% url 'cit2020:quiz' %}">
-      <div style="position: relative; text-align: center; margin-top: 4rem;">
-        <img class="headerImg" src="{% static "./Assets/title.png" %}" alt="Start">
-        <div class="txtOnImage start">Start<i class="fa fa-play icon start-icon" style="left:7.5rem"></i></div>
-     </div></a
+      start</a
     >
     {% endif %}
     <br />
     <a href="{% url 'cit2020:about' %}">
-      <div style="position: relative; text-align: center;">
-        <img class="headerImg" src="{% static "./Assets/title.png" %}" alt="about">
-        <div class="txtOnImage about">About<i class="fa fa-question icon about-icon" style="left:7.5rem"></i></div>
-     </div>
+      About
       
     </a>
     <br />
     <a href="{% url 'cit2020:rules' %}">
-      <div style="position: relative; text-align: center;">
-        <img class="headerImg" src="{% static "./Assets/title.png" %}" alt="Instructions">
-        <div class="txtOnImage instructions">Instructions<i class="fa fa-book icon instructions-icon" style="left:4rem"></i></div>
-     </div>
+      Instructions
     </a>
     <br />
     <a href="{% url 'cit2020:lboard' %}">
-      <div style="position: relative; text-align: center;">
-        <img class="headerImg" src="{% static "./Assets/title.png" %}" alt="Leaderboard">
-        <div class="txtOnImage leaderboard" style="font-size: 1.25rem;">Leaderboard<i class="fa fa-star icon leaderboard-icon" style="left:4rem"></i></div>
-     </div>
+      Leaderboard
     </a>
     <br />
     {% if user.is_authenticated %}
     <a href="{% url 'cit2020:view_profile' %}">
-      <div style="position: relative; text-align: center;">
-        <img class="headerImg" src="{% static "./Assets/title.png" %}" alt="Profile">
-        <div class="txtOnImage profile">View Profile<i class="fa fa-user icon profile-icon" style="left:4.2rem"></i></div>
-     </div>
+      view_profile
     </a>
     {% endif %}
     <br />
@@ -344,8 +41,7 @@
   {% if user.is_authenticated %}
   <form method="post" action="{% url 'logout' %}">
     {% csrf_token %}
-    <button type="submit" class="start navButton glowing-circle-backButton logoutBtn">Log Out<img src="{% static "./Assets/logout.png" %}" alt=""></button>
+    <button type="submit" class="start navButton glowing-circle-backButton logoutBtn">Log Out </button>
   </form>
 </div>
 {% endif %}
-{% endblock %}

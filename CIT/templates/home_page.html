@@ -2,549 +2,961 @@
 {% load static %} 
 {% block content %}
 <script src="https://kit.fontawesome.com/66aa7c98b3.js" crossorigin="anonymous"></script>
+
 <style>
-  * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-  }
+  body {
+  margin: 0;
+  padding: 0;
+  background: #5f185a;
+}
+
+
+/* font */
+
+.poppins-regular {
+  font-family: "Poppins", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* ==================================================== */
+.hometext {
+  font-size: 100px;
+  line-height: 80px;
+  text-shadow: 2px 2px 5px black;
   
-  /* ------------------------------Button effect------------------------------------------------------------ */
+}
 
-  /* ---------------------------------------------------------------------- */
+@media (min-width: 1150px) {
+  .hometext {
+    font-size: 80px;
+    line-height: 80px;
+  }
+}
 
-  .socialMedia-home img:hover {
-    transform: scale(1.2);
+@media (min-width: 1050px) and (max-width: 1150px) {
+  .hometext {
+    font-size: 70px;
+    line-height: 80px;
   }
-  .titleHeading-home{
-    font-family: moto;
+}
+
+@media (min-width: 950px) and (max-width: 1050px) {
+  .hometext {
+    font-size: 80px;
+    line-height: 80px;
   }
-  .textAfterHeading-home{
-    font-family: antonio;
+}
+
+@media (min-width: 850px) and (max-width: 950px) {
+  .hometext {
+    font-size: 80px;
   }
-  .rounded-corners-gradient-borders{
-    font-family: ethno;
+}
+
+@media (min-width: 768px) and (max-width: 850px) {
+  .hometext {
+    font-size: 80px;
   }
-  .socialMedia-home{
-    font-family: antonio;
+}
+
+@media (min-width: 676px) and (max-width: 768px) {
+  .hometext {
+    font-size: 80px;
   }
-  .bTn{
-    position:relative;
-    top:6rem;
-    width: 5rem;
+}
+
+@media (min-width: 600px) and (max-width: 650px) {
+  .hometext {
+    font-size: 80px;
   }
-  .bTn img{
-    width: 15rem;
+}
+
+@media (min-width: 650px) and (max-width: 720px) {
+  .hometext {
+    font-size: 55px;
+    line-height: 60px;
   }
-  .txtOnImage{
-    position: absolute; 
-    top: 45%; 
-    left: 45%; 
-    transform: translate(-50%, -50%); 
-    color: white; 
-    font-size: 0.9rem; 
-    text-align: center;
-    font-family: moto;
-    letter-spacing: 0.5em;
+}
+
+@media (min-width: 500px) and (max-width: 600px) {
+  .hometext {
+    font-size: 60px;
+    line-height: 60px;
   }
+}
+
+@media (min-width: 450px) and (max-width: 500px) {
+  .hometext {
+    font-size: 60px;
+    line-height: 60px;
+  }
+}
+
+@media (min-width: 400px) and (max-width: 450px) {
+  .hometext {
+    font-size: 40px;
+    line-height: 60px;
+  }
+}
+
+@media (min-width: 330px) and (max-width: 400px) {
+  .hometext {
+    font-size: 40px;
+    line-height: 50px;
+  }
+}
+
+@media (min-width: 300px) and (max-width: 330px) {
+  .hometext {
+    font-size: 40px;
+    line-height: 40px;
+  }
+}
+
+.lineheigtt {
+  padding-top: 10%;
+}
+
+/* .register-btn {
+  background-color: #a196a7;
+  color: white;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 8px;
+  outline: none;
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+} */
+
+.registerBtn {
+  background-color: white;
+  color: #5b125b;
+  margin-right: 10px;
+  border-radius: 20px;
   
-  .btnArrow{
-    position: relative;
-    left:2rem;
-    font-size: 1rem;
-    letter-spacing: normal;
-  }
-  .bTn:hover .btnArrow{
-    color: cyan;
-  }
-  .social-menu ul{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    padding: 0;
-    margin: 0;
-    transform: translate(-50%, -50%);
-    display: flex;
-}
-
-.social-menu ul li{
-    list-style: none;
-    margin:0 0.4rem;
-    margin-top:0.1rem;
-}
-
-.social-menu ul li .fab{
-    font-size: 1rem;
-    transition: .3s;
-    color: #000;
-    position: relative;
-    top:-1rem;
-}
-
-.social-menu ul li .fab:hover{
-    color: #fff;
-}
-
-.social-menu ul li a{
-    position: relative;
-    display: block;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 50%;
-    background-color: #fff;
-    text-align: center;
-    transition: .6s;
-    box-shadow: 0 5px 4px rgba(0,0,0,.5);
-}
-
-.social-menu ul li a:hover{
-    transform: translate(0, -10%);
-}
-
-.social-menu ul li:nth-child(1) a:hover{
-  background-color: #0077b5;
-}
-.social-menu ul li:nth-child(2) a:hover{
-  background-color: #0077b5;
-}
-.social-menu ul li:nth-child(3) a:hover{
-  background-color: #E4405F;
-}
-.social-menu ul li:nth-child(4) a:hover{
-  background-color: #0077b5;
-}
-
-.followTxt{
+  padding: 10px 30px;
+  text-align: center;
   font-size: 1.5rem;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  
+  box-shadow: 2px 2px 5px black;
+  font-weight: bolder;
+  border-radius: 2px solid black;
 }
 
-.btnBox{
-  position: relative;
-  top:-50%;
+.register-btn:hover {
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  /* Box shadow on hover */
+  transform: scale(1.05);
+  /* Slightly increase size on hover */
+  opacity: 0.7;
 }
 
-  /* Bg image and responsiveness for mobile and tablet devices */
-  @media (min-width: 200px) and (max-width: 1023px) {
-    body {
-      width : 100vw;
-      background-image: url({% static "./Assets/hmobile.webp" %});
-    }
-    .social-menu{
-      position: absolute;
-      width: 20rem;
-      bottom: 1rem !important;
-    }
+.even{
+  background-color: #5f185a;
+  color:white;
+}
 
-    .social-menu ul li{
-      list-style: none;
-      margin:0 0.4rem;
-      margin-top:-0.2rem;
-    }
-    
-  .social-menu ul li .fab{
-      font-size: 1rem;
-      transition: .3s;
-      color: #000;
-      position: relative;
-      top:0.2rem;
-    }
-    .followTxt{
-      font-size: 1rem;
-    }
+/* ---------------------------------- about section ---------------------------------- */
+.aboutContainer {
+  height: fit-content;
+  background-image: url("../static/Assets/aboutbg.jpg");
+  background-size: cover;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 100vh;
+}
 
-    .titleHeading-home {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      color: #ffffff;
-      font-size: 4rem;
-      position: absolute;
-      width: 100%;
-      width: -webkit-fill-available;
-      bottom: 7rem;
-      font-optical-sizing: auto;
-    }
+/*---------------------------------- DotBg section ---------------------------------- */
 
-    .textAfterHeading-home {
-      color: whitesmoke;
-      height: 10rem;
-      margin-left: -2rem;
-      margin-top: -1rem;
-      text-align: center;
-      font-size: 0.75rem;
-    }
-    .btnBox{
-      width: 55%;
-      top:1rem;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-    }
-    .bTn{
-      top:1rem;
-      left: 0rem !important;
-      margin-bottom: -2rem;
-    }
-    .bTn img{
-      width: 10rem;
-    }
-    .txtOnImage{
-      font-size: 0.58rem;
-    }
-    .btnArrow{
-      font-size: 0.75rem;
-      left: 1.5rem !important;
-    }
-    .socialMedia-home {
-      display: flex;
-      width: 100%;
-      justify-content: center;
-      position: fixed;
-      bottom: 2rem;
-      color: #ffffff;
-    }
+.dotsBg img {
+  width: 100vw;
+  min-width: 100vw;
+  padding: 0;
+}
 
-    .socialMedia-home img {
-      width: 1.3rem;
-      margin-top: 0.1em;
-      margin-left: 0.1rem;
-      letter-spacing: 1rem;
-      filter:invert(0);
+/*---------------------------------- sponsor section ---------------------------------- */
+
+.sponsorContainer {
+  color: white;
+  text-align: center;
+}
+.sponsorOuterContainer {
+  background-color: rgb(0, 0, 0);
+
+  min-width: 100%;
+  height: auto;
+}
+
+.eventSponsorHeading {
+  font-size: 50px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color:white;
+  text-shadow: 2px 2px 10px wheat;
+}
+
+@media only screen and (max-width: 700px) {
+  .sponsorImages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .sponsorimage1 {
+    margin-bottom: 10%;
+  }
+}
+
+
+
+
+
+  
+
+/*---------------------------------- FAQ Section ------------------------------------------------------*/
+.contain{
+  background-image: url("faq.png");
+  background-repeat: repeat-x;
+  min-width:100%;
+  height:70vh;
+}
+.heading{
+  font-size: 50px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color:#111344;
+  text-shadow: 2px 2px 10px black;
+  
+  
+}
+.FAQTitleContainer {
+  background-color: #dccdc8;
+  height: auto;
+}
+
+.FAQBodycontainer {
+  background-color: #dbcec8;
+  min-height: 100%;
+  min-width: 100vw;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.container2 {
+  height: auto;
+  min-width: 100%;
+  /* padding: 30px; */
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.colDesign {
+  background-color: #d8b4b4;
+
+  color: black;
+  font-weight: 900;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  margin: 20px;
+  height: auto;
+  width: 80vw;
+  border-radius: 1rem;
+  box-shadow: inset 0 -2em 2em rgba(188, 206, 188, 0.3),
+    0 0 0 0.2px rgb(226, 195, 195), 0.3em 0.3em 1em rgba(170, 162, 162, 0.6);
+  border: 0.3px solid rgb(107, 100, 100);
+}
+
+.colDesign:hover {
+  scale: 1.01;
+  transition-duration: 500ms;
+  transition: ease-in-out;
+  background-color: #c9abab;
+  cursor: default;
+}
+
+/*-------------------- after prizes design ================*/
+.columnDesign {
+  width: 100vw;
+  height: 5vh;
+  background: #111344;
+  display: flex;
+}
+
+@media only screen and (max-width: 700px) {
+  .columnDesign {
+    height: 2.5vh;
+  }
+}
+
+/* ---------------------------------- contact section ---------------------------------- */
+
+.ContactOutercontainer {
+  min-width: 100%;
+  height: auto;
+  background-color: #dccdc8;
+}
+
+/* ############################## styles by gopeshwar ################################### */
+/* ---------------------------------- schedule section ---------------------------------- */
+
+@media only screen and (max-width: 900px) {
+  /* div[style*="flex: 1"] {
+      flex: 1 0 100%;
+      max-width: 100%;
+    } */
+
+  .h1tag {
+    font-size: 1.8rem;
+  }
+
+  .abcs {
+    font-size: 1rem;
+  }
+}
+
+/* Media Queries for Mobile and Tablet Responsiveness */
+@media (min-width: 1150px) {
+  .schedulewithmonkey {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1;
+  }
+}
+
+@media (min-width: 1050px) and (max-width: 1150px) {
+  .schedulewithmonkey {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1;
+  }
+}
+
+@media (min-width: 950px) and (max-width: 1050px) {
+  .schedulewithmonkey {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1;
+  }
+}
+
+@media (min-width: 850px) and (max-width: 950px) {
+  .schedulewithmonkey {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 850px) {
+  .schedulewithmonkey {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1;
+  }
+}
+
+@media (min-width: 676px) and (max-width: 768px) {
+  .schedulewithmonkey {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 650px) {
+}
+
+@media (min-width: 650px) and (max-width: 720px) {
+}
+
+@media (min-width: 500px) and (max-width: 600px) {
+  /* .sheduleimage{
+          display: none;
+        } */
+}
+
+@media (min-width: 450px) and (max-width: 500px) {
+  /* .sheduleimage{
+          display: none;
+        } */
+}
+
+@media (max-width: 480px) {
+  /* .sheduleimage{
+        display: none;
+      } */
+}
+
+@media (max-width: 370px) {
+}
+
+.schedulewithmonkey {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1;
+  grid-template-rows: 1;
+  gap: 10px;
+  padding: 10px;
+}
+
+/* ---------------------------------- prizes ----------------------------------*/
+
+.PrizeOutercontainer {
+  background-image: url("../static/Assets/prizesbg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-size: 100% 100%;
+  min-width: 100vw;
+  height: 100vh;
+  padding: 0;
+}
+
+@media only screen and (max-width: 700px) {
+  .PrizeOutercontainer {
+    height: 50vh;
+  }
+}
+
+.prizeContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 20px;
+  color: white;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.display-5 {
+  font-size: 3rem;
+}
+
+.fw-bold {
+  font-weight: bold;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  .display-5 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .display-5 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .display-5 {
+    font-size: 1.6rem;
+  }
+}
+.responsive-container{
+  display: flex;flex-direction: row; justify-content: center; align-items: center;align-self: center; margin-top: 3%;width: 100vw;
+} 
+/* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .responsive-container {
+      flex-direction: column; /* Stack buttons vertically on smaller screens */
+      margin-top: 5%;
     }
-
-    .registerBtn-home a{
-      right : 6vw;
+    .responsive-container div{
+      margin-bottom: 20px;
     }
-
-    .rulesBtn-home a{
-      left : 1vw;
-      margin-bottom: 1rem;
-    }
-
-    .rounded-corners-gradient-borders {
-      border: double 2px transparent;
-      border-radius: 20px;
-      background-image: linear-gradient(
-          rgba(0, 0, 0, 0.542),
-          rgba(0, 0, 0, 0.542)
-        ),
-        linear-gradient(#4ebaf0, #0018223b);
-      background-origin: border-box;
-      background-clip: padding-box, border-box;
-      box-shadow: 0 5px 5px rgba(0, 0, 0.2);
-    }
-
-    .logo-home img {
-      position: fixed;
-      width: 5rem;
-      height: auto;
-      top: 2.5rem;
-      left: 2.1rem;
-    }
-
-    /* -------------------------------Outer Border---------------------------------------- */
-
-    .outerBorder {
-      position: fixed;
-      border: 2px solid #ffffff;
-      width: 95%;
-      height: 95%;
-      top: 2.6%;
-      left: 3%;
-      border-radius: 40px;
-      justify-content: center;
-      align-items: center;
-      align-content: center;
-    }
-
-    .glowing-circle {
-      -webkit-animation: glowing 1s ease-in-out infinite alternate;
-      -moz-animation: glowing 1s ease-in-out infinite alternate;
-      animation: glowing 1s ease-in-out infinite alternate;
-    }
-    @keyframes glowing {
-      from {
-        box-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #ffffff,
-          0 0 4px rgba(0, 0, 0, 0), 0 0 5px #ffffff,
-          0 0 6prgba (0, 0, 0, 0) F0, 0 0 7px #ffffff;
-      }
-
-      to {
-        box-shadow: 0 0 2px #ffffff, 0 0 3px #ffffff, 0 0 4px #ffffff,
-          0 0 5px #ffffff, 0 0 6px #ffffff, 0 0 7px #ffffff, 0 0 8px #ffffff;
-      }
+    .hero-btn {
+      font-size: 0.9rem; /* Slightly smaller text for mobile */
+      width: 200px; /* Full width with some padding */
     }
   }
 
-  /* -------------------------------------------------------------- */
-
- 
-  /* Bg image and responsiveness for desktop devices */
-
-  @media (min-width: 1024px) {
-    body {
-      background-image: url({% static "./Assets/hdesk.webp"%});
-    }
-
-    .titleHeading-home {
-      color: #ffffff;
-      font-size: 9rem;
-      position: fixed;
-      display: flex;
-      top: 10rem;
-      left: 11rem;
-    }
-
-    .logo-home img {
-      position: fixed;
-      width: 7rem;
-      height: auto;
-      top: 3rem;
-      right: 3.5rem;
-    }
-
-    .textAfterHeading-home {
-      color: #ffffff;
-      position: relative;
-      top: 11rem;
-      left: -23rem;
-      font-size: 1.75rem;
-    }
-    .rulesBtn-home a {
-      left: -1rem;
-    }
-
-    .rounded-corners-gradient-borders {
-      border: double 4px transparent;
-      border-radius: 40px;
-      background-image: linear-gradient(
-          rgba(0, 0, 0, 0.542),
-          rgba(0, 0, 0, 0.542)
-        ),
-        linear-gradient(#4ebaf0, #0018223b);
-      background-origin: border-box;
-      background-clip: padding-box, border-box;
-      box-shadow: 0 5px 5px rgba(0, 0, 0.2);
-    }
-
-    .socialMedia-home {
-      display: flex;
-      width: 100%;
-      justify-content: center;
-      position: fixed;
-      font-size: 2rem;
-      text-align: center;
-      bottom: 2.4rem;
-      color: #ffffff;
-    }
-
-    .socialMedia-home img {
-      margin-top: 0.8rem;
-      margin-left: 0.1rem;
-      letter-spacing: 1rem;
-      filter:grayscale(10)
-    }
-
-    /* -------------------------------Outer Border---------------------------------------- */
-
-    .outerBorder {
-      position: fixed;
-      border: 2px solid #ffffff;
-      width: 95%;
-      height: 95%;
-      top: 2.5%;
-      left: 2.3%;
-      border-radius: 50px;
-      justify-content: center;
-      align-items: center;
-      align-content: center;
-    }
-
-    .glowing-circle {
-      -webkit-animation: glowing 1s ease-in-out infinite alternate;
-      -moz-animation: glowing 1s ease-in-out infinite alternate;
-      animation: glowing 1s ease-in-out infinite alternate;
-    }
-
-    @keyframes glowing {
-      from {
-        box-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #ffffff,
-          0 0 4px rgba(0, 0, 0, 0), 0 0 5px #ffffff,
-          0 0 6prgba (0, 0, 0, 0) F0, 0 0 7px #ffffff;
-      }
-
-      to {
-        box-shadow: 0 0 2px #ffffff, 0 0 3px #ffffff, 0 0 4px #ffffff,
-          0 0 5px #ffffff, 0 0 6px #ffffff, 0 0 7px #ffffff, 0 0 8px #ffffff;
-      }
-    }
-    @media (min-width:1024px) {
-      .titleHeading-home{
-        top:5rem;
-        left: 7.5rem;
-        font-size: 8rem;
-      }
-      .textAfterHeading-home{
-        font-size:1.4rem;
-        left: -19rem;
-      }
-      .bTn{
-        top:10rem;
-        width: 2rem;
-        left:1.2rem;
-        margin-right: 1rem;
-      }
-      .btnBox{
-        left: -2.5rem;
-      }
-      .bTn img{
-        width: 11.2rem;
-      }
-      .txtOnImage{
-        font-size: 0.6rem;
-      }
-    }
-    @media (min-width:1200px) {
-      .titleHeading-home{
-        top:9rem;
-        left: 8rem;
-      }
-      .bTn{
-        top:10rem;
-        width: 2rem;
-        left:2rem;
-        margin-right: 3.4rem;
-      }
-
-      .btnBox{
-        left:-4rem;
-      }
-      .bTn img{
-        width: 12rem;
-      }
-      .txtOnImage{
-        font-size: 0.6rem;
-      }
-    }
-    @media (min-width:1300px) {
-      .titleHeading-home{
-        top:7rem;
-        left: 10rem;
-      }
-      .btnBox{
-        left: -2rem;
-      }
-      .bTn{
-        top:8rem;
-        width: 2rem;
-        left:0rem;
-        margin-right: 1rem;
-      }
-      .bTn img{
-        width: 12rem;
-      }
-      .txtOnImage{
-        font-size: 0.6rem;
-      }
-    }
-    @media (min-width:1450px) {
-      .titleHeading-home{
-        top:10rem;
-        left:12rem;
-      }
-      .bTn{
-        top:10rem;
-        left:0rem;
-        margin-right: 2rem;
-      }
-      .btnBox{
-        left: -2rem;
-      }
-      .txtOnImage{
-        font-size: 0.9rem;
-        margin-left: 0.75rem;
-      }
-      .btnArrow{
-        left:0.5rem !important;
-      }
-    }
-  }
-  .btnBox a:hover{
-    img{
-      filter:hue-rotate(676deg);
-    }
-  }
-
-
-
-  /*----------------------------------------------------------------*/
+.card-body{
+  background-color: #222020;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+}
+.card-body h2{
+  font-size: 70px;
+}
+.fab,.fas{
+  color: #222020;
+}
 </style>
-<link href="https://fonts.googleapis.com/css?family=Raleway+Dots" rel="stylesheet" type="text/css">
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-<div class="outerBorder glowing-circle"></div>
-<div class="wrapper">
-  <div class="logo-home text-right">
-    <img src="{% static './Assets/whiteIste.png'%}" alt="ISTE Logo" />
-  </div>
-  <div class="titleHeading-home text-center">
-    CIT
-    <div class="textAfterHeading-home text-center">
-     &nbsp &nbsp COGNITIVE INTELLIGENCE TEST 7.0<br />
-      <div class="btnBox" style="display:flex; margin-right: 0;">
-        <a class="bTn" href="{% url 'cit2020:about' %}" id="demo">
-          <div style="position: relative; display: inline-block;">
-             <img src="{% static "./Assets/Enter.png" %}" alt="About">
-             <div class="txtOnImage">About<span class="btnArrow">>></span></div>
-          </div>
-         </a>
-          
-        
-        <br>
-        {% if user.is_anonymous %}
 
-        <a class="bTn" style="position: relative; left:8rem;" href="#" id="demo" onclick="window.location='{% url 'social:begin' 'google-oauth2' %}';">
-          <div class="registerBtn-home" style="position: relative; display: inline-block;">
-             <img src="{% static "./Assets/Enter.png" %}" alt="About">
-             <div class="txtOnImage">Login<span class="btnArrow" style="left:2.5rem;">>></span></div>
-          </div>
-         </a>
-        {% endif %} {% if user and not user.is_anonymous %}
-        <a class="bTn" style="position: relative; left:8rem;" href="#" id="demo" onclick="window.location='{% url 'cit2020:navPage' %}';">
-          <div style="position: relative; display: inline-block;">
-             <img src="{% static "./Assets/Enter.png" %}" alt="About">
-             <div class="txtOnImage">Enter<span class="btnArrow" style="">>></span></div>
-          </div>
-         </a>
-        {% endif %}
+<div class="mainhomepage vh-100" style="margin: 0; width: 100vw;background-color: #5F185A; ">
+
+
+  <nav class="navbar navbar-expand-lg poppins-regular" style="background-color: #5F185A;" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="../static/Assets/whiteIste.png" alt="iste-logo" width="50">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item p-2">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item p-2">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item p-2">
+            <a class="nav-link" href="#">Instructions</a>
+          </li>
+          <li class="nav-item p-2">
+            <a class="nav-link" href="#">Faq</a>
+          </li>
+          <li class="nav-item p-2">
+            <a class="nav-link" href="#">Sponsors</a>
+          </li>
+          <li class="nav-item p-2">
+            <a class="nav-link" href="#">Contact Us</a>
+          </li>
+
+        </ul>
       </div>
+    </div>
+  </nav>
+
+
+  <div class="lineheigtt">
+    <p class="hometext" style="text-align: center; color: rgb(255, 255, 255); letter-spacing: 5px;font-family: fantasy;">
+      COGNITIVE INTELIGENCE<br />TEST 8.0
+    </p>
+  </div>
+    {% if user.is_anonymous %}
+    <div class="responsive-container">
+      <div>
+        <button class="hero-btn odd register-btn  registerBtn" onclick="window.location='{% url 'social:begin' 'google-oauth2' %}';">Register</button>
+      </div>
+    </div>
+    {% endif %} 
+
+    {% if user and not user.is_anonymous %}
+    <div class="responsive-container">
+        <div>
+          <button class="hero-btn odd register-btn  registerBtn"  id="demo" onclick="window.location='{% url 'cit2020:quiz' %}';">Start</button>
+        </div>
+
+        {% if user.is_authenticated %}
+        <div>
+          <button class="hero-btn even register-btn  registerBtn" id="demo" onclick="window.location='{% url 'cit2020:view_profile' %}';">View Profile</button>
+        </div>
+
+        {% if user.is_authenticated %}
+        <div>
+          <button class="hero-btn odd register-btn  registerBtn" id="demo" onclick="window.location='{% url 'cit2020:lboard' %}';">Leaderboard</button>
+        </div>
+        
+        {% if user.is_authenticated %}
+        <div>
+          <form method="post" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <button class="start even navButton logoutBtn hero-btn register-btn  registerBtn" type="submit">Log Out</button>
+          </form>
+        </div>
+    {% endif %}
+    {% endif %}
+    {% endif %}
+    {% endif %}
+    </div>
+
+  <div style="background: #5F185A; position:absolute ; bottom: 0; display: flex; flex-direction: column;">
+    <div style="width: 100vw; height: 8vh; background: yellow;  display: flex; ">
+      <div style="width: 10vw; background:#DCCDC8; color: white;"></div>
+      <div style="width: 10vw; background:#DCCDC8; color: white;"></div>
+      <div style="width: 10vw; background: #5F185A; color: white;"></div>
+      <div style="width: 10vw; background:#DCCDC8; color: white;"></div>
+      <div style="width: 10vw; background:#5F185A; color: white;"></div>
+      <div style="width: 10vw; background:#DCCDC8; color: white;"></div>
+      <div style="width: 10vw; background:#5F185A; color: white;"></div>
+      <div style="width: 10vw; background: #5F185A; color: white;"></div>
+      <div style="width: 10vw; background:#DCCDC8; color: white;"></div>
+      <div style="width: 10vw; background:#5F185A; color: white;"></div>
+    </div>
+
+    <div style="width: 100vw; height: 8vh; background: #5F185A; display: flex; ">
+      <div style="width: 10vw; background:#5F185A; color: white;"></div>
+      <div style="width: 10vw; background:#DCCDC8; color: white;"></div>
+      <div style="width: 10vw; background:#DCCDC8; color: white;"></div>
+      <div style="width: 10vw; background:#5F185A; color: white;"></div>
+      <div style="width: 10vw; background:#DCCDC8; color: white;"></div>
+      <div style="width: 10vw; background:#DCCDC8; color: white;"></div>
+      <div style="width: 10vw; background:#5F185A;"></div>
+      <div style="width: 10vw; background:#DCCDC8; color: white;"></div>
+      <div style="width: 10vw; background:#DCCDC8; color: white;"></div>
+      <div style="width: 10vw; background:#DCCDC8; color: white;"></div>
+    </div>
+
+    <div style="width: 100vw; height: 8vh; background: #5F185A; display: flex; ">
+      <div style="width: 10vw; background:#DCCDC8; color: white;"></div>
+      <div style="width: 10vw; background:#DCCDC8; color: white;"></div>
+      <div style="width: 10vw; background:#DCCDC8; color: white;"></div>
+      <div style="width: 10vw; background:#DCCDC8; color: white;"></div>
+      <div style="width: 10vw; background:#5F185A; color: white;"></div>
+      <div style="width: 10vw; background:#5F185A; color: white;"></div>
+      <div style="width: 10vw; background:#DCCDC8; color: white;"></div>
+      <div style="width: 10vw; background:#DCCDC8; color: white;"></div>
+      <div style="width: 10vw; background:#DCCDC8; color: white;"></div>
+      <div style="width: 10vw; background:#DCCDC8; color: white;"></div>
     </div>
   </div>
 </div>
 
-<div class="socialMedia-home text-left align-text-bottom">
-  <div class="social-menu">
-    <ul>
-      <div class="followTxt">
-        Follow&nbsp;us&nbsp;on&nbsp;:
+<!-- About Section -->
+
+<div class="outeraboutcontainer poppins-regular">
+  <div class="container-fluid d-flex flex-column justify-content-center align-items-center vh-100 p-3 aboutContainer">
+    <div class="row w-100">
+      <div class="col-md-1"></div>
+      <div class="col-md-5 d-flex justify-content-center align-items-center">
+        <div class="container my-5 Abouttextbox" id="About">
+          <div class="card-body">
+            <h2 class="mb-4">
+              ABOUT <br>
+              <b>CIT 8.0</b>
+            </h2>
+          </div>
+          <p class="lead">
+            CIT 7.0 is one-of-a-kind opportunity for all aspiring students
+            as we unveil exhilarating challenges of national standard over
+            the realms of basic mathematical aptitude, logical & verbal
+            reasoning, and data interpretation. Not only does CIT implant an
+            idea of various acclaimed aptitude tests like CAT, but our
+            flagship event also never fails to provide a simulation of the
+            overall screening procedure of the hiring companies. This is the
+            most anticipated online event to compete for intellectual glory
+            among a multitude of striving contestants.
+          </p>
+        </div>
       </div>
-        
-        <li><a href="https://www.facebook.com/istenitdgp/" target="blank"><i class="fab fa-facebook"></i></i></a></li>
-        <li><a href="https://instagram.com/istenitdgp?igshid=YmMyMTA2M2Y=" target="blank"><i class="fab fa-instagram"></i></a></li>
-        <li><a href="https://www.linkedin.com/company/istenitdgp/" target="blank"><i class="fab fa-linkedin-in"></i></a></li>
-    </ul>
+      <div class="col-md-6"></div>
+    </div>
   </div>
 
-</div>
-<script>
-  function change_text() {
-    document.getElementById("demo").innerHTML = "Start";
-  }
-</script>
-<script>
-  window.ondevtoolopen = function() {
-    alert('Developer tools opened!');
-};
-</script>
+  <!-- Schedule Section -->
+
+  <div class="poppins-regular" style="width: 100%; min-width: 100vw; background-color: #dccdc8; height: auto;"
+    id="Schedule">
+    <div
+      style="display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; height: 100%; color: black;">
+      <div class="schedulewithmonkey">
+
+        <div style="display: flex; align-items: center; justify-content: center;">
+          <img src="../static/Assets/monkey.jpg" alt="coding-monkey"
+            style="max-width: 100%; height: 40vh;" class="sheduleimagee" />
+        </div>
+
+        <div>
+          <h1 class="h1tag text-center" style="font-size: 3rem;padding: 15px; color: white; text-align: center; margin-bottom: 1.5rem; background-color: #111344; border-radius: 5px;">
+            SCHEDULE <br /> FOR <br /><b>CIT 8.0</b>
+          </h1>
+          <div
+            style="width: 100%; display: flex; justify-content: center; flex-direction: column; justify-self: center; align-items: center;">
+            <p class="abcs" style="font-weight: bold;">Preliminary Round:</p>
+            <div>
+              <p style="padding: 5px;">
+                Candidates can attempt CIT only once in any of the three available slots:
+              </p>
+              <ul class="abcs">
+                <li>Slot 1: January 24, 2025 (9:00 PM - 9:45 PM)</li>
+                <li>Slot 2: January 25, 2025 (9:00 PM - 9:45 PM)</li>
+                <li>Slot 3: January 26, 2025 (9:00 PM - 9:45 PM)</li>
+              </ul>
+            </div>
+
+            <div>
+              <p class="abcs" style="font-weight: bold; padding: 5px;">Final Round:</p>
+              <p style="padding: 5px;">
+                Candidates selected for the final round will receive a mail with details.
+              </p>
+              <p class="abcs" style="padding: 5px;">Final: January 27, 2025 (9:00 PM - 9:45 PM)</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dotsBg">
+    <image src="../static/Assets/dotsBg.png" />
+  </div>
+
+  <!-- Prizes Section -->
+
+  <div class="PrizeOutercontainer">
+    <div class="prizeContainer">
+      <div class="text-center">
+        <h1 class="display-5 fw-bold" style="color: white;">
+          Win Cash PRIZES <br />
+          worth <b>8K</b> For <br />
+          <b>CIT 8.0</b>
+        </h1>
+      </div>
+    </div>
+  </div>
+
+  <div style="background: #111344; bottom: 0; display: flex; flex-direction: column;">
+    <div class="columnDesign">
+      <div style="width: 10vw; background: #111344; color: white;"></div>
+      <div style="width: 10vw; background: #DCCDC8; color: white;"></div>
+      <div style="width: 10vw; background: #111344; color: white;"></div>
+      <div style="width: 10vw; background: #DCCDC8; color: white;"></div>
+      <div style="width: 10vw; background: #111344; color: white;"></div>
+      <div style="width: 10vw; background: #DCCDC8; color: white;"></div>
+      <div style="width: 10vw; background: #111344; color: white;"></div>
+      <div style="width: 10vw; background: #111344; color: white;"></div>
+      <div style="width: 10vw; background: #DCCDC8; color: white;"></div>
+      <div style="width: 10vw; background: #111344; color: white;"></div>
+    </div>
+
+    <div class="columnDesign">
+      <div style="width: 10vw; background: #DCCDC8; color: white;"></div>
+      <div style="width: 10vw; background: #DCCDC8; color: white;"></div>
+      <div style="width: 10vw; background: #DCCDC8; color: white;"></div>
+      <div style="width: 10vw; background: #111344; color: white;"></div>
+      <div style="width: 10vw; background: #DCCDC8; color: white;"></div>
+      <div style="width: 10vw; background: #DCCDC8; color: white;"></div>
+      <div style="width: 10vw; background: #111344;"></div>
+      <div style="width: 10vw; background: #DCCDC8; color: white;"></div>
+      <div style="width: 10vw; background: #DCCDC8; color: white;"></div>
+      <div style="width: 10vw; background: #DCCDC8; color: white;"></div>
+    </div>
+
+    <div class="columnDesign">
+      <div style="width: 10vw; background: #DCCDC8; color: white;"></div>
+      <div style="width: 10vw; background: #DCCDC8; color: white;"></div>
+      <div style="width: 10vw; background: #DCCDC8; color: white;"></div>
+      <div style="width: 10vw; background: #DCCDC8; color: white;"></div>
+      <div style="width: 10vw; background: #111344; color: white;"></div>
+      <div style="width: 10vw; background: #111344; color: white;"></div>
+      <div style="width: 10vw; background: #DCCDC8; color: white;"></div>
+      <div style="width: 10vw; background: #DCCDC8; color: white;"></div>
+      <div style="width: 10vw; background: #DCCDC8; color: white;"></div>
+      <div style="width: 10vw; background: #DCCDC8; color: white;"></div>
+    </div>
+  </div>
+
+
+  <!-- FAQ Section -->
+
+  <div
+    class="container-fluid d-flex flex-column justify-content-center align-items-center p-3 FAQTitleContainer contain "
+    id="FAQ">
+    <div class="text-center mb-5">
+      <h1 class="heading">
+        FREQUENTLY <b>ASKED</b> <br /> QUESTIONS
+      </h1>
+    </div>
+  </div>
+
+  <div class="text-center FAQBodycontainer">
+   
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3 container2 accordion" id="accordionExample">
+      <div class="col colDesign">
+        <div class="p-3">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Accordion Item #1
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col colDesign">
+        <div class="p-3">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Accordion Item #2
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col colDesign">
+        <div class="p-3">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Accordion Item #3
+              </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col colDesign">
+        <div class="p-3">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFour">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                Accordion Item #4
+              </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>This is the fourth item's accordion body.</strong> Update it as needed.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col colDesign">
+        <div class="p-3">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFive">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                Accordion Item #5
+              </button>
+            </h2>
+            <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>This is the fifth item's accordion body.</strong> Add your content here.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col colDesign">
+        <div class="p-3">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingSix">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                Accordion Item #6
+              </button>
+            </h2>
+            <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>This is the sixth item's accordion body.</strong> Modify it as needed.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col colDesign">
+        <div class="p-3">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingSeven">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                Accordion Item #7
+              </button>
+            </h2>
+            <div id="collapseSeven" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>This is the seventh item's accordion body.</strong> Customize as you prefer.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col colDesign">
+        <div class="p-3">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingEight">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                Accordion Item #8
+              </button>
+            </h2>
+            <div id="collapseEight" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>This is the eighth item's accordion body.</strong> Add your own content here.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col colDesign">
+        <div class="p-3">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingNine">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                Accordion Item #9
+              </button>
+            </h2>
+            <div id="collapseNine" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>This is the ninth item's accordion body.</strong> Finalize your custom content here.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- dot bg background -->
+
+  <div class="dotsBg">
+    <image src="../static/Assets/dotsBg.png" />
+  </div>
+  <!-- sponsor Section -->
+
+  <div class="sponsorOuterContainer" id="Sponsor">
+    <div class="container-fluid d-flex flex-column justify-content-center align-items-center vh-100 sponsorContainer">
+      <h2 class="eventSponsorHeading">Event Sponsors</h2>
+      <div class="d-flex justify-content-center mt-4 sponsorImages">
+        <div class="sponsorimage1"> <img src="../static/Assets/ims.png" alt="ims" class="mx-3" style="max-height: 100px;" /></div>
+        <div class="sponsorimage2"> <img src="../static/Assets/techbairn.png" alt="techbairn" class="mx-3"
+            style="max-height: 100px;" /></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- contact us -->
+  <div class="container-fluid d-flex flex-column justify-content-center align-items-center py-5 ContactOutercontainer"
+    id="Contact">
+    <div class="text-center mb-4">
+      <h1>Contact Us:</h1>
+    </div>
+    <div class="d-flex justify-content-center">
+      <div class="mx-3">
+        <a href="https://www.facebook.com/istenitdgp"><i class="fab fa-facebook-square" style="font-size: 40px;"></i></a>
+      </div>
+      <div class="mx-3">
+        <a href="https://www.instagram.com/istenitdgp?igsh=NHpjeTZvaWtod2Vk"><i class="fab fa-instagram" style="font-size: 40px;"></i></a>
+      </div>
+      <div class="mx-3">
+        <a href="https://www.linkedin.com/company/istenitdgp/"><i class="fab fa-linkedin" style="font-size: 40px;"></i></a>
+      </div>
+      <div class="mx-3">
+        <a href="mailto:istenitdurgapur@gmail.com"><i class="fas fa-envelope" style="font-size: 40px;"></i></a>
+      </div>
+    </div>
+  </div>
+
+
+
 {% endblock %}

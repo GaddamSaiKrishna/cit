@@ -1,768 +1,227 @@
 {%extends 'base.html'%}
 {% load static %}
 {%block content%}
-<section class="outerBorder-lBoard glowing-circle">
-    <a href="{% url 'cit2020:navPage' %}">
-        <button type="button" class="btn backButton glowing-circle-backButton">
-            <
-        </button>
-    </a>
-    <div class="container">
-        <a href="{% url 'cit2020:navPage' %}">
-            <div class="logo-lBoard">
-                <img src="{% static './Assets/whiteIste.png' %}" alt="logo-lBoard">
-            </div>
-        </a>
-        <div class="container">
-            <section>
-                <div class="cont-lBoard">
-                    <div style="position: relative; text-align: center;">
-                        <img class="headerImg" src="{% static "./Assets/profile.png" %}" alt="Leaderboard">
-                        <div class="txtOnImage">Leaderboard
-                            <br>
-                            {% if slot == 1 %}
-                                Slot 1
-                            {% elif slot == 2 %}
-                                Slot 2
-                            {% elif slot == 3 %}
-                                Slot 3
-                            {% else %}
-                                Final
-                            {% endif %}
-                        </div>
-                    </div>
-                </div>
-                <div class="slots-lBoard">
-                    <div class="container">
-                        <a id="slot1" class="slot-button-lBoard rounded-corners-gradient-borders"
-                            href="{% url 'cit2020:lboard' 1  %}">Slot 1</a>
-                        <a id="slot2" class="slot-button-lBoard rounded-corners-gradient-borders"
-                            href="{% url 'cit2020:lboard' 2  %}">Slot 2</a>
-                        <a id="slot3" class="slot-button-lBoard rounded-corners-gradient-borders"
-                            href="{% url 'cit2020:lboard' 3  %}">Slot 3</a>
-                        <a id="finalSlot" class="slot-button-lBoard rounded-corners-gradient-borders"
-                            href="{% url 'cit2020:lboard' 4 %}">Final Round</a>
-                    </div>
-                </div>
-                <br>
-                {% if players %}
-                    {% if rank == 0 %}
-
-                    {% else %}
-                        <br>
-                        <h4 style="text-align: center;"><strong> Your rank is <span style="color: #0d6efd">{{rank}}</span></strong></h4>
-                    {% endif %}
-                    <br>
-                    <div class="center">
-                        <div class="top3 glowing-circle1">
-                            {% if slot == 4 %}
-                                {% for player in players|slice:":1" %}
-
-                                        <div class="one item">
-                                            <!-- Player 1 -->
-                                            <div class="pos">
-                                                1
-                                            </div>
-                                            <div class="pic"
-                                                style="background-image: url({{player.image_url}})">
-                                            </div>
-                                            <div class="name">
-                                                {{player.name}}
-                                            </div>
-                                            <div class="score">
-                                                {{player.final_score}}
-                                            </div>
-                                        </div>
-
-                                {% endfor %}
-                            {% else %}
-                                {% for player in players|slice:":1" %}
-
-                                        <div class="one item">
-                                            <!-- Player 1 -->
-                                            <div class="pos">
-                                                1
-                                            </div>
-                                            <div class="pic"
-                                                style="background-image: url({{player.image_url}})">
-                                            </div>
-                                            <div class="name">
-                                                {{player.name}}
-                                            </div>
-                                            <div class="score">
-                                                {{player.score}}
-                                            </div>
-                                        </div>
-
-                                {% endfor %}
-                            {% endif %}
-                            {% if slot == 4 %}
-                    {% for player in players|slice:':2' %}
-
-                    {% if player.rank == 2 %}
-                    <div class="two item">
-                        <div class="pos">
-                            2
-                        </div>
-                        <div class="pic"
-                            style="background-image: url({{player.image_url}})">
-                        </div>
-                        <div class="name">
-                            {{player.name}}
-                        </div>
-                        <div class="score">
-                            {{player.final_score}}
-                        </div>
-                    </div>
-                    {% endif %}
-                    {% endfor %}
-                    {% else %}
-                    {% for player in players|slice:':2' %}
-                    {% if player.rank == 2 %}
-                    <div class="two item">
-                        <div class="pos">
-                            2
-                        </div>
-                        <div class="pic"
-                            style="background-image: url({{player.image_url}})">
-                        </div>
-                        <div class="name">
-                            {{player.name}}
-                        </div>
-                        <div class="score">
-                            {{player.score}}
-                        </div>
-                    </div>
-                    {% endif %}
-                    {% endfor %}
-                    {% endif %}
-
-                    {% if slot == 4 %}
-                    {% for player in players|slice:':3' %}
-                    {% if player.rank == 3 %}
-                    <div class="three item">
-                        <div class="pos">3</div>
-                        <div class="pic"
-                            style="background-image: url({{player.image_url}})">
-                        </div>
-                        <div class="name">{{player.name}}</div>
-                        <div class="score">{{player.final_score}}</div>
-                    </div>
-                    {% endif %}
-                    {% endfor %}
-                    {% else %}
-                    {% for player in players|slice:':3' %}
-                    {% if player.rank == 3 %}
-                    <div class="three item">
-                        <div class="pos">3</div>
-                        <div class="pic"
-                            style="background-image: url({{player.image_url}})">
-                        </div>
-                        <div class="name">{{player.name}}</div>
-                        <div class="score">{{player.score}}</div>
-                    </div>
-                    {% endif %}
-                    {% endfor %}
-                    {% endif %}
-                </div>
-            </div>
-        </section>
-            <br>
-            <div class="container">
-                <h4>All Users</h4>
-                <br>
-                {% if slot == 4 %}
-                        {% for player in players %}
-                            {% if rank == player.rank %}
-                                <div class="list">
-                                    <!-- Player with rank -->
-                                    <div class="item">
-                                        <div class="pos">{{player.rank}}</div>
-                                        <div class="pic" style="background-image: url({{player.image_url}})"></div>
-                                        <div class="name">{{player.name}}</div>
-                                        <div class="score">{{player.final_score}}</div>
-                                    </div>
-                                </div>
-                            {% else %}
-                                <div class="list">
-                                    <div class="item">
-                                        <div class="pos">{{player.rank}}</div>
-                                        <div class="pic" style="background-image: url({{player.image_url}})"></div>
-                                        <div class="name">{{player.name}}</div>
-                                       <div class="score">{% if showScore %}{{player.final_score}}{% endif %}</div>
-                                    </div>
-                                </div>
-                            {% endif %}
-                        {% endfor %}
-                    {% else %}
-                        {% for player in players %}
-                            {% if rank == player.rank %}
-                                <div class="list">
-                                    <div class="item">
-                                        <div class="pos">{{player.rank}}</div>
-                                        <div class="pic" style="background-image: url({{player.image_url}})"></div>
-                                        <div class="name">{{player.name}}</div>
-                                        <div class="score">{{player.score}}</div>
-                                     </div>
-                                </div>
-                            {% else %}
-                                <div class="list">
-                                    <div class="item">
-                                        <div class="pos">{{player.rank}}</div>
-                                        <div class="pic" style="background-image: url({{player.image_url}})"></div>
-                                        <div class="name">{{player.name}}</div>
-                                        <div class="score">{% if showScore %}{{player.score}}{% endif %}</div>
-                                    </div>
-                                </div>
-                            {% endif %}
-                        {% endfor %}
-                    {% endif %}
-                {% else %}
-                    <div class="soonText text-center">
-                        Leaderboard will be available soon ....
-                    </div>
-                {% endif %}
-            </div>
-        </div>
-    </div>
-</section>
 
 <style>
     body {
-        color: white;
-        font-family: Ethno;
-        letter-spacing: 4px;
+        background-color: #1a202c;
+        margin: 0;
+        font-family: Arial, sans-serif;
+        height: 70vh;
+        background-image: url('bgimage.jpg');
+        background-size: 100% 100%;
+        background-position: center center;
+        background-attachment: fixed;
     }
-    .nameLboard{
+
+    .fixed-header {
+        position: absolute;
+        top: 1rem;
+        left: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 10;
+        margin-bottom: 2rem;
+    }
+
+    .title {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        color: wheat;
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .buttons-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    .slot-button {
+        padding: 0.8rem 2rem;
+        background: linear-gradient(45deg, #6b46c1, #805ad5);
+        color: #ffffff;
+        border: none;
+        border-radius: 25px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 0 4px 6px rgba(128, 90, 213, 0.5);
+        transition: all 0.3s ease;
+    }
+
+    .slot-button:hover {
+        background: linear-gradient(45deg, #805ad5, #9f7aea);
+        color: #e9d8fd;
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 6px 8px rgba(128, 90, 213, 0.7);
+    }
+
+    .slot-button:active {
+        transform: translateY(2px) scale(0.98);
+        box-shadow: 0 2px 4px rgba(128, 90, 213, 0.5);
+    }
+
+    .lboard {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        overflow: hidden;
+        margin-top: 13rem;
+    }
+
+    .leaderboard {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        background: rgba(0, 0, 0, 0.7);
+        padding: 1rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        max-height: 60vh;
+        overflow: hidden;
+    }
+
+    .header-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        background: #4a5568;
+        color: #f7fafc;
+        font-weight: bold;
+        font-size: 1.2rem;
+        border-radius: 5px;
+    }
+
+    .player-list {
+        overflow-y: auto;
+        max-height: 45vh;
+        transition: max-height 0.3s ease;
+    }
+
+    .player-list.expanded {
+        max-height: 80vh;
+    }
+
+    .player-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0.75rem;
+        padding: 0.5rem 1rem;
+        background: #2d3748;
+        border-radius: 5px;
+        color: #f7fafc;
+        font-weight: bold;
         font-size: 1.2rem;
     }
 
-    .scoreLboard{
+    .gold {
+        background: linear-gradient(45deg, #ffdf00, #ffd700);
+        color: #000;
+    }
+
+    .silver {
+        background: linear-gradient(45deg, #c0c0c0, #dcdcdc);
+        color: #000;
+    }
+
+    .bronze {
+        background: linear-gradient(45deg, #cd7f32, #d2691e);
+        color: #000;
+    }
+
+    .rank,
+    .player,
+    .score {
+        flex: 1;
+        text-align: center;
+    }
+
+    .see-more {
+        text-align: center;
+        margin-top: 1rem;
         font-size: 1rem;
-        color:white;
-    }
-
-    .hashTag{
-        color: whitesmoke;
-        font-size: 1rem;
-        margin-top: 2%;
-    }
-
-    .highlight-rank{
-        color:red;
-    }
-    .cont-lBoard {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        margin-top: 4rem;
-        font-size: 5rem;
-    }
-
-    .topBox {
-        height: 5rem;
-        position: fixed;
-        width: 100%;
-    }
-
-    .leaderboard-card {
-        background: #080c5800;
-        margin-bottom: 30px;
-        height: auto;
-    }
-
-    .bodyBox-lBoard {
-        background-color: #040737a0;
-        border-radius: 30px;
-        border: 2px solid #4EBAF0;
-        background-origin: border-box;
-        background-clip: padding-box, border-box;
-    }
-
-    .soonText{
-        margin-top:10%;
-        font-size: 3rem;
-    }
-    .leaderboard-card.leaderboard-card--first {
-        transform: scale(1.05);
-    }
-
-    .leaderboard-card.leaderboard-card--first .leaderboard-card-bottom {
-        color: red;
-    }
-
-    .leaderboard-card-bottom {
-        width: auto;
-    }
-
-    img.circle-img.circle-img--small {
-        height: 55px;
-        width: 55px;
-    }
-
-    .table {
-        border-spacing: 0 15px;
-        border-collapse: separate;
-    }
-
-    .table-section {
-        margin-top: 45px;
-    }
-
-    .table-section h1 {
-        text-align: center;
-        margin-bottom: 30px;
-    }
-
-    .row{
-        margin-top:3rem;
-    }
-
-    .rounded-corners-gradient-borders {
-        border: double 2px transparent;
-        border-radius: 20px;
-        background-origin: border-box;
-        background-clip: padding-box, border-box;
-        box-shadow: 2px 5px 10px rgba(0, 0, 0.2);
-    }
-
-    .slots-lBoard {
-        text-align: center;
-        margin-top: 2rem;
-    }
-
-    .slots-lBoard a:hover {
-        background-color:#0000004d;
-        color: yellowgreen;
-        text-decoration: none;
-    }
-
-    /* Border */
-
-    .outerBorder-lBoard {
-        position: relative;
-        border: 2px solid #fff;
-        width: 95%;
-        left: 2.5%;
-        margin-top: 1.5%;
-        margin-bottom: 1.5%;
-        border-radius: 3rem;
-        justify-content: center;
-        align-items: center;
-        align-content: center;
-        min-height: 93vh;
-    }
-
-    .glowing-circle {
-
-        -webkit-animation: glowing 1s ease-in-out infinite alternate;
-        -moz-animation: glowing 1s ease-in-out infinite alternate;
-        animation: glowing 1s ease-in-out infinite alternate;
-    }
-
-    @keyframes glowing {
-        from {
-          box-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #ffffff,
-            0 0 4px rgba(0, 0, 0, 0), 0 0 5px #ffffff,
-            0 0 6prgba (0, 0, 0, 0) F0, 0 0 7px #ffffff;
-        }
-
-        to {
-          box-shadow: 0 0 2px #ffffff, 0 0 3px #ffffff, 0 0 4px #ffffff,
-            0 0 5px #ffffff, 0 0 6px #ffffff, 0 0 7px #ffffff, 0 0 8px #ffffff;
-        }
-      }
-    {% comment %} back button {% endcomment %}
-    .backButton{
-        position: fixed;
-        border: 2px solid white;
-        border-radius: 1rem;
-        font-size: 1.5rem;
-        padding: 0px 10px;
-        right:5rem;
-        top:5rem;
-        font-family: moto;
-        color: white;
-        background-color:#0000004d;
-        text-align: center;
-    }
-
-    .backButton:hover{
-        background-color:white;
-        transform: scale(1.1);
-    }
-
-    .glowing-circle-backButton {
-        -webkit-animation: glowing 2s ease-in-out infinite alternate;
-        -moz-animation: glowing 2s ease-in-out infinite alternate;
-        animation: glowing 2s ease-in-out infinite alternate;
-    }
-    .txtOnImage{
-        position: absolute;
-        top: 45%;
-        left: 45%;
-        transform: translate(-50%, -50%);
-        color: white;
-        font-size: 1.3rem;
-        margin-left: 0.5rem;
-        text-align: center;
-        font-family: moto;
-      }
-
-      .headerImg{
-        width: 35rem;
-        height: 12rem;
-      }
-
-      .icon{
-        position: relative;
-        left: 4.5rem;
-      }
-       {% comment %} Leaderboard table styles {% endcomment %}
-    .center {
-        position: relative;
-        top: 12rem;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 10;
-        font-family: "Red Hat Display", sans-serif;
-      }
-
-      .top3 {
-        display: flex;
-        justify-content: center;
-        align-items: flex-end;
-        color: white;
-      }
-      .top3 .item {
-        box-sizing: border-box;
-        position: relative;
-        background: #0000009c;
-        border: 2px solid white;
-        width: 12rem;
-        height: 15rem;
-        text-align: center;
-        padding: 2.8rem 0 0;
-        margin: 1rem 1rem 2rem;
-        border-radius: 2rem;
-        transform-origin: bottom;
+        font-weight: bold;
+        color: #fbbf24;
         cursor: pointer;
-        font-family: ethno;
-        transition: transform 200ms ease-in-out;
-        box-shadow: 0 0 4rem 0 rgba(0, 0, 0, 0.1), 0 1rem 2rem -1rem rgba(0, 0, 0, 0.3);
-      }
-      .top3 .item.one{
-        -webkit-animation: glowing1 7s ease-in-out infinite alternate;
-        -moz-animation: glowing1 7s ease-in-out infinite alternate;
-        animation: glowing1 7s ease-in-out infinite alternate;
-      }
-      .top3 .item.two{
-        -webkit-animation: glowing1 6s ease-in-out infinite alternate;
-        -moz-animation: glowing1 6s ease-in-out infinite alternate;
-        animation: glowing1 6s ease-in-out infinite alternate;
-      }
-      .top3 .item.three{
-        -webkit-animation: glowing1 5s ease-in-out infinite alternate;
-        -moz-animation: glowing1 5s ease-in-out infinite alternate;
-        animation: glowing1 5s ease-in-out infinite alternate;
-      }
-      .top3 .item .pic {
-        position: absolute;
-        top: -2rem;
-        left: 3.5rem;
-        width: 5rem;
-        height: 5rem;
-        border-radius: 50%;
-        background-size: cover;
-        background-position: center;
-        margin-right: 1rem;
-        box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2), 0 1rem 1rem -0.5rem rgba(0, 0, 0, 0.3);
-      }
-      .top3 .item .pos {
-        font-weight: 900;
-        font-size: 1.5rem;
-        margin-bottom: 0.5rem;
-      }
-      .top3 .item .name {
-        font-size: 1.1rem;
-        margin-bottom: 0.5rem;
-      }
-      .top3 .item .score {
-        opacity: 0.75;
-      }
-      .top3 .item .score:after {
-        display: block;
-        content: "points";
-        opacity: 0.5;
-      }
-      .top3 .item.one {
-        width: 12rem;
-        height: 19rem;
-        padding-top: 3.5rem;
-      }
-      .top3 .item.one .pic {
-        width: 6rem;
-        height: 6rem;
-        left: 2.8rem;
-      }
-      .top3 .item:hover {
-        transform: scale(1.05);
-      }
-      .top3 .item.two {
-        height: 17rem;
-      }
-
-      .list {
-        padding-left: 2rem;
-        margin: 0 auto;
-      }
-      .list .item {
-        position: relative;
-        display: flex;
-        align-items: center;
-        background: white;
-        height: 3rem;
-        border: 1px solid white;
-        border-radius: 4rem;
-        margin-bottom: 2rem;
-        background: #000000ad;
-        transform-origin: left;
-        cursor: pointer;
-        transition: transform 200ms ease-in-out;
-        box-shadow: 0 0 4rem 0 rgba(0, 0, 0, 0.1), 0 1rem 2rem -1rem rgba(0, 0, 0, 0.3);
-      }
-      .list .item .pos {
-        font-weight: 900;
-        position: absolute;
-        left: -2rem;
-        text-align: center;
-        font-size: 1.25rem;
-        width: 1.5rem;
-        color: white;
-        opacity: 0.75;
-        transition: opacity 200ms ease-in-out;
-      }
-      .list .item .pic {
-        width: 4rem;
-        height: 4rem;
-        margin-left: -0.2rem;
-        border-radius: 50%;
-        background-size: cover;
-        background-position: center;
-        margin-right: 1rem;
-        box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2), 0 1rem 1rem -0.5rem rgba(0, 0, 0, 0.3);
-      }
-      .list .item .name {
-        flex-grow: 2;
-        flex-basis: 10rem;
-        font-size: 1.1rem;
-      }
-      .list .item .score {
-        margin-right: 1.5rem;
-        opacity: 1;
-      }
-      .list .item .score:after {
-        margin-right: 1rem;
-        content: "points";
-        opacity: 0.5;
-      }
-      .list .item:hover {
-        transform: scale(1.05);
-      }
-      .list .item:hover .pos {
-        opacity: 0.8;
-      }
-    {% comment %}  {% endcomment %}
-    /* For mobile */
-    @media (min-width: 200px) and (max-width: 1024px) {
-        .backButton{
-            right:2rem;
-            top:2rem;
-            margin-top:1rem;
-        }
-        .content {
-            border-style: solid;
-            border-width: 1;
-            border-color: #fff;
-            background-color: #012c4149;
-            border-radius: 20px;
-            padding: 10px;
-            top: -2rem;
-            left: -0.1rem;
-            font-size: 1.5rem;
-            text-align: center;
-            width: 16rem;
-            color: rgb(77, 150, 233);
-        }
-
-        .center{
-            width: 100%;
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-            left: 60%;
-            top:22rem;
-        }
-
-        .outerBorder-lBoard {
-            position: relative;
-            border: 2px solid #fff;
-            width: 95%;
-            margin:1rem 0rem;
-            left: 2.5%;
-            border-radius: 3rem;
-            justify-content: center;
-            align-items: center;
-            align-content: center;
-        }
-
-
-        .logo-lBoard {
-            position: absolute;
-            top: 1rem;
-            left: 1rem;
-        }
-
-        .logo-lBoard img {
-            width: 5rem;
-            height: auto;
-        }
-
-        .slot-button-lBoard {
-            position: relative;
-            padding: 5px 10px;
-            width: 8rem;
-            height: auto;
-            top: 10%;
-            display: inline-block;
-            text-decoration: none;
-            color: #fff;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            overflow: hidden;
-            margin: 5px ;
-            border-radius: 10px;
-        }
-
-        .soonText{
-            margin-top: 0%;
-            font-size: 1rem;
-        }
-
-        .txtOnImage{
-            position: absolute;
-            top: 45%;
-            left: 45%;
-            transform: translate(-50%, -50%);
-            color: white;
-            font-size: 0.7rem;
-            margin-left: -0.2rem;
-            text-align: center;
-            font-family: moto;
-          }
-
-          .headerImg{
-            width: 17rem;
-            height: 8rem;
-          }
-
-          .top3{
-            position: relative;
-            top:2.5rem;
-            left: -2rem;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .top3 .item{
-              height: auto !important;
-          }
-
-          .list .item .name{
-            font-size: 0.55rem !important;
-          }
-
-          .list .item .score{
-            font-size: 0.5rem;
-          }
-
-          .list .item .pic{
-            width: 3rem !important;
-            height: 3rem !important;
-            margin-left:0.2rem;
-          }
-          .list .item .score:after {
-            display: block;
-            content: none !important;
-            opacity: 0.5;
-          }
+        text-decoration: underline;
     }
 
-    /* For desktop */
-
-    @media (min-width: 1025px) {
-        .content {
-            border-style: solid;
-            border: 2px solid #4EBAF0;
-            background-color: #012c4174;
-            border-radius: 30px;
-            padding: 20px;
-            font-size: 2rem;
-            left: -0.1rem;
-            text-align: center;
-            align-self: flex-end;
-            width: 25rem;
-            color: rgb(77, 150, 233);
-        }
-
-
-        .slot-button-lBoard {
-            position: relative;
-            padding: 15px 20px;
-            width: 15rem;
-            top: 10%;
-            text-decoration: none;
-            color: #fff;
-            font-size: 1em;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            overflow: hidden;
-        }
-
-        .logo-lBoard {
-            position: absolute;
-            top: 1rem;
-            left: 1rem;
-        }
-
-        .logo-lBoard img {
-            width: 7rem;
-            height: auto;
-        }
+    .see-more:hover {
+        color: #ffd700;
     }
 
-    @keyframes glowing1 {
-        0% {
-            box-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #ffffff,
-              0 0 4px rgba(0, 0, 0, 0), 0 0 5px #ffffff,
-              0 0 6px rgba(0, 0, 0, 0) F0, 0 0 7px #ffffff;
-         }
+    .leaderboard::-webkit-scrollbar {
+        width: 8px;
+    }
 
-          50% {
-            box-shadow: 0 0 2px #ffffff, 0 0 3px #ffffff, 0 0 4px #ffffff,
-              0 0 5px #ffffff, 0 0 6px #ffffff, 0 0 7px #ffffff, 0 0 8px #ffffff;
-         }
+    .leaderboard::-webkit-scrollbar-track {
+        background: #4a5568;
+        border-radius: 10px;
+    }
 
-          100% {
-            box-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #ffffff,
-              0 0 4px rgba(0, 0, 0, 0), 0 0 5px #ffffff,
-              0 0 6px rgba(0, 0, 0, 0) F0, 0 0 7px #ffffff;
-         }
+    .leaderboard::-webkit-scrollbar-thumb {
+        background: linear-gradient(45deg, #6b46c1, #805ad5);
+        border-radius: 10px;
+    }
 
-      }
+    .leaderboard::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(45deg, #9f7aea, #6b46c1);
+    }
 
+    .player-list::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    .player-list::-webkit-scrollbar-track {
+        background: #2d3748;
+        border-radius: 5px;
+    }
+
+    .player-list::-webkit-scrollbar-thumb {
+        background: linear-gradient(45deg, #805ad5, #6b46c1);
+        border-radius: 5px;
+        box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+    }
+
+    .player-list::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(45deg, #9f7aea, #805ad5);
+    }
 </style>
+
+<div class="fixed-header">
+    <div class="title">🏅 LEADERBOARD 🏅</div>
+    <div class="buttons-container">
+        <button class="slot-button">Slot 1</button>
+        <button class="slot-button">Slot 2</button>
+        <button class="slot-button">Slot 3</button>
+    </div>
+</div>
+
+<div class="container lboard">
+    <div class="leaderboard" id="leaderboard">
+        <div class="header-row">
+            <span class="rank">Rank</span>
+            <span class="player">Name</span>
+            <span class="score">Points</span>
+        </div>
+        <div class="player-list" id="player-list"></div>
+        <div class="see-more" id="see-more">See More...</div>
+    </div>
+</div>
+
+
 
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>

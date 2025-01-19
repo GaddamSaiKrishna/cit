@@ -1,4 +1,4 @@
-* {
+{% comment %} * {
     margin: 0;
     padding: 0;
 }
@@ -226,4 +226,4 @@ button {
 
 .card .btn {
     margin-top: 25px;
-}
+} {% endcomment %}

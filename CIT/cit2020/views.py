@@ -68,7 +68,8 @@ def quiz(request):
                 elif datetime.datetime.now() > final_end:
                     return render(request, 'finish.html', {'player': player})
             else:
-                return render(request, 'luck.html', {'player': player})
+                # return render(request, 'luck.html', {'player': player})
+                return render(request, 'question.html', {'player': player})
         else:
             if player.slot == 1:
                 if datetime.datetime.now() < slot1_start:
@@ -257,7 +258,7 @@ def forms(request):
 
         player.save()
 
-    return redirect(reverse_lazy('cit2020:navPage'))
+    return redirect(reverse_lazy('cit2020:index'))
 
 @login_required
 def view_profile(request):  

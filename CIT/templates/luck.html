@@ -1,3 +1,4 @@
+
 {% extends 'base.html' %}
 {% block content%}
 {% load static %}
@@ -16,6 +17,8 @@
     
     .bg-container {
         height: 100vh;
+        background-image: url(../static/Assets/bg25.png);
+        background-size: 100% 100%;
     }
     
       .outerBorder {
@@ -204,10 +207,10 @@
 </style>
 
 <div class = "bg-container">
-    <a href="{% url 'cit2020:navPage' %}"> <button type="button" class="btn backButton glowing-circle-backButton"><</button></a>
+    <a href="{% url 'cit2020:index' %}"> <button type="button" class="btn backButton glowing-circle-backButton"><</button></a>
     <div class="container-1 outerBorder glowing-circle">
         <div class="text-center cont">
-            <a href="{% url 'cit2020:navPage' %}"><img class="image" src="{% static './Assets/whiteIste.png'%}" /></a>
+            <a href="{% url 'cit2020:index' %}"><img class="image" src="{% static './Assets/whiteIste.png'%}" /></a>
         </div>
         <div class="container-fluid">
             <h2 class = "para-1"><strong>You Have Not Qualified For the Final Round</strong></h2>

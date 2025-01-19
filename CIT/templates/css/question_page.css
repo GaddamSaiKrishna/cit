@@ -1,4 +1,4 @@
-* {
+{% comment %} * {
     padding: 0px;
     margin: 0px;
 }
@@ -497,4 +497,4 @@ input.clear-button:hover {
 
 .grid-item {
     text-align: center;
-}
+} {% endcomment %}

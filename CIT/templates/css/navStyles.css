@@ -1,4 +1,4 @@
-body {
+{% comment %} body {
     margin: 0;
     padding: 0;
     height: 100vh;
@@ -138,4 +138,4 @@ body {
         top: 3rem;
         left: 2rem;
     }
-}
+} {% endcomment %}
