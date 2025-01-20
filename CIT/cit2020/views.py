@@ -257,7 +257,7 @@ def forms(request):
 
         player.save()
 
-    return redirect(reverse_lazy('cit2020:navPage'))
+    return redirect(reverse_lazy('cit2020:index'))
 
 @login_required
 def view_profile(request):  

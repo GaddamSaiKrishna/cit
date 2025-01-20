@@ -169,12 +169,21 @@
             cursor: pointer;
         }
 
-        .hover-effect:hover {
+        .hover-effect:hover{
             background-color: azure;
             border-color: 2px solid #5f185a;
             box-shadow: 2px 2px 10px black;
         }
-
+        /* .option2 input:checked + label{
+            background-color: azure;
+            border-color: 2px solid #5f185a;
+            box-shadow: 2px 2px 10px black;
+        } */
+        .hover-effect input:checked{
+            background-color: azure;
+            border-color: 2px solid #5f185a;
+            box-shadow: 2px 2px 10px black;
+        }
         .buttons {
             display: flex;
             justify-content: center;
@@ -322,13 +331,38 @@
                 font-size: 1rem;
             }
         }
+        /* .option1 input:checked + label,
+.option2 input:checked + label {
+    background-color: azure;
+    border-color: #5f185a;
+    box-shadow: 2px 2px 10px black;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    color: #5f185a;
+} */
+
+.hover-effect:hover {
+    background-color: azure;
+    border-color: #5f185a;
+    box-shadow: 2px 2px 10px black;
+}
+    /* .selected{
+        background-color: azure;
+    border-color: #5f185a;
+    box-shadow: 2px 2px 10px black;
+    } */
+    .selected {
+    background-color: #f0f8ff; /* Light pastel blue */
+    border-color: #2a7f2a; /* Deep blue-violet */
+    box-shadow: 0 4px 8px rgba(76, 76, 138, 0.3); /* Soft blue-violet shadow */
+    font-weight: bold;
+    color: #2a7f2a; /* Matches the border color */
+    transition: all 0.3s ease;
+    transform: scale(1.05); /* Slightly enlarges the selected option */
+}
        
     </style>
 
-
-<style>
-/* Include the CSS provided in your new code here. I'll skip it as per your instructions. */
-</style>
 
 <div class="Container">
     <header>
@@ -350,7 +384,7 @@
 
     <!-- Timer -->
     <div class="timer-container" id="demo-box">
-        <div class="timer" id="timer-box demo"></div>
+        <div class="timer" id="demo"></div>
     </div>
 
     <!-- Question Section -->
@@ -370,7 +404,7 @@
     </div>
 
     <!-- Options Section -->
-    <form id="answer-form ans" method="post" action="/answer/">
+    <form id="ans" method="post" action="/answer/">
         {% csrf_token %}
         <div class="options">
             <div class="row g-2 option-box">
@@ -403,50 +437,24 @@
     </form>
 </div>
 
-<!-- <script>
-    // Timer logic
-    var countDownDate;
-    if ({{ player.qualified }}) {
-        countDownDate = new Date("Jan 21, 2024 22:30:00").getTime();
-    } else if ({{ player.slot }} == 1) {
-        countDownDate = new Date("Jan 18, 2024 21:45:00").getTime();
-    } else if ({{ player.slot }} == 2) {
-        countDownDate = new Date("Jan 19, 2024 21:45:00").getTime();
-    } else if ({{ player.slot }} == 3) {
-        countDownDate = new Date("Jan 20, 2024 21:45:00").getTime();
-    } else {
-        countDownDate = new Date("Jan 21, 2024 22:30:00").getTime();
-    }
-
-    var timerInterval = setInterval(function () {
-        var now = new Date().getTime();
-        var distance = countDownDate - now;
-
-        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        document.getElementById("timer-box").innerHTML = hours + "h " + minutes + "m " + seconds + "s";
-
-        if (distance < 0) {
-            clearInterval(timerInterval);
-            document.getElementById("timer-box").innerHTML = "TIME OVER";
-            document.getElementById("answer-form").submit();
-        } else if (hours == 0 && minutes == 5 && seconds == 0) {
-            alert("Quiz will auto-submit after 5 minutes.");
-        }
-    }, 1000);
-
-    // Clear selection function
-    function clearSelection() {
-        document.querySelectorAll("input[type='radio']").forEach(input => input.checked = false);
-    }
-</script> -->
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
     crossorigin="anonymous"></script>
 <script>
+    // Get all the option containers
+    const options = document.querySelectorAll('.option1, .option2');
+
+    options.forEach(option => {
+        // Add a click event listener to each option container
+        option.addEventListener('click', () => {
+            // Remove the 'selected' class from all options
+            options.forEach(opt => opt.classList.remove('selected'));
+
+            // Add the 'selected' class to the clicked option
+            option.classList.add('selected');
+        });
+    });
     // Set the date we're counting down to
     True = 1
     False = 0
@@ -461,7 +469,7 @@
       } 
       else if ({{player.slot}}==2) {
         // slot 2 date 
-        countDownDate = new Date("Jan 25 , 2025 21:45:00").getTime();
+        countDownDate = new Date("Jan 21 , 2025 21:45:00").getTime();
       } 
       else if ({{player.slot}}==3) {
         // slot 3 date 
@@ -508,11 +516,11 @@
     //Clear selection function
     function clearSelection() {
         document.querySelectorAll("input[type='radio']").forEach(input => input.checked = false);
+        options.forEach(option => {
+        // Remove the 'selected' class from all options
+        options.forEach(opt => opt.classList.remove('selected'));
+    });
     }
 </script>
 
 {% endblock %}
-
-
-
-  

@@ -125,13 +125,30 @@
         -moz-animation: glowing 2s ease-in-out infinite alternate;
         animation: glowing 2s ease-in-out infinite alternate;
     } */
+    .logo a img{
+      width:100px
+    }
+    .logo{
+      position:absolute;
+      top:10px;
+      left:10px;
+    }
+    @media (max-width: 768px) {
+      .logo a img{
+      width:50px
+    }
+    .logo{
+      top:5px;
+      left:5px;
+    }
+    }
   
 </style>
 
 
 <div class="body d-flex ">
     <div class="logo">
-        <a href="{% url 'cit2020:index' %}"><img src="{% static './Assets/whiteIste.png' %}" alt="" width="100"/></a>
+        <a href="{% url 'cit2020:index' %}"><img src="{% static './Assets/whiteIste.png' %}" alt="" /></a>
     </div>
     <!-- <a href="{% url 'cit2020:index' %}"><button type="button" class="btn backButton glowing-circle-backButton">&lt;</button></a> -->
     <div class="container d-flex justify-content-center align-items-center" >
