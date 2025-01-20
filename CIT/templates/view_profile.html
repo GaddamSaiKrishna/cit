@@ -242,8 +242,8 @@
             <a href="{% url 'cit2020:index' %}"><img src="{% static './Assets/whiteIste.png' %}" alt="" /></a>
         </div>
         <div style="position: relative; text-align: center;">
-            <img class="headerImg" src="{% static "./Assets/Enter.png" %}" alt="Profile">
-            <div class="txtOnImage">Profile<i class="fa fa-book icon"></i></div>
+            <img class="headerImg" src="{% static "./Assets/profile.png" %}" alt="Profile">
+            <div class="txtOnImage">Profile</div>
          </div>
 
         <div class="container">
@@ -264,9 +264,9 @@
                     {% else %}
                     <h3><strong >Preliminary Round  </strong></h3>
                     <h4><strong style="color:wheat; ">Slot: </strong> 
-                        {% if player.slot == 1 %} (1) Jan 18, 2024 (9:00 PM - 9:45 PM)
-                        {% elif player.slot == 2 %} (2) Jan 19, 2024 (9:00 PM - 9:45 PM)
-                        {% elif player.slot == 3 %} (3) Jan 20, 2024 (9:00 PM - 9:45 PM)
+                        {% if player.slot == 1 %} (1) Jan 24, 2025 (9:00 PM - 9:45 PM)
+                        {% elif player.slot == 2 %} (2) Jan 25, 2025 (9:00 PM - 9:45 PM)
+                        {% elif player.slot == 3 %} (3) Jan 26, 2025 (9:00 PM - 9:45 PM)
                         {% endif %}
                     </h4>
                     <h4><strong style="color:wheat; font-family: ethno;">Score : </strong> {{player.score}}</h4>
@@ -279,7 +279,7 @@
                     {% endif %}
                     {% if player.qualified == True %}
                     <h3><strong style="color:wheat; font-family: ethno;">Final Round : </strong></h3>
-                    <h4><strong style="color:wheat; font-family: ethno;">Slot : </strong> Jan 21, 2024 (9:00 PM - 9:45 PM)</h4>
+                    <h4><strong style="color:wheat; font-family: ethno;">Slot : </strong> Jan 27, 2025 (9:00 PM - 9:45 PM)</h4>
                     <h4><strong style="color:wheat; font-family: ethno;">Score : </strong> {{player.final_score}}</h4>
                     {% endif %}
                     {% endif %}    

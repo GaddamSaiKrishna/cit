@@ -13,7 +13,7 @@ body {
 
 /* LINKS */
 
-a:link, a:visited {
+/* a:link, a:visited {
     color: #5b80b2;
     text-decoration: none;
 }
@@ -29,7 +29,7 @@ a img {
 a.section:link, a.section:visited {
     color: white;
     text-decoration: none;
-}
+} */
 
 /* GLOBAL DEFAULTS */
 

@@ -3,7 +3,7 @@
 {% load static %}
 <style>
 
-    /* * {
+    * {
         padding: 0;
         margin: 0;
     }
@@ -12,6 +12,7 @@
         overflow-y: hidden;
         font-family: ethno;
         letter-spacing: 2.3px;
+        background-color: #111341;
     }
     
     .bg-container {
@@ -29,6 +30,8 @@
         justify-content: center;
         align-items: center;
         align-content: center;
+        background-image: url(../static/Assets/bg25.png);
+        background-size: 100% 100%;
       }
     
     .glowing-circle {
@@ -209,12 +212,12 @@
         margin-top : 30px;
         }
     
-    } */
+    } 
 
 </style>
 
 <div class = "bg-container">
-    <a href="{% url 'cit2020:navPage' %}"> <button type="button" class="btn backButton glowing-circle-backButton"><</button></a>
+    <a href="{% url 'cit2020:index' %}"> <button type="button" class="btn backButton glowing-circle-backButton"><</button></a>
     <div class="container-1 outerBorder glowing-circle">
         <div class="text-center cont">
             <img class="image" src="{% static './Assets/whiteIste.png'%}" />
@@ -222,7 +225,7 @@
         <div class="container-fluid">
             <h2 class = "para-1"><strong>Qualifier Round Is Over </strong></h2>
             <h2 class = "para-2" ><strong>Visit <a style="text-decoration:none;" href="{% url 'cit2020:lboard' %}"> LEADERBOARD </a></strong></h2>
-            <h2 class = "para-3" ><strong>Keep Practicing , Meet You In CIT 7.0</strong></h2>
+            <h2 class = "para-3" ><strong>Keep Practicing , Meet You In CIT 9.0</strong></h2>
         </div>
     </div>
 </div>

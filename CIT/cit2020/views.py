@@ -9,19 +9,19 @@ from django.urls import reverse_lazy
 from django.contrib.auth import logout
 from .forms import Profileform
 
-slot1_start=datetime.datetime(2024, 1, 18, 21, 00, 00, 701322)
-slot1_end=datetime.datetime(2024, 1, 18, 21, 45, 00, 701322)
+slot1_start=datetime.datetime(2025, 1, 20, 19, 00, 00, 701322)
+slot1_end=datetime.datetime(2025, 1, 20, 19, 45, 00, 701322)
 
-slot2_start=datetime.datetime(2024, 1, 19, 21, 00, 00, 701322)
-slot2_end=datetime.datetime(2024, 1, 19, 21, 45, 00, 701322)
+slot2_start=datetime.datetime(2025, 1, 25, 21, 00, 00, 701322)
+slot2_end=datetime.datetime(2025, 1, 25, 21, 45, 00, 701322)
 
-slot3_start=datetime.datetime(2024, 1, 20, 21, 00, 00, 701322)
-slot3_end=datetime.datetime(2024, 1, 20, 21, 45, 00, 701322)
+slot3_start=datetime.datetime(2025, 1, 26, 21, 00, 00, 701322)
+slot3_end=datetime.datetime(2025, 1, 26, 21, 45, 00, 701322)
 
-round1_result=datetime.datetime(2024, 1, 21, 10, 45, 00, 701322)
+round1_result=datetime.datetime(2025, 1, 27, 10, 45, 00, 701322)
 
-final_start=datetime.datetime(2024, 1, 21, 21, 45, 00, 701322)
-final_end=datetime.datetime(2024, 1, 21, 22, 30, 00, 701322)
+final_start=datetime.datetime(2025, 1, 27, 21, 45, 00, 701322)
+final_end=datetime.datetime(2025, 1, 27, 22, 30, 00, 701322)
 
 def index(request):
     user = request.user
@@ -68,8 +68,7 @@ def quiz(request):
                 elif datetime.datetime.now() > final_end:
                     return render(request, 'finish.html', {'player': player})
             else:
-                # return render(request, 'luck.html', {'player': player})
-                return render(request, 'question.html', {'player': player})
+                return render(request, 'luck.html', {'player': player})
         else:
             if player.slot == 1:
                 if datetime.datetime.now() < slot1_start:
@@ -79,7 +78,7 @@ def quiz(request):
             
             elif player.slot == 2: 
                 if datetime.datetime.now() < slot2_start:
-                    return render(request, 'wait.html', {'player': player})
+                    return render(request, 'notQualified.html', {'player': player})
                 elif datetime.datetime.now() > slot2_end:
                     return render(request, 'finish.html', {'player': player})
             
@@ -258,7 +257,7 @@ def forms(request):
 
         player.save()
 
-    return redirect(reverse_lazy('cit2020:index'))
+    return redirect(reverse_lazy('cit2020:navPage'))
 
 @login_required
 def view_profile(request):  

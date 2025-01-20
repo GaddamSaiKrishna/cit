@@ -15,8 +15,7 @@
       height: 100vh;
       display: flex;
       justify-content: center;
-      background-image: url(../static/Assets/bg25.png);
-      background-size: 100% 100%;
+      background-color: #111341;
   }
 
   .outerBorder {
@@ -30,6 +29,8 @@
       justify-content: center;
       align-items: center;
       align-content: center;
+      background-image: url(../static/Assets/bg25.png);
+      background-size: 100% 100%;
   }
 
   .glowing-circle {
@@ -209,7 +210,7 @@
     <div class="containertimerpage container-fluid">
       <h1 class="main-headingtimerpage">TEST WILL START AFTER</h1>
       <p id="demo" style="color:red;"></p>
-      <p class="paratimerpage1">Register at <a href="https://unstop.com/p/coginitive-intelligence-test-70-nit-durgapur-869662" style="text-decoration: none;">Unstop</a> platform to confirm your registration.</p>
+      <p class="paratimerpage1">Register at <a href="https://unstop.com/o/y0wpsZV?lb=xoZUCgKu" style="text-decoration: none;">Unstop</a> platform to confirm your registration.</p>
       <p class="paratimerpage2">READ THE <a href="{% url 'cit2020:rules' %}" style="text-decoration: none;">Rules</a> CAREFULLY BEFORE STARTING YOUR TEST</p>
       <p class="paratimerpage3">ALL THE BEST!</p>
     </div>
@@ -223,23 +224,23 @@
   var countDownDate
   if ({{player.qualified}}) {
     // Final slot date
-    countDownDate = new Date("Jan 21, 2024 21:45:00").getTime();
+    countDownDate = new Date("Jan 27 , 2025 22:30:00").getTime();
   }
   else if ({{player.slot}}==1) {
     // slot 1 date
-    countDownDate = new Date("Jan 18, 2024 21:00:00").getTime();
+    countDownDate = new Date("Jan 24 , 2025 21:45:00").getTime();
   } 
   else if ({{player.slot}}==2) {
     // slot 2 date 
-    countDownDate = new Date("Jan 19, 2024 21:00:00").getTime();
+    countDownDate = new Date("Jan 25 , 2025 21:45:00").getTime();
   } 
   else if ({{player.slot}}==3) {
     // slot 3 date 
-    countDownDate = new Date("Jan 20, 2024 21:00:00").getTime();
+    countDownDate = new Date("Jan 26 , 2025 21:45:00").getTime();
   } 
   else{
     // final slot date 
-    countDownDate = new Date("Jan 21, 2024 21:45:00").getTime();
+    countDownDate = new Date("Jan 27 , 2025 22:30:00").getTime();
   }
   
 

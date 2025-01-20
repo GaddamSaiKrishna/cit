@@ -9,8 +9,7 @@
     height: 100vh;
     display: flex;
     justify-content: center;
-    background-image: url(../static/Assets/bg25.png);
-    background-size: 100% 100%;
+    
   }
 
   .submitbtn {
@@ -34,6 +33,7 @@
   
   body {
     font-family: MonsOlympia;
+    background-color: #111344;
   }
 
   .outerBorder-forms {
@@ -46,6 +46,8 @@
     align-items: center;
     align-content: center;
     min-height:95%;
+    background-image: url(../static/Assets/bg25.png);
+    background-size: 100% 100%;
   }
 
   .opt input[type="radio"] {
@@ -110,6 +112,8 @@
 
   .container {
     text-align: center;
+    background-image: url(../static/Assets/bg25.png);
+    background-size: 100% 100%;
   }
 
   .main-heading-slot {
@@ -210,20 +214,21 @@
 
         <h2 class="main-heading-slot">Please Choose Your Slot  </h2>
 
+
         <form id="slot" method="post" action="/forms/">
           {% csrf_token %}
           <div class="options-block slots-block">
             <div class="opt outerBorder211">
               <input type="radio" name="slot" value="1" id="option1" />
-              <label for="option1" class="p1">18 January 2024 (9:00 PM - 9:45 PM)</label>
+              <label for="option1" class="p1">24 January 2025 (9:00 PM - 9:45 PM)</label>
             </div>
             <div class="opt outerBorder211">
               <input type="radio" name="slot" value="2" id="option2" />
-              <label for="option2" class="p1">19 January 2024 (9:00 PM - 9:45 PM)</label>
+              <label for="option2" class="p1">25 January 2025 (9:00 PM - 9:45 PM)</label>
             </div>
             <div class="opt outerBorder211">
               <input type="radio" name="slot" value="3" id="option3" />
-              <label for="option3" class="p1">20 January 2024 (9:00 PM - 9:45 PM)</label>
+              <label for="option3" class="p1">26 January 2025 (9:00 PM - 9:45 PM)</label>
             </div>
           </div>
           <br> <br>

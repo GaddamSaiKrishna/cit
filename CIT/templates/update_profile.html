@@ -8,11 +8,15 @@
     margin: 0;
     padding: 0;
 }
-
+.logo{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
 .body {
     background-color: #0b0b3a;
     
-    background-image: url(background.png);
+    background-image: url(../static/Assets/bg25.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;
     color: #000;
@@ -96,29 +100,40 @@
     align-items: center;
     text-align: center;
   }
+  /* .backButton{
+        position: absolute;
+        border: 2px solid #fff;
+        font-family: moto;
+        border-radius: 1rem;
+        font-size: 1.5rem;
+        padding: 0px 10px;
+        right:1.5%;
+        top:2%;
+        color: #fff;
+        background-color:#0000004d;
+        text-align: center;
+    }
+
+    .backButton:hover{
+        background-color:white;
+        transform: scale(1.1);
+    }
+
+    .glowing-circle-backButton {
+    
+        -webkit-animation: glowing 2s ease-in-out infinite alternate;
+        -moz-animation: glowing 2s ease-in-out infinite alternate;
+        animation: glowing 2s ease-in-out infinite alternate;
+    } */
   
 </style>
 
-{% comment %} <div class="forms-main-container outerBorder glowing-circle">
-        <img class="forms-logo " src="{% static './Assets/whiteIste.png' %}" alt="">
-        <div class="forms-container">
-            <div class="forms-card">
-                <div class="forms-inner-box">     
-                    <div class="forms-card-front">
-                    <div style="position: relative; text-align: center; top:1.5rem;" class="header">
-                        <img class="headerImg" src="{% static "./Assets/profile.png" %}" alt="Register">
-                        <div class="txtOnImage about">Register</div>
-                     </div>
-                      <form id="complete_profile" method="post" action="/profile/update">
-                         
-                        <button type="submit" class="button-forms submit-btn-forms glowing-circle"><span>Submit</span></button>
-                      </form>
-                </div>
-              </div>
-            </div>
-          </div>
-</div> {% endcomment %}
-<div class="body">
+
+<div class="body d-flex ">
+    <div class="logo">
+        <a href="{% url 'cit2020:index' %}"><img src="{% static './Assets/whiteIste.png' %}" alt="" width="100"/></a>
+    </div>
+    <!-- <a href="{% url 'cit2020:index' %}"><button type="button" class="btn backButton glowing-circle-backButton">&lt;</button></a> -->
     <div class="container d-flex justify-content-center align-items-center" >
       <form class="p-4 rounded shadow registration-form col-md-8 box" id="complete_profile" method="post" action="/profile/update">
         <h2 class="text-center mb-4">Registration Form</h2>
