@@ -9,8 +9,8 @@ from django.urls import reverse_lazy
 from django.contrib.auth import logout
 from .forms import Profileform
 
-slot1_start=datetime.datetime(2025, 1, 20, 19, 00, 00, 701322)
-slot1_end=datetime.datetime(2025, 1, 20, 19, 45, 00, 701322)
+slot1_start=datetime.datetime(2025, 1, 24, 21, 00, 00, 701322)
+slot1_end=datetime.datetime(2025, 1, 24, 21, 45, 00, 701322)
 
 slot2_start=datetime.datetime(2025, 1, 25, 21, 00, 00, 701322)
 slot2_end=datetime.datetime(2025, 1, 25, 21, 45, 00, 701322)
@@ -78,7 +78,7 @@ def quiz(request):
             
             elif player.slot == 2: 
                 if datetime.datetime.now() < slot2_start:
-                    return render(request, 'notQualified.html', {'player': player})
+                    return render(request, 'wait.html', {'player': player})
                 elif datetime.datetime.now() > slot2_end:
                     return render(request, 'finish.html', {'player': player})
             
