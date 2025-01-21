@@ -1,10 +1,10 @@
-# Cognitive Intelligence Test (CIT) 7.0 Website
+# Cognitive Intelligence Test (CIT) 8.0 Website
 
-Welcome to the official repository of the Cognitive Intelligence Test (CIT) 7.0 website built using Django.
+Welcome to the official repository of the Cognitive Intelligence Test (CIT) 8.0 website built using Django.
 
 ## Description
 
-CIT 7.0 offers a unique opportunity for aspiring students to engage in exhilarating challenges of national standards. The test covers a wide range of topics, including basic mathematical aptitude, logical and verbal reasoning, and data interpretation. Inspired by acclaimed aptitude tests like CAT, CIT provides participants with a simulation of the overall screening procedure employed by hiring companies. This online event is highly anticipated, offering a platform for intellectual competition among a multitude of striving contestants.
+CIT 8.0 offers a unique opportunity for aspiring students to engage in exhilarating challenges of national standards. The test covers a wide range of topics, including basic mathematical aptitude, logical and verbal reasoning, and data interpretation. Inspired by acclaimed aptitude tests like CAT, CIT provides participants with a simulation of the overall screening procedure employed by hiring companies. This online event is highly anticipated, offering a platform for intellectual competition among a multitude of striving contestants.
 
 ## Tech Stacks Used
 
@@ -15,12 +15,12 @@ CIT 7.0 offers a unique opportunity for aspiring students to engage in exhilarat
 
 ## Getting Started
 
-To run the CIT 7.0 website locally, follow these steps:
+To run the CIT 8.0 website locally, follow these steps:
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/your-username/CIT-7.0.git
-   cd CIT-7.0
+   git clone https://github.com/your-username/CIT-8.0.git
+   cd CIT-8.0
    ```
 
 2. **Install Dependencies:**
@@ -53,4 +53,4 @@ To run the CIT 7.0 website locally, follow these steps:
 
 We welcome contributions from the community. If you find any issues or have suggestions for improvements, please create a pull request or open an issue.
 
-Happy coding and best of luck to all participants in the CIT 7.0!
+Happy coding and best of luck to all participants in the CIT 8.0!

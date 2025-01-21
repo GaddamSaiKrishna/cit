@@ -9,8 +9,8 @@ from django.urls import reverse_lazy
 from django.contrib.auth import logout
 from .forms import Profileform
 
-slot1_start=datetime.datetime(2025, 1, 21, 11, 50, 00, 701322)
-slot1_end=datetime.datetime(2025, 1, 21, 12, 35, 00, 701322)
+slot1_start=datetime.datetime(2025, 1, 21, 23, 00, 00, 701322)
+slot1_end=datetime.datetime(2025, 1, 21, 23, 45, 00, 701322)
 
 slot2_start=datetime.datetime(2025, 1, 25, 21, 00, 00, 701322)
 slot2_end=datetime.datetime(2025, 1, 25, 21, 45, 00, 701322)
