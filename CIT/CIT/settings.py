@@ -144,18 +144,21 @@ SOCIAL_AUTH_LOGIN_ERROR_URL = '/'
 
 STATIC_URL = '/static/'
 
+
 # STATICFILES_DIRS = [BASE_DIR / 'static']
 # STATIC_ROOT = BASE_DIR / "staticfiles"
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
-
-# STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_root")
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles_build",'static')
-
-MEDIA_URL = '/media/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+MEDIA_URLS ='/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_root")
+# STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles_build",'static')
+
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = config('SOCIAL_AUTH_GOOGLE_OAUTH2_KEY')
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = config('SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET')
