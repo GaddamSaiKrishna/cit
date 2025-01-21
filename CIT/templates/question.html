@@ -46,7 +46,8 @@
         }
 
         /* Section-A container - centered horizontally above the timer */
-        .section-no-container {
+
+        .section-no-container{
             text-align: center;
             font-size: 1.5rem;
             font-weight: bold;
@@ -59,10 +60,7 @@
             margin-left: auto;
             margin-right: auto; /* Centering the box horizontally */
             box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1); /* Light shadow for effect */
-            /* background-image: url(../static/Assets/sectionno.jpg);
-            background-size: 200px; */
         }
-
         .timer-container {
             display: flex;
             justify-content: center;
@@ -360,6 +358,44 @@
     transition: all 0.3s ease;
     transform: scale(1.05); /* Slightly enlarges the selected option */
 }
+.txtOnImage{
+            position: absolute; 
+            top: 45%; 
+            left: 45%; 
+            transform: translate(-50%, -50%); 
+            color: white; 
+            font-size: 1.3rem; 
+            margin-left: 0.5rem;
+            text-align: center;
+            font-family: moto;
+          }
+  
+          .headerImg{
+            width: 27rem;
+            height: 10rem;
+          }
+          
+          @media only screen and (max-width: 600px){
+            /* .txtOnImage{
+                position: absolute; 
+                top: 45%; 
+                left: 45%; 
+                transform: translate(-50%, -50%); 
+                color: white; 
+                font-size: 1rem; 
+                margin-top: 4rem;
+                margin-left: 0.5rem;
+                text-align: center;
+                font-family: moto;
+              } */
+      
+              .headerImg{
+                /* position: relative;
+                top:4rem; */
+                width: 18rem;
+                height: 7rem;
+              }
+          }
        
     </style>
 
@@ -378,8 +414,12 @@
     </header>
 
     <!-- SECTION-A -->
-    <div class="section-no-container">
-        SECTION
+    <div class="">
+        <!-- SECTION -->
+        <div style="position: relative; text-align: center;">
+            <img class="headerImg" src="{% static "./Assets/question.png" %}" alt="section">
+            <div class="txtOnImage">Section</div>
+        </div>
     </div>
 
     <!-- Timer -->
@@ -465,11 +505,11 @@
       }
       else if ({{player.slot}}==1) {
         // slot 1 date
-        countDownDate = new Date("Jan 24 , 2025 21:45:00").getTime();
+        countDownDate = new Date("Jan 21 , 2025 12:35:00").getTime();
       } 
       else if ({{player.slot}}==2) {
         // slot 2 date 
-        countDownDate = new Date("Jan 21 , 2025 21:45:00").getTime();
+        countDownDate = new Date("Jan 25 , 2025 21:45:00").getTime();
       } 
       else if ({{player.slot}}==3) {
         // slot 3 date 
