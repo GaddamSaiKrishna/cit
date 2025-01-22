@@ -17,6 +17,7 @@
 
 .poppins-regular {
   font-family: "Poppins", serif;
+  font-family: "Playfair Display", serif;
   font-weight: 400;
   font-style: normal;
 }
@@ -34,8 +35,18 @@
   text-shadow: 2px 2px 5px black;
   
 }
+#navbarSupportedContent{
+  font-size: 19px;
+}
+.navbar{
+  height: 110px;
+}
+/* .navbar-brand{
+  position: absolute;
+  top: 0px;
+} */
 .navbar-brand img{
-  width: 100px;
+  width: 90px;
 }
 .card-body{
   background-color: #222020;
@@ -222,6 +233,7 @@
 .eventSponsorHeading {
   font-size: 50px;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Playfair Display", serif;
   color:white;
   text-shadow: 2px 2px 10px wheat;
 }
@@ -246,7 +258,7 @@
 
 /*---------------------------------- FAQ Section ------------------------------------------------------*/
 .contain{
-  background-image: url("faq.png");
+  /* background-image: url("faq.png"); */
   background-repeat: repeat-x;
   min-width:100%;
   height:70vh;
@@ -254,6 +266,7 @@
 .heading{
   font-size: 50px;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Playfair Display", serif;
   color:#111344;
   text-shadow: 2px 2px 10px black;
   
@@ -286,6 +299,7 @@
   color: black;
   font-weight: 900;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-family: "Playfair Display", serif;
   margin: 20px;
   height: auto;
   width: 80vw;
@@ -523,7 +537,10 @@
       height: auto;
     }
     .navbar-brand img{
-      width: 70px;
+      width: 60px;
+    }
+    .navbar{
+      height: 80px;
     }
   }
 
@@ -531,16 +548,19 @@
 .fab,.fas{
   color: #222020;
 }
+*{
+  font-family: "Playfair Display", serif;
+}
 </style>
 <nav class="navbar navbar-expand-lg sticky-top"  style="background-color: #5F185A;" data-bs-theme="dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
-        <img src="../static/Assets/whiteIste.png" alt="iste-logo" class="m-0 p-0">
+        <img src="../static/Assets/whiteIste (1).png" alt="iste-logo" class="m-0 p-0">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse fs-3" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item p-2">
           <a class="nav-link active" aria-current="page" href="#">Home</a>
@@ -565,7 +585,7 @@
   </div>
 </nav>
 
-<div class="mainhomepage" style="margin: 0; width: 100vw;background-color: #5F185A; ">
+<div class="mainhomepage" style="margin: 0; width: 100vw;background-color: #5F185A; " id="hm">
 
 
  
@@ -667,7 +687,7 @@
       <div class="col-md-1"></div>
       <div class="col-md-5 d-flex justify-content-center align-items-center">
         <div class="container my-5 Abouttextbox" id="About">
-          <div class="card-body">
+          <div class="card-body text-center">
             <h2 class="mb-4">
               ABOUT <br>
               <b>CIT 8.0</b>
