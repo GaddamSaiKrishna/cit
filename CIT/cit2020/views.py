@@ -10,7 +10,7 @@ from django.contrib.auth import logout
 from .forms import Profileform
 
 slot1_start=datetime.datetime(2025, 1, 23, 18, 45, 00, 701322)
-slot1_end=datetime.datetime(2025, 1, 23, 21, 00, 00, 701322)
+slot1_end=datetime.datetime(2025, 1, 23, 22, 00, 00, 701322)
 
 slot2_start=datetime.datetime(2025, 1, 25, 21, 00, 00, 701322)
 slot2_end=datetime.datetime(2025, 1, 25, 21, 45, 00, 701322)
