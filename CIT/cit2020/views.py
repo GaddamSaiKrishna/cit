@@ -18,7 +18,7 @@ slot2_end=datetime.datetime(2025, 1, 23, 23, 35, 00, 701322)
 slot3_start=datetime.datetime(2025, 1, 23, 23, 40, 00, 701322)
 slot3_end=datetime.datetime(2025, 1, 23, 23, 50, 00, 701322)
 
-round1_result=datetime.datetime(2025, 1, 24, 18, 00, 00, 701322)
+round1_result=datetime.datetime(2025, 1, 24, 00, 10, 00, 701322)
 
 final_start=datetime.datetime(2025, 1, 24, 18, 20, 00, 701322)
 final_end=datetime.datetime(2025, 1, 24, 18, 30, 00, 701322)
