@@ -1,20 +1,18 @@
 {% extends 'base.html' %} 
 {% load static %} 
 {% block content %}
-
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <title>CIT Website</title>
+<link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://kit.fontawesome.com/66aa7c98b3.js" crossorigin="anonymous"></script>
-
-
 
 <style>
   body {
   margin: 0;
   padding: 0;
   background: #5f185a;
-  background-color: #f4f4f4;
+  background-color: #5f185a;
   transition: margin-top 0.3s ease-in-out;
 }
 
@@ -23,10 +21,10 @@
 
 .poppins-regular {
   font-family: "Poppins", serif;
+  font-family: "Playfair Display", serif;
   font-weight: 400;
   font-style: normal;
 }
-
 .nav-link{
   color: rgba(255, 255, 255, 0.626);
 }
@@ -41,8 +39,18 @@
   text-shadow: 2px 2px 5px black;
   
 }
+#navbarSupportedContent{
+  font-size: 19px;
+}
+.navbar{
+  height: 110px;
+}
+/* .navbar-brand{
+  position: absolute;
+  top: 0px;
+} */
 .navbar-brand img{
-  width: 100px;
+  width: 90px;
 }
 .card-body{
   background-color: #222020;
@@ -218,23 +226,18 @@
 .sponsorContainer {
   color: white;
   text-align: center;
-  padding: 30px;
 }
 .sponsorOuterContainer {
   background-color: rgb(0, 0, 0);
 
   min-width: 100%;
-  height: 60vh;
-  min-height: fit-content;
-  display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  height: auto;
 }
 
 .eventSponsorHeading {
   font-size: 50px;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Playfair Display", serif;
   color:white;
   text-shadow: 2px 2px 10px wheat;
 }
@@ -245,11 +248,10 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: auto;
   }
-  /* .sponsorimage1 {
-    margin-bottom: 5%;
-  } */
+  .sponsorimage1 {
+    margin-bottom: 10%;
+  }
 }
 
 
@@ -258,9 +260,9 @@
 
   
 
-/*---------------------------------- FAQ Section ------------------------------------------------------*/
+/---------------------------------- FAQ Section ------------------------------------------------------/
 .contain{
-  background-image: url("faq.png");
+  /* background-image: url("faq.png"); */
   background-repeat: repeat-x;
   min-width:100%;
   height:70vh;
@@ -268,6 +270,7 @@
 .heading{
   font-size: 50px;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Playfair Display", serif;
   color:#111344;
   text-shadow: 2px 2px 10px black;
   
@@ -300,6 +303,7 @@
   color: black;
   font-weight: 900;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-family: "Playfair Display", serif;
   margin: 20px;
   height: auto;
   width: 80vw;
@@ -317,7 +321,7 @@
   cursor: default;
 }
 
-/*-------------------- after prizes design ================*/
+/-------------------- after prizes design ================/
 .columnDesign {
   width: 100vw;
   height: 5vh;
@@ -434,6 +438,7 @@
 @media (max-width: 480px) {
   .lead{
     font-size: 18px;
+    margin-top: 20px;
   }
   .card-body h2{
   font-size: 50px;
@@ -500,6 +505,7 @@
   }
   .lead{
     font-size: 19px;
+    margin-top: 20px;
   }
   .card-body h2{
   font-size: 60px;
@@ -537,7 +543,10 @@
       height: auto;
     }
     .navbar-brand img{
-      width: 70px;
+      width: 60px;
+    }
+    .navbar{
+      height: 80px;
     }
   }
 
@@ -573,9 +582,7 @@
     .navbar img {
       width: 150px;
     }
-    .logo img{
-      width: 100px;
-    }
+
     .nav-links {
       list-style: none;
       display: flex;
@@ -631,10 +638,7 @@
         transform: translateY(0); /* Show the navbar with smooth transition */
         opacity: 1; /* Fade in */
       }
-      .logo img{
-      width: 70px;
-    }
-   
+
       .nav-links li {
         margin: 10px 0;
         text-align: center;
@@ -654,7 +658,6 @@
   color: #222020;
 }
 
-
 nav {
   background: #5F185A; /* Custom background color */
   height: 80px;
@@ -664,13 +667,12 @@ label.logo {
   color: white;
   font-size: 25px;
   line-height: 80px;
-  padding: 10px 20px;
+  padding: 10px;
   font-weight: bold;
 }
 nav ul {
   float: right;
   margin-right: 20px;
-  z-index: 1;
 }
 nav ul li {
   display: inline-block;
@@ -687,9 +689,8 @@ nav ul li a {
 }
 a.active,
 a:hover {
-  background: #d4c2fc; /* Light color when hovering */
+  background: #5F185A; /* Light color when hovering */
   transition: .5s;
-  color: #5F185A;
 }
 .checkbtn {
   font-size: 22px;
@@ -703,11 +704,13 @@ a:hover {
 #check {
   display: none;
 }
-
+.logo img{
+  width: 100px;
+}
 /* Adjustments for medium and large screens */
 @media (max-width: 1050px) {
   label.logo {
-    padding-left: 30px;
+    padding-left: 5px;
   }
   nav ul li a {
     font-size: 16px;
@@ -721,9 +724,6 @@ a:hover {
   }
   label.logo {
     font-size: 22px;
-    label.logo {
-  padding: 10px 10px !important;
-}
   }
   ul {
     position: fixed;
@@ -746,18 +746,25 @@ a:hover {
   a:hover,
   a.active {
     background: none;
-    color: white;
+    color: #0082e6;
   }
   #check:checked~ul {
     left: 0;
   }
+  .logo img{
+  width: 70px;
+}
+}
+body.no-scroll {
+  overflow: hidden; /* Prevent scrolling */
 }
 
 section {
   background: url("bg.jpg") no-repeat;
   background-size: cover;
-  height: calc(100vh - 80px);
+  height: 1rem;
 }
+
 </style>
 <nav>
   <!-- Checkbox for toggling menu -->
@@ -767,7 +774,7 @@ section {
     <i class="fas fa-bars"></i>
   </label>
   <!-- Site logo -->
-  <label class="logo"><img src="{% static 'Assets/whiteIste (1).png' %}" alt="iste-logo"></label>
+  <label class="logo"><img src="{% static 'Assets/whiteIste.png' %}" alt="iste-logo"></label>
   <!-- Navigation links -->
   <ul>
     <li><a class="active" href="#">Home</a></li>
@@ -779,7 +786,9 @@ section {
   </ul>
 </nav>
 <section>
-<div class="mainhomepage" style="margin: 0; width: 100vw;background-color: #5F185A; ">
+  <div class="mainhomepage" style="margin: 0; width: 100vw; background-color: #5F185A;">
+  </div>
+</section>
 
 
  
@@ -793,13 +802,13 @@ section {
     {% if user.is_anonymous %}
     <div class="responsive-container">
       <div>
-        <button class="hero-btn odd register-btn mb-4 registerBtn" onclick="window.location='{% url 'social:begin' 'google-oauth2' %}';">Register</button>
+        <button class="hero-btn odd register-btn  registerBtn" onclick="window.location='{% url 'social:begin' 'google-oauth2' %}';">Register</button>
       </div>
     </div>
     {% endif %} 
 
     {% if user and not user.is_anonymous %}
-    <div class="responsive-container mb-3">
+    <div class="responsive-container">
         <div>
           <button class="hero-btn odd register-btn  registerBtn"  id="demo" onclick="window.location='{% url 'cit2020:quiz' %}';">Start</button>
         </div>
@@ -831,7 +840,7 @@ section {
     {% endif %}
     </div>
 
-  <div style="background: #5F185A; position:relative ; top: 0px; display: flex; flex-direction: column;">
+  <div style="background: #5F185A; position:relative ; top: 40px; display: flex; flex-direction: column;">
     <div style="width: 100vw; height: 8vh; background: yellow;  display: flex; ">
       <div style="width: 10vw; background:#DCCDC8; color: white;"></div>
       <div style="width: 10vw; background:#DCCDC8; color: white;"></div>
@@ -881,7 +890,7 @@ section {
       <div class="col-md-1"></div>
       <div class="col-md-5 d-flex justify-content-center align-items-center">
         <div class="container my-5 Abouttextbox" id="About">
-          <div class="card-body">
+          <div class="card-body text-center">
             <h2 class="mb-4">
               ABOUT <br>
               <b>CIT 8.0</b>
@@ -913,7 +922,7 @@ section {
       <div class="schedulewithmonkey">
 
         <div style="display: flex; align-items: center; justify-content: center;">
-          <img src="../static/Assets/man1.jpg" alt="coding-man"
+          <img src="{% static 'Assets/man1.jpg' %}" alt="coding-man"
             class="sheduleimagee" />
         </div>
 
@@ -1138,6 +1147,7 @@ section {
           </div>
         </div>
       </div>
+     
     </div>
   </div>
   <!-- dot bg background -->
@@ -1148,12 +1158,12 @@ section {
   <!-- sponsor Section -->
 
   <div class="sponsorOuterContainer" id="Sponsor">
-    <div class="container-fluid d-flex flex-column justify-content-center align-items-center sponsorContainer">
+    <div class="container-fluid d-flex flex-column justify-content-center align-items-center vh-100 sponsorContainer">
       <h2 class="eventSponsorHeading">Event Sponsors</h2>
       <div class="d-flex justify-content-center mt-4 sponsorImages">
         <div class="sponsorimage1"> <img src="../static/Assets/ims.png" alt="ims" class="mx-3" style="max-height: 100px;" /></div>
-        <!-- <div class="sponsorimage2"> <img src="../static/Assets/techbairn.png" alt="techbairn" class="mx-3"
-            style="max-height: 100px;" /></div> -->
+        <div class="sponsorimage2"> <img src="../static/Assets/techbairn.png" alt="techbairn" class="mx-3"
+            style="max-height: 100px;" /></div>
       </div>
     </div>
   </div>
@@ -1181,14 +1191,25 @@ section {
   </div>
   </section>
   <script>
-    // Collapse the navbar after clicking any link in mobile view
-    const navLinks = document.querySelectorAll('nav ul li a');
     const checkBox = document.getElementById('check');
+    const body = document.body;
+    const navLinks = document.querySelectorAll('nav ul li a');
 
+    // Prevent scrolling when navbar is open
+    checkBox.addEventListener('change', function() {
+      if (checkBox.checked) {
+        body.classList.add('no-scroll'); // Disable scrolling
+      } else {
+        body.classList.remove('no-scroll'); // Enable scrolling
+      }
+    });
+
+    // Collapse the navbar after clicking any link in mobile view
     navLinks.forEach(link => {
       link.addEventListener('click', function() {
         if (checkBox.checked) {
           checkBox.checked = false; // Collapse the navbar
+          body.classList.remove('no-scroll'); // Enable scrolling
         }
       });
     });

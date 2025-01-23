@@ -4,362 +4,129 @@
 {% load widget_tweaks %}
 
 <script src="https://kit.fontawesome.com/66aa7c98b3.js" crossorigin="anonymous"></script>
-  <style>
-        .outerBorder-instruct {
-            position: absolute;
-            border: 2px solid #fff;
-            width: 95%;
-            top: 2.5%;
-            border-radius: 3rem;
-            justify-content: center;
-            align-items: center;
-            align-content: center;
-            background-image: url(../static/Assets/bg25.png);
-            background-size: 100% 100%;
-        }
+<style>
+    .outerBorder-instruct {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url("{% static 'Assets/bg25.png' %}");
+        background-size: cover;
+        background-position: center;
+        background-size: 100% 100%;
+        overflow-y: auto; /* Enable vertical scrolling */
+    }
 
-        .glowing-circle {
+    .section-container {
+        width: 90%;
+        max-width: 800px;
+        max-height: 90%; /* Restrict height for scrollable content */
+        overflow-y: auto; /* Allow scrolling within the container */
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.7);
+        border-radius: 20px;
+        color: #fff;
+        font-family: Arial, bold;
+        text-align: center;
+    }
 
-            -webkit-animation: glowing 1s ease-in-out infinite alternate;
-            -moz-animation: glowing 1s ease-in-out infinite alternate;
-            animation: glowing 1s ease-in-out infinite alternate;
-        }
+    .main-heading {
+        font-size: 2rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 1.5rem;
+    }
 
-        @keyframes glowing {
-            from {
-              box-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #ffffff,
-                0 0 4px rgba(0, 0, 0, 0), 0 0 5px #ffffff,
-                0 0 6prgba (0, 0, 0, 0) F0, 0 0 7px #ffffff;
-            }
-      
-            to {
-              box-shadow: 0 0 2px #ffffff, 0 0 3px #ffffff, 0 0 4px #ffffff,
-                0 0 5px #ffffff, 0 0 6px #ffffff, 0 0 7px #ffffff, 0 0 8px #ffffff;
-            }
-          }
+    .instructions, .rules {
+        font-size: 1rem;
+        text-align: left;
+        margin: 20px 0;
+    }
 
-        body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            font-family : Montserrat;
-            color : white;
-            background-color: #111344;
-            
-        }
+    .instructions li, .rules li {
+        margin-bottom: 10px;
+        line-height: 1.5;
+    }
 
-        .containerinstructionpage-1 {
-            height: cover;
-            top:4.5rem;
-            position: relative;
-            padding-bottom: 3rem;
-            margin-bottom: 3rem;
-        }
-        .containerinstructionpage-2{
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            top:2rem;
-        }
+    .slotBlock li {
+        margin-left: 20px;
+    }
 
-        .continstructionpage {
-            display: flex;
-            flex-direction: row;
-        }
-
-        .logo-imageinstructionpage {
-            position: absolute;
-            width: 7rem;
-            height: auto;
-            top: 1rem;
-            left: 1rem;
-        }
-
-        .txtOnImage{
-            position: absolute; 
-            top: 45%; 
-            left: 45%; 
-            transform: translate(-50%, -50%); 
-            color: white; 
-            font-size: 1.3rem; 
-            margin-left: 3rem;
-            text-align: center;
-            font-family: moto;
-          }
-  
-          .headerImg{
-            width: 30rem;
-          }
-
-          .icon{
-            position: relative;
-            left: 4.5rem;
-          }
-
-        .main-headinginstructionpage {
-            border-style: solid;
-            border-width: 1;
-            border-color: rgba(98, 159, 228, 0.781);
-            border-radius: 30px;
-            padding: 10px 25px;
-            position: relative;
-            top: 2rem;
-            font-size: 40px;
-            border-left-style: none;
-            color: rgb(77, 150, 233);
-            background-color: rgba(83, 174, 219, 0.155);
-            text-align: center;
-            font-family : MonsOlympia;
-            letter-spacing : 5px;
-        }
-
-        .containerinstructionpage-2 {
-            
-            margin-top: 2rem;
-        }
-
-        .parainstructionpage {
-            color: white;
-            font-size: 20px;
-        }
-
-        li{
-            font-size: 20px;
-        }
-
-        .slotBlock{
-            padding : 8px 20px;
-        }
-
-        .slotBlock li{
-            color:white;
-            font-size: 18px;
-        }
-
-        .rulesHeader{
-            font-size: 1.7rem;
-            letter-spacing: 0.1em;
-        }
-
-        .rulesIcn{
-            position: relative;
-            left: 5.6rem;
-        }
-
-        .main-headinginstructionpage1 {
-            border-style: solid;
-            border-width: 1;
-            border-color: #fff;
-            border-radius: 30px;
-            padding: 10px 20px;
-            font-size: 40px;
-            border-left-style: none;
-            color: #fff;
-            background-color: rgba(83, 174, 219, 0.155);
-            text-align: center;
-            align-self: flex-end;
-            font-family : MonsOlympia;
-            letter-spacing : 5px;
-        }
-        
-        {% comment %} back button {% endcomment %}
-    .backButton{
+    .backButton {
         position: absolute;
         border: 2px solid #fff;
         border-radius: 1rem;
         font-size: 1.5rem;
         padding: 0px 10px;
-        right:1.5%;
-        top:2%;
-        font-family: moto;
+        top: 2%;
+        right: 2%;
         color: #fff;
-        background-color:#0000004d;
-        text-align: center;
+        background-color: #0000004d;
+        cursor: pointer;
     }
 
-    .backButton:hover{
+    .backButton:hover {
         background-color: white;
+        color: black;
         transform: scale(1.1);
     }
 
-    .glowing-circle-backButton {
-    
-        -webkit-animation: glowing 2s ease-in-out infinite alternate;
-        -moz-animation: glowing 2s ease-in-out infinite alternate;
-        animation: glowing 2s ease-in-out infinite alternate;
-    }
-
-    .cont{
-        height: 0px;
-        margin-bottom: 8rem;
-    }
-    {% comment %}  {% endcomment %}
-   
-        /* For mobile */
-
-        @media screen and (max-width: 600px) {
-            .txtOnImage{
-                position: absolute; 
-                top: 45%; 
-                left: 45%; 
-                transform: translate(-50%, -50%); 
-                color: white; 
-                font-size: 0.8rem; 
-                margin-left: 0rem;
-                text-align: center;
-                font-family: moto;
-              }
-      
-              .headerImg{
-                width: 18rem;
-              }
-    
-              .icon{
-                position: relative;
-                left: 3.2rem;
-              }
-
-              .rulesHeader{
-                font-size: 0.9rem;
-                margin-left: 1rem;
-              }
-
-              .rulesIcn{
-                left: 3.25rem;
-              }
-
-            .backButton{
-                right:4%;
-                top:2%;
-            }
-            
-            .logo-imageinstructionpage {
-                position: absolute;
-                width: 5rem;
-                height: auto;
-                top: 1rem;
-                left: 1rem;
-            }
-
-            .main-headinginstructionpage {
-                border-style: solid;
-                border-width: 1;
-                border-color: rgba(98, 159, 228, 0.781);
-                border-radius: 30px;
-                padding: 10px 20px;
-                position: relative;
-                top: 4rem;
-                font-size: 30px;
-                border-left-style: none;
-                font-family : moto;
-                color: rgb(77, 150, 233);
-                background-color: rgba(83, 174, 219, 0.155);
-                text-align: center;
-            }
-
-            .main-headinginstructionpage1 {
-                font-size: 25px;
-            }
-
-            .containerinstructionpage-2{
-                margin-left : 10px;
-                padding-top: 0;
-                margin-top: 0;
-                top:-1rem;
-            }
-
-            .parainstructionpageRules{
-                padding-top : 0rem;
-            }
-
-            li{
-                font-size: 18px;
-            }
-    
-            .slotBlock{
-                padding : 8px 20px;
-            }
-    
-            .slotBlock li{
-                font-size: 16px;
-            }
-    
-
-            .containerinstructionpage-1 {
-                margin: 0px;
-                margin-bottom: 3rem;
-            }
+    /* Adjustments for smaller screens */
+    @media screen and (max-width: 600px) {
+        .section-container {
+            width: 95%;
+            max-height: 80%; /* Adjust max height for smaller screens */
+            padding: 15px;
         }
-  @media screen and (min-width: 601px ) and (max-width:776px) {
 
-          .txtOnImage{
-            position: absolute; 
-            top: 45%; 
-            left: 37%; 
-            transform: translate(-50%, -50%); 
-            color: white; 
-            font-size: 1.3rem; 
-            margin-left: 3rem;
-            text-align: center;
-            font-family: moto;
-          }
-          }
-        @media screen and (min-width: 776px ) and (max-width:990px) {
+        .main-heading {
+            font-size: 1.5rem;
+        }
 
-          .txtOnImage{
-            position: absolute; 
-            top: 45%; 
-            left: 40%; 
-            transform: translate(-50%, -50%); 
-            color: white; 
-            font-size: 1.3rem; 
-            margin-left: 3rem;
-            text-align: center;
-            font-family: moto;
-          }
-          }
-    </style>
+        .instructions, .rules {
+            font-size: 0.9rem;
+        }
 
-    <div class="outerBorder-instruct glowing-circle" style="font-family: Montserrat;">
-        <a href="{% url 'cit2020:index' %}"><button type="button" class="btn backButton glowing-circle-backButton"><</button></a>
-        <a href="{% url 'cit2020:index' %}"><img class="logo-imageinstructionpage" src="{% static './Assets/whiteIste.png'%}" /></a>
-        <div class="container containerinstructionpage-1">
-            <div class="text-center cont">
-            <div style="position: relative; text-align: center;">
-                <img class="headerImg" src="{% static "./Assets/title.png" %}" alt="Instructions">
-                <div class="txtOnImage">Instructions<i class="fa fa-book icon"></i></div>
-             </div>
-        </div>
-      <div class="containerinstructionpage-2">
-        <p class="parainstructionpage">
-          <li>Register at <a href="https://unstop.com/o/y0wpsZV?lb=xoZUCgKu"> Unstop </a> platform to confirm your registration. <br /></li>
-          <li> Qualifier Round: Candidates can attempt CIT only once in any of the three available slots: <br /> </li>
-          <div class="slotBlock">
-            <li><b>Slot 1:</b> January 24, 2025 (9:00 PM - 9:45 PM)</li>
-            <li><b>Slot 2:</b> January 25, 2025 (9:00 PM - 9:45 PM)</li>
-            <li><b>Slot 3:</b> January 26, 2025 (9:00 PM - 9:45 PM)</li>
-            
-          </div>
-          <li> Candidates selected for final round will receive a mail with details. <br /> </li>
-          <li> Final Round: January 27, 2025 (9:00 PM - 9:45 PM) </li>
-        </p>
-        <div class="text-center rulesHeader">
-            <div style="position: relative; text-align: center;">
-                <img class="headerImg" src="{% static "./Assets/title.png" %}" alt="Instructions">
-                <div class="txtOnImage rulesHeader">Rules<i style="left:3.5rem;" class="fa fa-book rulesIcn"></i></div>
-             </div>
-        </div>
-        <p class="parainstructionpage parainstructionpageRules">
-          <li>This test comprises of 30 questions which needs to be solved in time limit of 45 minutes.</li>
-          <li>Test includes questions from Logical Reasoning, Verbal Reasoning, Data Interpretation and Aptitude.</li>
-          <li>Each question carries 4 mark for correct answer. Incorrect answer will fetch you negative marks of - 1.</li>
-          <li>No marks if question is not attempted.</li>
-          <li>Just Select the Option or Click Next Question(without selecting any option) to skip the Question</li>
-          <li>Once you skip to the next question you cannot go back. </li>
-        </p>
-      </div>
+        .backButton {
+            font-size: 1.2rem;
+            padding: 0px 8px;
+        }
+    }
+</style>
+
+<div class="outerBorder-instruct">
+    <a href="{% url 'cit2020:index' %}">
+        <button type="button" class="btn backButton glowing-circle-backButton"><</button>
+    </a>
+    <div class="section-container">
+        <h1 class="main-heading">Instructions</h1>
+        <ul class="instructions">
+            <li>Register at <a href="https://unstop.com/o/y0wpsZV?lb=xoZUCgKu" style="color: lightblue;">Unstop</a> platform to confirm your registration.</li>
+            <li>Qualifier Round: Candidates can attempt CIT only once in any of the three available slots:</li>
+            <div class="slotBlock">
+                <li><b>Slot 1:</b> January 24, 2025 (9:00 PM - 9:45 PM)</li>
+                <li><b>Slot 2:</b> January 25, 2025 (9:00 PM - 9:45 PM)</li>
+                <li><b>Slot 3:</b> January 26, 2025 (9:00 PM - 9:45 PM)</li>
+            </div>
+            <li>Candidates selected for the final round will receive an email with details.</li>
+            <li>Final Round: January 27, 2025 (9:00 PM - 9:45 PM)</li>
+        </ul>
+        <h1 class="main-heading">Rules</h1>
+        <ul class="rules">
+            <li>This test comprises 30 questions to be solved within a time limit of 45 minutes.</li>
+            <li>Questions cover Logical Reasoning, Verbal Reasoning, Data Interpretation, and Aptitude.</li>
+            <li>Each question carries 4 marks for the correct answer. Incorrect answers result in a deduction of 1 mark.</li>
+            <li>No marks will be awarded if a question is not attempted.</li>
+            <li>Select an option or click "Next Question" without selecting to skip.</li>
+            <li>Once you move to the next question, you cannot go back.</li>
+        </ul>
     </div>
+    
+</div>
+
+
 {% endblock %}
