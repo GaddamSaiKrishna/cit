@@ -152,11 +152,11 @@
         }
 
         .option1,
-        .option2 {
+        .option2{
             height: 8vh;
             width: 20vw;
             background-color: #dccdc8;
-            padding: 1rem;
+            /* padding: 1rem; */
             border-radius: 20px;
             color: #5f185a;
             box-shadow: 3px 3px 10px #dccdc8;
@@ -273,7 +273,7 @@
             .option2 {
                 width: 80vw;
                 font-size: 1rem;
-                padding: 1rem;
+                /* padding: 1rem; */
             }
 
             .buttons {
@@ -316,7 +316,7 @@
             .option2 {
                 width: 90vw;
                 font-size: 0.9rem;
-                padding: 1rem;
+                /* padding: 1rem; */
             }
 
             .buttons {
@@ -396,7 +396,19 @@
                 height: 7rem;
               }
           }
-       
+          .option1 input,
+            .option2 input {
+                display: none !important; 
+            }
+
+.option1 input,.option1 label,.option2 input,
+.option2 label {
+    display: block; /* Make the label cover the entire container */
+    width: 100%; 
+    height: 100%; 
+    cursor: pointer; /* Pointer to indicate clickable area */
+}
+
     </style>
 
 
@@ -442,7 +454,76 @@
             </div>
         </div>
     </div>
+<!-- 
+    
+    <form id="ans" method="post" action="/answer/">
+        <div class="footer">
+            {% csrf_token %}
+            <div class="options-block">
+                
+                <div class="options">
 
+                    <div class="row g-2 option-box">
+                        <div class="opt outerBorder211 col-8 option1 hover-effect">
+                            <input type="radio" name="option" value="1" id="option1" />
+                            <label for="option1" style="
+                            user-select: none;
+                            -webkit-user-select: none;
+                            -moz-user-select: none;
+                            -o-user-select: none;
+                            -user-select: none;
+                            ">{{question.option1}}</label>
+                        </div>
+                        <div class="opt outerBorder211 col-8 option2 hover-effect">
+                            <input type="radio" name="option" value="2" id="option2" />
+                            <label for="option2" style="
+                            user-select: none;
+                            -webkit-user-select: none;
+                            -moz-user-select: none;
+                            -o-user-select: none;
+                            -user-select: none;
+                            ">{{question.option2}}</label>
+                        </div>
+                    </div>
+                    <div class="row g-2 options-box">
+                        <div class="opt outerBorder211 col-8 option1 hover-effect">
+                            <input type="radio" name="option" value="3" id="option3" />
+                            <label for="option3" style="
+                            user-select: none;
+                            -webkit-user-select: none;
+                            -moz-user-select: none;
+                            -o-user-select: none;
+                            -user-select: none;
+                            ">{{question.option3}}</label>
+                        </div>
+                        <div class="opt outerBorder211 col-8 option2 hover-effect">
+                            <input type="radio" name="option" value="4" id="option4" />
+                            <label for="option4" style="
+                            user-select: none;
+                            -webkit-user-select: none;
+                            -moz-user-select: none;
+                            -o-user-select: none;
+                            -user-select: none;
+                            ">{{question.option4}}</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid-container buttons">
+                    <div class="grid-item"><span style="display: none;"><input type="radio" name="option" id="option5"
+                        value="0" /></span>
+                        <input  type="button" class="clear-button clear" value="Clear Choice"
+                            onclick="document.getElementById('option5').checked = true;" />
+                    </div>
+
+                    <div class="last">
+                        <span style="display: none;"><input type="radio" name="option" id="option5" value="0" /></span>
+                        <input type="submit" class="clear-button next" value="Next" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form> -->
     <!-- Options Section -->
     <form id="ans" method="post" action="/answer/">
         {% csrf_token %}
@@ -453,29 +534,28 @@
                     <label for="option1">(a) {{ question.option1 }}</label>
                 </div>
                 <div class="col-8 option2 hover-effect">
-                    <input type="radio" name="option" value="2" id="option2" style="display: none;" />
+                    <input type="radio" name="option" value="2" id="option2"  />
                     <label for="option2">(b) {{ question.option2 }}</label>
                 </div>
             </div>
             <div class="row g-2 option-box">
                 <div class="col-8 option1 hover-effect">
-                    <input type="radio" name="option" value="3" id="option3" style="display: none;" />
+                    <input type="radio" name="option" value="3" id="option3"  />
                     <label for="option3">(c) {{ question.option3 }}</label>
                 </div>
                 <div class="col-8 option2 hover-effect">
-                    <input type="radio" name="option" value="4" id="option4" style="display: none;" />
+                    <input type="radio" name="option" value="4" id="option4"  />
                     <label for="option4">(d) {{ question.option4 }}</label>
                 </div>
             </div>
         </div>
 
-        <!-- Buttons -->
+        
         <div class="buttons">
             <button type="button" class="clear" onclick="clearSelection()">Clear</button>
-            <button type="submit" class="next">Next</button>
+            <button type="submit" class="next" name="option">Next</button>
         </div>
     </form>
-</div>
 
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
@@ -505,7 +585,7 @@
       }
       else if ({{player.slot}}==1) {
         // slot 1 date
-        countDownDate = new Date("Jan 22 , 2025 23:45:00").getTime();
+        countDownDate = new Date("Jan 23 , 2025 21:00:00").getTime();
       } 
       else if ({{player.slot}}==2) {
         // slot 2 date 

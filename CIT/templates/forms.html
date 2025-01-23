@@ -9,6 +9,7 @@
     height: 100vh;
     display: flex;
     justify-content: center;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     
   }
 
@@ -28,11 +29,14 @@
     border:2px solid white;
     font-weight: 500;
     margin-bottom : 20px;
-    font-family: ethno;
+    /* font-family: ethno; */
+    background-color: white;
+    color: #5b125b;
+    text-transform: uppercase;
   }
   
   body {
-    font-family: MonsOlympia;
+    /* font-family: MonsOlympia; */
     background-color: #111344;
   }
 
@@ -57,7 +61,10 @@
   .opt input[type="radio"]:checked ~ label {
       background-color: #0012128a;
       transition: background-color 0.4s;
+      background-color: white;
+    color: #5b125b;
   }
+  
   .opt label {
     cursor: pointer;
     font-size: 18px;
@@ -124,7 +131,8 @@
     margin-bottom: 5rem !important;
     letter-spacing : 5px;
     margin-bottom : 30px;
-    font-family: ethno;
+    /* font-family: ethno; */
+    text-transform: uppercase;
   }
 
   .p1 {
@@ -133,8 +141,12 @@
     font-weight: 300;
     color: white;
     padding-top: 25px;
-    letter-spacing : 5px;
-    font-family:ethno;
+    letter-spacing : 3px;
+    /* font-family:ethno; */
+  }
+  .p1:hover{
+    background-color: white;
+    color: #5b125b !important;
   }
   
   
@@ -174,7 +186,9 @@
       font-weight: 400;
       color: white;
       padding-top: 25px;
+      
     }
+
 
     .main-heading-slot{
       margin-bottom: 3rem !important;
@@ -185,7 +199,7 @@
       top: 50px;
       left: 20px;
       text-decoration: none;
-      color: white``;
+      color: white;
       font-size: 0.6rem;
       letter-spacing: 4px;
       overflow: hidden;
@@ -194,6 +208,8 @@
       border-image-slice: 1;
       background-color: #0000005c;
       font-weight: 500;
+      background-color: white !important;
+      color: #5b125b;
     }
 
     .opt label{
@@ -233,7 +249,7 @@
           <br> <br>
           <div class="next-arrow-block">
             <div class="next-arrow">
-              <input type="submit" value="Submit" class="submitbtn glowing-circle" />
+              <input type="submit" value="Submit" class="submitbtn" />
             </div>
           </div>
         </form>

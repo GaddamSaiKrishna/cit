@@ -1,15 +1,21 @@
 {% extends 'base.html' %} 
 {% load static %} 
 {% block content %}
+
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<title>CIT Website</title>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://kit.fontawesome.com/66aa7c98b3.js" crossorigin="anonymous"></script>
+
+
+
 <style>
   body {
   margin: 0;
   padding: 0;
   background: #5f185a;
+  background-color: #f4f4f4;
+  transition: margin-top 0.3s ease-in-out;
 }
 
 
@@ -17,10 +23,10 @@
 
 .poppins-regular {
   font-family: "Poppins", serif;
-  font-family: "Playfair Display", serif;
   font-weight: 400;
   font-style: normal;
 }
+
 .nav-link{
   color: rgba(255, 255, 255, 0.626);
 }
@@ -35,18 +41,8 @@
   text-shadow: 2px 2px 5px black;
   
 }
-#navbarSupportedContent{
-  font-size: 19px;
-}
-.navbar{
-  height: 110px;
-}
-/* .navbar-brand{
-  position: absolute;
-  top: 0px;
-} */
 .navbar-brand img{
-  width: 90px;
+  width: 100px;
 }
 .card-body{
   background-color: #222020;
@@ -222,18 +218,23 @@
 .sponsorContainer {
   color: white;
   text-align: center;
+  padding: 30px;
 }
 .sponsorOuterContainer {
   background-color: rgb(0, 0, 0);
 
   min-width: 100%;
-  height: auto;
+  height: 60vh;
+  min-height: fit-content;
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .eventSponsorHeading {
   font-size: 50px;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-family: "Playfair Display", serif;
   color:white;
   text-shadow: 2px 2px 10px wheat;
 }
@@ -244,10 +245,11 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    height: auto;
   }
-  .sponsorimage1 {
-    margin-bottom: 10%;
-  }
+  /* .sponsorimage1 {
+    margin-bottom: 5%;
+  } */
 }
 
 
@@ -258,7 +260,7 @@
 
 /*---------------------------------- FAQ Section ------------------------------------------------------*/
 .contain{
-  /* background-image: url("faq.png"); */
+  background-image: url("faq.png");
   background-repeat: repeat-x;
   min-width:100%;
   height:70vh;
@@ -266,7 +268,6 @@
 .heading{
   font-size: 50px;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-family: "Playfair Display", serif;
   color:#111344;
   text-shadow: 2px 2px 10px black;
   
@@ -299,7 +300,6 @@
   color: black;
   font-weight: 900;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-family: "Playfair Display", serif;
   margin: 20px;
   height: auto;
   width: 80vw;
@@ -537,55 +537,249 @@
       height: auto;
     }
     .navbar-brand img{
-      width: 60px;
-    }
-    .navbar{
-      height: 80px;
+      width: 70px;
     }
   }
 
+  .sheduleimagee {
+    max-width: 100%;
+    height: 40vh;
+  }
+
+  @media (max-width: 1000px) {
+    .sheduleimagee {
+      height: 23vh;
+    }
+  }
+
+  
+
+    /* .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background-color: #5F185A;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    } */
+
+    .navbar .logo a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .navbar img {
+      width: 150px;
+    }
+    .logo img{
+      width: 100px;
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .nav-links li {
+      margin: 0 15px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #d4c2fc;
+    }
+
+    /* Hamburger Menu */
+    /* .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      width: 30px;
+      height: 4px;
+      margin: 5px 0;
+      background-color: white;
+    } */
+
+    /* Media Queries for responsiveness */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: #5F185A;
+        margin-top: 10px;
+        padding: 15px 0;
+        transform: translateY(-100%); /* Initially hidden */
+        opacity: 0; /* Initially hidden */
+      }
+
+      .nav-links.active {
+        transform: translateY(0); /* Show the navbar with smooth transition */
+        opacity: 1; /* Fade in */
+      }
+      .logo img{
+      width: 70px;
+    }
+   
+      .nav-links li {
+        margin: 10px 0;
+        text-align: center;
+      }
+
+      /* .hamburger {
+        display: flex;
+      } */
+
+      /* Adjust content when menu is active */
+      body.menu-open {
+        margin-top: 100px; /* Adjust this value based on your navbar height */
+      }
+    }
 
 .fab,.fas{
   color: #222020;
 }
-*{
-  font-family: "Playfair Display", serif;
+
+
+nav {
+  background: #5F185A; /* Custom background color */
+  height: 80px;
+  width: 100%;
+}
+label.logo {
+  color: white;
+  font-size: 25px;
+  line-height: 80px;
+  padding: 10px 20px;
+  font-weight: bold;
+}
+nav ul {
+  float: right;
+  margin-right: 20px;
+  z-index: 1;
+}
+nav ul li {
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 5px;
+}
+nav ul li a {
+  color: white;
+  font-size: 17px;
+  padding: 7px 13px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+a.active,
+a:hover {
+  background: #d4c2fc; /* Light color when hovering */
+  transition: .5s;
+  color: #5F185A;
+}
+.checkbtn {
+  font-size: 22px;
+  color: white;
+  float: right;
+  line-height: 80px;
+  margin-right: 30px;
+  cursor: pointer;
+  display: none;
+}
+#check {
+  display: none;
+}
+
+/* Adjustments for medium and large screens */
+@media (max-width: 1050px) {
+  label.logo {
+    padding-left: 30px;
+  }
+  nav ul li a {
+    font-size: 16px;
+  }
+}
+
+/* Responsive media query for smaller screens */
+@media (max-width: 890px) {
+  .checkbtn {
+    display: block;
+  }
+  label.logo {
+    font-size: 22px;
+    label.logo {
+  padding: 10px 10px !important;
+}
+  }
+  ul {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #5F185A;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
+  }
+  nav ul li {
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  nav ul li a {
+    font-size: 20px;
+  }
+  a:hover,
+  a.active {
+    background: none;
+    color: white;
+  }
+  #check:checked~ul {
+    left: 0;
+  }
+}
+
+section {
+  background: url("bg.jpg") no-repeat;
+  background-size: cover;
+  height: calc(100vh - 80px);
 }
 </style>
-<nav class="navbar navbar-expand-lg sticky-top"  style="background-color: #5F185A;" data-bs-theme="dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-        <img src="../static/Assets/whiteIste (1).png" alt="iste-logo" class="m-0 p-0">
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item p-2">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item p-2">
-          <a class="nav-link" href="#About">About</a>
-        </li>
-        <li class="nav-item p-2">
-          <a class="nav-link" href="#Schedule">Instructions</a>
-        </li>
-        <li class="nav-item p-2">
-          <a class="nav-link" href="#FAQ">Faq</a>
-        </li>
-        <li class="nav-item p-2">
-          <a class="nav-link" href="#Sponsor">Sponsors</a>
-        </li>
-        <li class="nav-item p-2">
-          <a class="nav-link" href="#Contact">Contact Us</a>
-        </li>
-      </ul>
-    </div>
-  </div>
+<nav>
+  <!-- Checkbox for toggling menu -->
+  <input type="checkbox" id="check">
+  <!-- Menu icon -->
+  <label for="check" class="checkbtn">
+    <i class="fas fa-bars"></i>
+  </label>
+  <!-- Site logo -->
+  <label class="logo"><img src="{% static 'Assets/whiteIste (1).png' %}" alt="iste-logo"></label>
+  <!-- Navigation links -->
+  <ul>
+    <li><a class="active" href="#">Home</a></li>
+    <li><a href="#About">About</a></li>
+    <li><a href="#Schedule">Instructions</a></li>
+    <li><a href="#FAQ">FAQ</a></li>
+    <li><a href="#Sponsor">Sponsors</a></li>
+    <li><a href="#Contact">Contact Us</a></li>
+  </ul>
 </nav>
-
-<div class="mainhomepage" style="margin: 0; width: 100vw;background-color: #5F185A; " id="hm">
+<section>
+<div class="mainhomepage" style="margin: 0; width: 100vw;background-color: #5F185A; ">
 
 
  
@@ -599,13 +793,13 @@
     {% if user.is_anonymous %}
     <div class="responsive-container">
       <div>
-        <button class="hero-btn odd register-btn  registerBtn" onclick="window.location='{% url 'social:begin' 'google-oauth2' %}';">Register</button>
+        <button class="hero-btn odd register-btn mb-4 registerBtn" onclick="window.location='{% url 'social:begin' 'google-oauth2' %}';">Register</button>
       </div>
     </div>
     {% endif %} 
 
     {% if user and not user.is_anonymous %}
-    <div class="responsive-container">
+    <div class="responsive-container mb-3">
         <div>
           <button class="hero-btn odd register-btn  registerBtn"  id="demo" onclick="window.location='{% url 'cit2020:quiz' %}';">Start</button>
         </div>
@@ -637,7 +831,7 @@
     {% endif %}
     </div>
 
-  <div style="background: #5F185A; position:relative ; top: 40px; display: flex; flex-direction: column;">
+  <div style="background: #5F185A; position:relative ; top: 0px; display: flex; flex-direction: column;">
     <div style="width: 100vw; height: 8vh; background: yellow;  display: flex; ">
       <div style="width: 10vw; background:#DCCDC8; color: white;"></div>
       <div style="width: 10vw; background:#DCCDC8; color: white;"></div>
@@ -687,7 +881,7 @@
       <div class="col-md-1"></div>
       <div class="col-md-5 d-flex justify-content-center align-items-center">
         <div class="container my-5 Abouttextbox" id="About">
-          <div class="card-body text-center">
+          <div class="card-body">
             <h2 class="mb-4">
               ABOUT <br>
               <b>CIT 8.0</b>
@@ -719,8 +913,8 @@
       <div class="schedulewithmonkey">
 
         <div style="display: flex; align-items: center; justify-content: center;">
-          <img src="../static/Assets/monkey.jpg" alt="coding-monkey"
-            style="max-width: 100%; height: 40vh;" class="sheduleimagee" />
+          <img src="../static/Assets/man1.jpg" alt="coding-man"
+            class="sheduleimagee" />
         </div>
 
         <div>
@@ -944,7 +1138,6 @@
           </div>
         </div>
       </div>
-     
     </div>
   </div>
   <!-- dot bg background -->
@@ -955,12 +1148,12 @@
   <!-- sponsor Section -->
 
   <div class="sponsorOuterContainer" id="Sponsor">
-    <div class="container-fluid d-flex flex-column justify-content-center align-items-center vh-100 sponsorContainer">
+    <div class="container-fluid d-flex flex-column justify-content-center align-items-center sponsorContainer">
       <h2 class="eventSponsorHeading">Event Sponsors</h2>
       <div class="d-flex justify-content-center mt-4 sponsorImages">
         <div class="sponsorimage1"> <img src="../static/Assets/ims.png" alt="ims" class="mx-3" style="max-height: 100px;" /></div>
-        <div class="sponsorimage2"> <img src="../static/Assets/techbairn.png" alt="techbairn" class="mx-3"
-            style="max-height: 100px;" /></div>
+        <!-- <div class="sponsorimage2"> <img src="../static/Assets/techbairn.png" alt="techbairn" class="mx-3"
+            style="max-height: 100px;" /></div> -->
       </div>
     </div>
   </div>
@@ -986,28 +1179,23 @@
       </div>
     </div>
   </div>
+  </section>
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var toggler = document.querySelector('.navbar-toggler');
-      var collapse = document.querySelector('.navbar-collapse');
-  
-      toggler.addEventListener('click', function () {
-        collapse.classList.remove('show');
-      });
-    });
-    // Add an event listener to each nav-link
-    const navLinks = document.querySelectorAll('.nav-link');
+    // Collapse the navbar after clicking any link in mobile view
+    const navLinks = document.querySelectorAll('nav ul li a');
+    const checkBox = document.getElementById('check');
 
     navLinks.forEach(link => {
       link.addEventListener('click', function() {
-        // Remove 'active' class from all nav-links
-        navLinks.forEach(nav => nav.classList.remove('active'));
-
-        // Add 'active' class to the clicked nav-link
-        this.classList.add('active');
+        if (checkBox.checked) {
+          checkBox.checked = false; // Collapse the navbar
+        }
       });
     });
   </script>
+  
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
   
 
 
