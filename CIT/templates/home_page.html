@@ -207,6 +207,7 @@
   min-height: 100vh;
   min-width: 100vw;
   background-position: center;
+  object-fit: fill;
   background-repeat: no-repeat;
   box-sizing: border-box;
   width: 100%;
@@ -229,7 +230,7 @@
 }
 .sponsorOuterContainer {
   background-color: rgb(0, 0, 0);
-
+  padding: 100px;
   min-width: 100%;
   height: auto;
 }
@@ -251,6 +252,9 @@
   }
   .sponsorimage1 {
     margin-bottom: 10%;
+  }
+  .sponsorOuterContainer{
+    padding: 40px;
   }
 }
 
@@ -689,12 +693,13 @@ nav ul li a {
 }
 a.active,
 a:hover {
-  background: #5F185A; /* Light color when hovering */
   transition: .5s;
+  background-color: white;
+  color: #5F185A;
 }
 .checkbtn {
   font-size: 22px;
-  color: white;
+  color: white !important;
   float: right;
   line-height: 80px;
   margin-right: 30px;
@@ -710,7 +715,7 @@ a:hover {
 /* Adjustments for medium and large screens */
 @media (max-width: 1050px) {
   label.logo {
-    padding-left: 5px;
+    padding-left: 10px;
   }
   nav ul li a {
     font-size: 16px;
@@ -745,8 +750,8 @@ a:hover {
   }
   a:hover,
   a.active {
-    background: none;
-    color: #0082e6;
+    background-color: white;
+  color: #5F185A;
   }
   #check:checked~ul {
     left: 0;
@@ -767,7 +772,9 @@ section {
 nav ul{
   z-index: 1000;
 }
-
+.fa-bars::before{
+  color: white;
+}
 </style>
 <nav>
   <!-- Checkbox for toggling menu -->
@@ -1161,12 +1168,10 @@ nav ul{
   <!-- sponsor Section -->
 
   <div class="sponsorOuterContainer" id="Sponsor">
-    <div class="container-fluid d-flex flex-column justify-content-center align-items-center vh-100 sponsorContainer">
+    <div class="container-fluid d-flex flex-column justify-content-center align-items-center sponsorContainer">
       <h2 class="eventSponsorHeading">Event Sponsors</h2>
       <div class="d-flex justify-content-center mt-4 sponsorImages">
         <div class="sponsorimage1"> <img src="../static/Assets/ims.png" alt="ims" class="mx-3" style="max-height: 100px;" /></div>
-        <div class="sponsorimage2"> <img src="../static/Assets/techbairn.png" alt="techbairn" class="mx-3"
-            style="max-height: 100px;" /></div>
       </div>
     </div>
   </div>
