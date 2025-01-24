@@ -99,6 +99,7 @@
             box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
             overflow: hidden;
             min-height: 35vh;
+            
         }
 
         .question-text {
@@ -120,8 +121,14 @@
     color: #5f185a; /* Same color as the question text */
     margin-bottom: 1rem; /* Adds space between the heading and the question text */
     text-align: left; /* Align the heading to the left */
+    color: #e12424;
 }
-
+.question-text h4{
+    color: #1d6f03;
+}
+.question-text div img{
+    width: 100%;
+}
 
         .question-image {
             width: 30%;
@@ -419,7 +426,9 @@
     cursor: pointer; /* Pointer to indicate clickable area */
     user-select: none;
 }
-
+h3{
+    text-decoration: underline;
+}
 
     </style>
 
@@ -455,13 +464,9 @@
     <div class="question">
         <div class="question-container">
             <div class="question-text">
-                <h3>Q {{ question.Q_number }}</h3>
+                <h3>Q{{ question.Q_number }}</h3>
                 {{ question.Question|safe }}
-                {% if question.image %}
-                <div class="question-image">
-                    <img src="{{ question.image.url }}" alt="Question Image" />
-                </div>
-                {% endif %}
+                
                 <h4>Accuracy: {{ question.accuracy }}%</h4>
             </div>
         </div>
