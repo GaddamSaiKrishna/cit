@@ -320,64 +320,17 @@
             <span class="score">Points</span>
         </div>
         <div class="player-list" id="player-list">
-            {% for player in players|slice:":10" %}
+            {% for player in players %}
             <div class="player-row {% if player.rank == 1 %}gold{% elif player.rank == 2 %}silver{% elif player.rank == 3 %}bronze{% endif %}">
                 <span class="rank">{{ player.rank }}</span>
                 <span class="player">{{ player.name }}</span>
                 <span class="score">{% if slot == 4 %}{{ player.final_score }}{% else %}{{ player.score }}{% endif %}</span>
             </div>
-            
             {% endfor %}
         </div>
-        {% if players|length > 10 %}
-        <div class="see-more" id="see-more">See More...</div>
-        {% endif %}
+
     </div>
 </div>
 
-<script>
-    let currentIndex = 10; // Start index for the next batch of players
-    const playerList = document.getElementById('player-list');
-    const seeMoreBtn = document.getElementById('see-more');
-
-    seeMoreBtn.addEventListener('click', function() {
-        // Hide "See More" button when clicked
-        seeMoreBtn.style.display = 'none';
-
-        // Fetch the next set of players
-        fetch(`/leaderboard/see_more/?start=${currentIndex}`)
-            .then(response => response.json())
-            .then(data => {
-                if (data.players.length) {
-                    // Append new players to the list
-                    data.players.forEach(player => {
-                        const playerRow = document.createElement('div');
-                        playerRow.classList.add('player-row');
-                        if (player.rank == 1) {
-                            playerRow.classList.add('gold');
-                        } else if (player.rank == 2) {
-                            playerRow.classList.add('silver');
-                        } else if (player.rank == 3) {
-                            playerRow.classList.add('bronze');
-                        }
-
-                        playerRow.innerHTML = `
-                            <span class="rank">${player.rank}</span>
-                            <span class="player">${player.name}</span>
-                            <span class="score">${player.score}</span>
-                        `;
-                        playerList.appendChild(playerRow);
-                    });
-                    currentIndex += 10; // Increment index for the next batch
-
-                    // If no more players to load, remove "See More" button
-                    if (data.players.length < 10) {
-                        seeMoreBtn.style.display = 'none';
-                    }
-                }
-            })
-            .catch(error => console.error('Error loading more players:', error));
-    });
-</script>
 
 {% endblock %}
