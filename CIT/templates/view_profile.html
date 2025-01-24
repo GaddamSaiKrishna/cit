@@ -51,6 +51,17 @@
         height: auto; /* Set height to auto to allow scrolling */
         max-height: 80vh; /* Limit max height */
         overflow-y: auto; /* Enable vertical scrolling if content overflows */
+        animation: fadeInScale 1s ease-out forwards;
+    }
+    @keyframes fadeInScale {
+        0% {
+            opacity: 0; /* Start invisible */
+            transform: scale(0.95); /* Slightly smaller */
+        }
+        100% {
+            opacity: 1; /* Fully visible */
+            transform: scale(1); /* Original size */
+        }
     }
 
     .backButton {
