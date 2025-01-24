@@ -212,6 +212,8 @@
   box-sizing: border-box;
   width: 100%;
   min-height: 100vh;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: lighter;
 }
 
 /*---------------------------------- DotBg section ---------------------------------- */
@@ -443,6 +445,8 @@
   .lead{
     font-size: 18px;
     margin-top: 20px;
+    padding-bottom: 0;
+    margin-bottom: 0;
   }
   .card-body h2{
   font-size: 50px;
@@ -760,21 +764,8 @@ a:hover {
   width: 70px;
 }
 }
-body.no-scroll {
-  overflow: hidden; /* Prevent scrolling */
-}
 
-section {
-  background: url("bg.jpg") no-repeat;
-  background-size: cover;
-  height: 1rem;
-}
-nav ul{
-  z-index: 1000;
-}
-.fa-bars::before{
-  color: white;
-}
+
 </style>
 <nav>
   <!-- Checkbox for toggling menu -->
@@ -806,7 +797,7 @@ nav ul{
 
   <div class="lineheigtt">
     <p class="hometext" style="text-align: center; color: rgb(255, 255, 255); letter-spacing: 5px;font-family: fantasy;">
-      COGNITIVE INTELIGENCE<br />TEST 8.0
+      COGNITIVE INTELLIGENCE<br />TEST 8.0
     </p>
   </div>
     {% if user.is_anonymous %}
@@ -894,7 +885,7 @@ nav ul{
 
 <!-- About Section -->
 
-<div class="outeraboutcontainer poppins-regular" id="About">
+<div class="outeraboutcontainer poppins-regular fade-left scroll-animate" id="About" >
   <div class="container-fluid d-flex flex-column justify-content-center align-items-center vh-100 p-3 aboutContainer">
     <div class="row w-100">
       <div class="col-md-1"></div>
@@ -906,16 +897,16 @@ nav ul{
               <b>CIT 8.0</b>
             </h2>
           </div>
-          <p class="lead">
-            CIT 8.0 is one-of-a-kind opportunity for all aspiring students
+          <p class="lead" style="font-family: 'Poppins', sans-serif;">
+            CIT 8.0 is a one-of-a-kind opportunity for all aspiring students
             as we unveil exhilarating challenges of national standard over
-            the realms of basic mathematical aptitude, logical & verbal
-            reasoning, and data interpretation. Not only does CIT implant an
+            the realms of basic mathematical aptitude, logical and verbal
+            reasoning, and data interpretation. Not only does CIT instill an
             idea of various acclaimed aptitude tests like CAT, but our
             flagship event also never fails to provide a simulation of the
-            overall screening procedure of the hiring companies. This is the
+            overall screening procedure of hiring companies. This is the
             most anticipated online event to compete for intellectual glory
-            among a multitude of striving contestants.
+            among a multitude of striving contestants
           </p>
         </div>
       </div>
@@ -925,7 +916,7 @@ nav ul{
 
   <!-- Schedule Section -->
 
-  <div class="poppins-regular" style="width: 100%; min-width: 100vw; background-color: #dccdc8; height: auto;"
+  <div class="poppins-regular" style="width: 100%; min-width: 100vw; background-color: #dccdc8; height: auto; font-family: 'Poppins', sans-serif;"
     id="Schedule">
     <div
       style="display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; height: 100%; color: black;">
@@ -936,30 +927,32 @@ nav ul{
             class="sheduleimagee" />
         </div>
 
-        <div>
+        <div class="fade-left">
           <h1 class="h1tag text-center" style="font-size: 3rem;padding: 15px; color: white; text-align: center; margin-bottom: 1.5rem; background-color: #111344; border-radius: 5px;">
             SCHEDULE <br /> FOR <br /><b>CIT 8.0</b>
           </h1>
           <div
             style="width: 100%; display: flex; justify-content: center; flex-direction: column; justify-self: center; align-items: center;">
-            <p class="abcs" style="font-weight: bold;">Preliminary Round:</p>
+            <p class="abcs" style="font-weight: bold; text-transform: uppercase;">Preliminary Round:</p>
             <div>
               <p style="padding: 5px;">
-                Candidates can attempt CIT only once in any of the three available slots:
+                Candidates can attempt CIT only once in any of the three available slots: <br>
+                Slot 1: January 24, 2025 (9:00 PM - 9:45 PM) <br>
+                Slot 2: January 25, 2025 (9:00 PM - 9:45 PM) <br>
+                Slot 3: January 26, 2025 (9:00 PM - 9:45 PM) <br>
+                <!-- <ul>
+                  <li>Slot 1: January 24, 2025 (9:00 PM - 9:45 PM)</li>
+                  <li>Slot 2: January 25, 2025 (9:00 PM - 9:45 PM)</li>
+                  <li>Slot 3: January 26, 2025 (9:00 PM - 9:45 PM)</li>
+                </ul> -->
               </p>
-              <ul class="abcs">
-                <li>Slot 1: January 24, 2025 (9:00 PM - 9:45 PM)</li>
-                <li>Slot 2: January 25, 2025 (9:00 PM - 9:45 PM)</li>
-                <li>Slot 3: January 26, 2025 (9:00 PM - 9:45 PM)</li>
-              </ul>
+             
             </div>
 
-            <div>
-              <p class="abcs" style="font-weight: bold; padding: 5px;">Final Round:</p>
-              <p style="padding: 5px;">
-                Candidates selected for the final round will receive a mail with details.
-              </p>
-              <p class="abcs" style="padding: 5px;">Final: January 27, 2025 (9:00 PM - 9:45 PM)</p>
+            <div >
+             
+              <p style="padding: 5px;">  Candidates selected for the final round will receive a mail with details. <br> Qualified for the final round will be announced on Jan 27, 2025 (10:00 AM) <br>
+              <strong style="text-transform: uppercase;">Final Round :</strong> January 27, 2025 (9:00 PM - 9:45 PM)</p>
             </div>
 
           </div>
@@ -1221,6 +1214,9 @@ nav ul{
         }
       });
     });
+    
+
+  
   </script>
   
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
