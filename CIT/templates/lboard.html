@@ -294,7 +294,19 @@
             width: 50px;
         }
     }
-   
+    .lboard{
+        animation: fadeInScale 1s ease-out forwards;
+    }
+    @keyframes fadeInScale {
+        0% {
+            opacity: 0; /* Start invisible */
+            transform: scale(0.95); /* Slightly smaller */
+        }
+        100% {
+            opacity: 1; /* Fully visible */
+            transform: scale(1); /* Original size */
+        }
+    }
 
 </style>
 
